@@ -1,0 +1,257 @@
+[
+  {
+    "id": 1,
+    "title": "Focus Park Estate",
+    "location": "Ibeju-Lekki, Lagos",
+    "price": "₦11,500,000",
+    "image": "/card5.jpg",
+    "type": "Land",
+    "size": "450 - 225 sqm",
+    "features": ["Deed of Assignment", "Survey Plan", "Good Road Nets."],
+    "description": "Prime residential land in the heart of Lekki Phase 1. Perfect for building your dream home in one of Lagos most prestigious neighborhoods.",
+    "amenities": [
+      "24/7 Security",
+      "Paved Roads",
+      "Street Lighting",
+      "Drainage System"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "New Dawn Estate",
+    "location": "Enugu State",
+    "price": "₦5,000,000",
+    "image": "/card6.jpg",
+    "type": "Land",
+    "deposite": "30%",
+    "size": "450 - 225 sqm",
+    "features": ["Survey Plan", "Deed of Assignment", "Dry Land"],
+    "description": "Magnificent 4-bedroom duplex with modern amenities in the prestigious Victoria Island.",
+    "amenities": [
+      "Swimming Pool",
+      "Backup Generator",
+      "24/7 Security",
+      "Fitted Kitchen",
+      "Garden"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "He-Cares Garden",
+    "location": "Itori Ewekoro, Ogun State",
+    "price": "₦1,800,000",
+    "image": "/card3.jpg",
+    "type": "Land",
+    "deposite": "30%",
+    "size": "450 - 225 sqm",
+    "features": ["Survey Plan", "Deed of Assignment", "Dry Land"],
+    "description": "Stunning 3-bedroom apartment with breathtaking ocean views in prestigious Ikoyi.",
+    "amenities": [
+      "Ocean View",
+      "Gymnasium",
+      "Swimming Pool",
+      "Elevator",
+      "Concierge"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Laurel's Court VIP ESTATE",
+    "location": "Imota-Ikorodu",
+    "price": "₦2,100,000",
+    "image": "/card4.jpg",
+    "type": "Land",
+    "deposite": "30%",
+    "size": "450 - 225 sqm",
+    "features": [
+      "Good Security",
+      "Good Road/Nets",
+      "Recreational Center",
+      "Deed of Assignment",
+      "CCTV Surveillance"
+    ],
+    "description": "Prime commercial land in rapidly developing Ajah corridor, perfect for business ventures.",
+    "amenities": [
+      "Main Road Access",
+      "Commercial Zoning",
+      "High Visibility",
+      "Public Transport"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Laurel's Court VIP ESTATE",
+    "location": "Imota-Ikorodu, Lagos",
+    "price": "₦9,500,000",
+    "image": "/card1.jpg",
+    "type": "Land",
+    "discount": "-30%",
+    "size": "1 Acre (6 Plots)",
+    "features": [
+      "Good Security",
+      "Good Road/Nets",
+      "Recreational Center",
+      "CCTV Surveillance System",
+      "Deed of Assignment"
+    ],
+
+    "description": "Beautiful 5-bedroom bungalow with spacious compound in peaceful Ikorodu neighborhood.",
+    "amenities": [
+      "Large Compound",
+      "Private Borehole",
+      "Perimeter Fence",
+      "Car Port"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Investment Land in Odeda",
+    "location": "Odeda, Ogun State",
+    "price": "₦800,000",
+    "image": "/card2.jpg",
+    "type": "Land",
+    "deposite": "30%",
+    "size": "600 - 300 sqm",
+    "features": ["Survey Plan", "Deed of Assignment", "Dry Land"],
+    "description": "Excellent investment opportunity in fast-growing Epe area with high appreciation potential.",
+    "amenities": [
+      "Survey Plan",
+      "Deed of Assignment",
+      "Dry Land",
+      "Road Access"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Executive 2 Bedroom Flat",
+    "location": "Lekki Phase 2, Lagos",
+    "price": "₦28,000,000",
+    "image": "https://images.pexels.com/photos/1571453/pexels-photo-1571453.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "type": "Apartment",
+    "size": "150 sqm",
+    "beds": 2,
+    "baths": 2,
+    "features": ["Estate", "Swimming Pool", "Gym", "Security", "Parking"],
+    "description": "Executive 2-bedroom apartment in premium Lekki Phase 2 estate with world-class amenities.",
+    "amenities": [
+      "Swimming Pool",
+      "Gymnasium",
+      "24/7 Security",
+      "Car Park",
+      "Playground"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Detached 6 Bedroom Villa",
+    "location": "Banana Island, Lagos",
+    "price": "₦350,000,000",
+    "image": "https://images.pexels.com/photos/1396126/pexels-photo-1396126.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "type": "Villa",
+    "size": "800 sqm",
+    "beds": 6,
+    "baths": 8,
+    "features": [
+      "Waterfront",
+      "Private Jetty",
+      "Swimming Pool",
+      "Garden",
+      "Premium"
+    ],
+    "description": "Ultra-luxury 6-bedroom waterfront villa on exclusive Banana Island with private jetty.",
+    "amenities": [
+      "Private Jetty",
+      "Swimming Pool",
+      "Manicured Garden",
+      "Staff Quarters",
+      "CCTV"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Mixed-Use Development Land",
+    "location": "Ikeja, Lagos",
+    "price": "₦120,000,000",
+    "image": "https://images.pexels.com/photos/323775/pexels-photo-323775.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "type": "Commercial",
+    "size": "2000 sqm",
+    "features": [
+      "Mixed-Use Zoning",
+      "Corner Plot",
+      "High Traffic",
+      "C of O",
+      "Development Potential"
+    ],
+    "description": "Large mixed-use development land in commercial hub of Ikeja, perfect for retail and office complex.",
+    "amenities": [
+      "Mixed-Use Zoning",
+      "Corner Plot",
+      "High Traffic Area",
+      "Public Utilities"
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Luxury 1 Bedroom Studio",
+    "location": "Victoria Island, Lagos",
+    "price": "₦22,000,000",
+    "image": "https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "type": "Apartment",
+    "size": "75 sqm",
+    "beds": 1,
+    "baths": 1,
+    "features": ["City View", "Furnished", "Gym", "Pool", "Modern"],
+    "description": "Fully furnished luxury studio apartment with city views in the heart of Victoria Island.",
+    "amenities": [
+      "City View",
+      "Fully Furnished",
+      "Gym Access",
+      "Rooftop Pool",
+      "Concierge"
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Family 4 Bedroom Terrace",
+    "location": "Magodo, Lagos",
+    "price": "₦55,000,000",
+    "image": "https://images.pexels.com/photos/1396147/pexels-photo-1396147.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "type": "Terrace",
+    "size": "280 sqm",
+    "beds": 4,
+    "baths": 4,
+    "features": [
+      "Estate Living",
+      "Security",
+      "Playground",
+      "Parking",
+      "Modern"
+    ],
+    "description": "Beautiful 4-bedroom terrace house in secure Magodo estate, perfect for family living.",
+    "amenities": [
+      "Estate Security",
+      "Children Playground",
+      "Car Park",
+      "Power Supply",
+      "Water"
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Beachfront Land Plot",
+    "location": "Eleko Beach, Lagos",
+    "price": "₦45,000,000",
+    "image": "https://images.pexels.com/photos/1029604/pexels-photo-1029604.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "type": "Land",
+    "size": "1200 sqm",
+    "features": [
+      "Beachfront",
+      "Survey Plan",
+      "High Appreciation",
+      "Tourism Potential",
+      "Dry Land"
+    ],
+    "description": "Prime beachfront land with enormous tourism and development potential along Lagos coastline.",
+    "amenities": ["Beach Access", "Survey Plan", "Road Access", "Tourism Zone"]
+  }
+]

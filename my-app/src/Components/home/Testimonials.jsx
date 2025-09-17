@@ -8,44 +8,52 @@ import "swiper/css";
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Adebayo Johnson",
+      name: " Mr. Ade ",
       role: "Business Owner",
       image:
         "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=400",
       rating: 5,
-      text: "PrimeEstate helped me secure a prime plot of land in Lekki at an amazing price. Their professionalism and transparency throughout the process was exceptional. I highly recommend them!",
+      text: "Buying land felt scary at first, but Bereoth made everything transparent and easy. Today, I’m a proud landowner. ",
     },
     {
-      name: "Mrs. Sarah Okafor",
+      name: "Mrs. Chioma.",
       role: "Healthcare Professional",
       image:
         "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400",
       rating: 5,
-      text: "Finding my dream home was made so easy by the PrimeEstate team. They understood my requirements perfectly and showed me properties that matched exactly what I was looking for.",
+      text: "From inspection to allocation, the process was smooth. The flexible payment plan was a lifesaver.",
     },
     {
-      name: "Engineer Kemi Adisa",
+      name: "Engineer Tunde",
       role: "Civil Engineer",
       image:
         "https://images.pexels.com/photos/1065084/pexels-photo-1065084.jpeg?auto=compress&cs=tinysrgb&w=400",
       rating: 5,
-      text: "As an investment, my property purchase through PrimeEstate has already appreciated by 40% in just 2 years. Their market knowledge and advice was spot-on!",
+      text: "Bereoth is different, NO HIDDEN FEES, no stories. Just honesty and results. ",
     },
     {
-      name: "Mr. Tunde Bakare",
+      name: "Mrs. Funke",
       role: "Entrepreneur",
       image:
         "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=400",
       rating: 5,
-      text: "The documentation process was seamless and stress-free. PrimeEstate handled everything professionally, and I got my C of O within the promised timeframe.",
+      text: " I started with Bereoth Farmlands in Abeokuta, and today I’m running a small agribusiness. They made my farming dream possible. ",
     },
     {
-      name: "Grace Akinlade",
+      name: "Miss. Blessing",
       role: "Real Estate Investor",
       image:
         "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=400",
       rating: 5,
-      text: "I've worked with several real estate companies, but PrimeEstate stands out for their transparency and attention to detail. Highly recommended.",
+      text: "I honestly didn’t believe land could be this easy to own. No omo onile wahala, Bereoth handled everything.",
+    },
+    {
+      name: "Mr. Emeka",
+      role: "Real Estate Investor",
+      image:
+        "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=400",
+      rating: 5,
+      text: "What gave me peace of mind was the legit land title. I sleep well knowing my property is fully secured and documented.",
     },
   ];
 
@@ -120,8 +128,9 @@ const Testimonials = () => {
 
         {/* Call to Action */}
         <div className="text-center">
-          <p className="text-lg text-gray-600 mb-6">
-            Ready to join our satisfied clients?
+          <p className="text-lg text-gray-600 my-6">
+            With Bereoth, every client becomes a success story. Ready to join
+            our satisfied clients?
           </p>
           <Link
             to="/properties"

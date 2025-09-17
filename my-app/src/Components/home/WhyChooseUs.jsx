@@ -1,5 +1,5 @@
 import React from "react";
-import { Shield, Users, Award, Clock, MapPin, TrendingUp } from "lucide-react";
+import { Shield, CreditCard, Clock, MapPin, AudioWaveform } from "lucide-react";
 
 const WhyChooseUs = () => {
   const features = [
@@ -7,37 +7,29 @@ const WhyChooseUs = () => {
       icon: Shield,
       title: "Secure Documentation",
       description:
-        "All our properties come with verified and secure documentation including C of O, Survey Plans, and proper land titles.",
-    },
-    {
-      icon: Users,
-      title: "500+ Happy Clients",
-      description:
-        "Join hundreds of satisfied clients who have found their dream properties through our trusted services.",
-    },
-    {
-      icon: Award,
-      title: "10+ Years Experience",
-      description:
-        "Over a decade of experience in the Nigerian real estate market, ensuring expert guidance and advice.",
-    },
-    {
-      icon: Clock,
-      title: "Quick Response Time",
-      description:
-        "Fast and efficient service delivery. We respond to all inquiries within 24 hours and provide instant support.",
+        "All our properties come with verified and authentic documentation.",
     },
     {
       icon: MapPin,
-      title: "Prime Locations",
+      title: "Strategic Locationss",
       description:
-        "Specializing in premium locations across Lagos with high appreciation potential and good infrastructure.",
+        "Estates sited in high-growth areas across Lagos, Ogun, and Enugu.",
     },
     {
-      icon: TrendingUp,
-      title: "Investment Advisory",
+      icon: CreditCard,
+      title: "Flexible Payment Plans",
+      description: "Designed to fit your budget without stress.",
+    },
+    {
+      icon: Clock,
+      title: "Customer-Centered Service",
+      description: "We walk with you from inspection to allocation and beyond.",
+    },
+    {
+      icon: AudioWaveform,
+      title: "Proven Track Record",
       description:
-        "Professional investment guidance to help you make informed decisions and maximize your returns.",
+        "From 1 estate to 11 in just 6 years of consistent growth and still counting.",
     },
   ];
 
@@ -49,8 +41,8 @@ const WhyChooseUs = () => {
             Why Choose PrimeEstate?
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            We combine expertise, integrity, and innovation to deliver
-            exceptional real estate solutions that exceed your expectations
+            At Bereoth Property & Investments Ltd, we make land ownership
+            simple, transparent, and rewarding. Here’s why hundreds trust us:
           </p>
         </div>
 

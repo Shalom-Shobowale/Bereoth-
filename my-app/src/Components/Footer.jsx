@@ -1,6 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom"
 import {
-  Home,
   Phone,
   Mail,
   MapPin,
@@ -18,7 +18,7 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <img src="logo.jpg" alt="Bereoth Estate Development Project" className="h-14 w-14 rounded-full"/>
+              <img src="logo.jpg" alt="Bereoth Estate Development Project" className="h-12 w-12 rounded-full"/>
               <span className="text-xl font-bold">
                 Bereoth Estate Development Project
               </span>
@@ -61,44 +61,44 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <a
-                  href="/about"
+                <Link
+                  to="/about"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/properties"
+                <Link
+                  to="/properties"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Properties
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/services"
+                <Link
+                  to="/services"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Services
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/blog"
+                <Link
+                  to="/blog"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Blog
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/contact"
+                <Link
+                  to="/contact"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

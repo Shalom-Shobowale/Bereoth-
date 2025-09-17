@@ -7,9 +7,7 @@ const Header2 = () => {
         <p>
           <MapPin />
         </p>
-        <p>
-          Plot 19, Oba Sekunmade Road, Majidun Ogolonto Ikorodu, Lagos Nigeria
-        </p>
+        <p>1/3 Suco Road Beside VIO Office, Idi-Oparun Agege, Lagos State.</p>
       </div>
       <div className="flex items-center gap-3 text-center">
         <p>

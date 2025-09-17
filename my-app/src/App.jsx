@@ -1,6 +1,5 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import Header from "./Components/Header";
+import { useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Footer from "./Components/Footer";
 import HomePage from "./Components/pages/HomePage";
 import AboutPage from "./Components/pages/AboutPage";
@@ -15,14 +14,24 @@ import WhatsAppButton from "./Components/WhatsAppButton";
 import Header2 from "./Components/Header2";
 import Navbar from "./Components/Navbar";
 
+
+function ScrollToTop(){
+  const { pathname } = useLocation();
+
+  useEffect(()=>{
+    window.scrollTo(0, 0)
+  },[pathname])
+  return null;
+ }
+
 function App() {
   return (
     <Router>
       <div className="min-h-screen bg-white">
-        {/* <Header /> */}
         <Header2 />
         <Navbar />
         <main>
+          <ScrollToTop/>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />

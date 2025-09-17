@@ -1,16 +1,41 @@
-import React from "react";
+import { useState, useRef } from "react";
 import {
-  Users,
+  Shuffle,
   Target,
   Eye,
-  Award,
-  TrendingUp,
+  Sparkles,
+  ScanLine,
   Shield,
-  ChevronRight,
+  Pause,
+  Play,
+  Volume2,
+  VolumeX,
+  Stamp,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-
 const AboutPage = () => {
+  const [showFullContent, setShowFullContent] = useState(false);
+  const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(true);
+
+  const togglePlay = () => {
+    if (!videoRef.current) return;
+    if (videoRef.current.paused) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    } else {
+      videoRef.current.pause();
+      setIsPlaying(false);
+    }
+  };
+
+  const toggleMute = () => {
+    if (!videoRef.current) return;
+    videoRef.current.muted = !videoRef.current.muted;
+    setIsMuted(videoRef.current.muted);
+  };
+
   const values = [
     {
       icon: Shield,
@@ -19,22 +44,22 @@ const AboutPage = () => {
         "We maintain the highest standards of honesty and transparency in all our dealings.",
     },
     {
-      icon: Award,
-      title: "Excellence",
+      icon: Sparkles,
+      title: "Simplicity",
       description:
-        "We strive for excellence in every service we provide to our valued clients.",
+        "We make property ownership simple, clear, and hassle-free for everyone.",
     },
     {
-      icon: Users,
-      title: "Client-Focused",
+      icon: Shuffle,
+      title: "Flexibility",
       description:
-        "Our clients' satisfaction and success are at the heart of everything we do.",
+        "We offer adaptable solutions tailored to meet the unique needs of every client.",
     },
     {
-      icon: TrendingUp,
-      title: "Innovation",
+      icon: ScanLine,
+      title: "Transparency",
       description:
-        "We embrace innovative solutions to make real estate transactions seamless.",
+        "We operate with honesty and openness, ensuring clear and trustworthy transactions.",
     },
   ];
 
@@ -47,10 +72,9 @@ const AboutPage = () => {
       bio: "15+ years in Nigerian real estate, former investment banker",
     },
     {
-      name: "Funmi Adebayo",
+      name: "Olamide Shobowale",
       role: "Head of Sales",
-      image:
-        "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400",
+      image: "team1.jpg",
       bio: "Expert in luxury property sales with 10+ years experience",
     },
     {
@@ -72,66 +96,104 @@ const AboutPage = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-[url('bg.png')] bg-no-repeat bg-cover bg-center text-accent py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              About{" "}
-              <span className="text-secondary">
-                {" "}
-                B<span className="text-primary">ER</span>EOTH
-              </span>
-            </h1>
-            <div className="flex items-center justify-center gap-3">
-              <p className="text-accent font-semibold text-xl">
-                Bereoth Estate Development Properties
-              </p>
-              <p className="text-2xl font-semibold"> {">"} </p>
-              <Link to="/" className="text-accent font-semibold text-xl">
-                Home
-              </Link>
-            </div>
-            {/* <p className="text-xl text-accent max-w-3xl mx-auto">
-              Your trusted partner in Nigerian real estate, combining expertise,
-              integrity, and innovation to deliver exceptional property
-              solutions since 2013.
-            </p> */}
-          </div>
+      <section className="bg-[url('bg1.png')] bg-no-repeat bg-cover bg-center text-accent py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            About Bereoth
+          </h1>
+          <p className="text-xl text-accent">
+            At Bereoth, we don’t just sell land, we build people, wealth, and legacies.
+          </p>
         </div>
       </section>
 
       {/* Company Story */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
-                Our Story
-              </h2>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Founded in 2013, PrimeEstate emerged from a simple vision: to
-                revolutionize the Nigerian real estate landscape by providing
-                transparent, reliable, and customer-focused property services.
-              </p>
-              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
-                Over the past decade, we have grown from a small startup to one
-                of Lagos' most trusted real estate firms, helping over 500
-                families and investors find their perfect properties while
-                maintaining our core values of integrity and excellence.
-              </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Today, we specialize in premium residential and commercial
-                properties across Lagos State, offering comprehensive services
-                from property acquisition to investment advisory.
-              </p>
+      <section className=" my-12">
+        <div className="max-w-7xl mx-auto ">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div className="px-4 sm:px-6 lg:px-8">
+              <div
+                className={`transition-all duration-500 ${
+                  showFullContent
+                    ? "overflow-visible h-auto"
+                    : "overflow-y-hidden h-[50vh]"
+                }`}
+              >
+                <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
+                  Our Story
+                </h2>
+                <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                  Bereoth Property & Investments Ltd is more than a real estate
+                  company — we are a movement transforming lives through
+                  property, investment, and empowerment.
+                </p>
+                <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                  From the very beginning, our vision has been clear: to make
+                  land ownership simple, transparent, and rewarding for
+                  Nigerians everywhere. We believe land is not just about
+                  building houses, but about building wealth, security, and
+                  legacies.
+                </p>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  In 2018, we took our first bold step with Focus Park Estate,
+                  Mowe Ofada. What started as a single project has now expanded
+                  into 11 thriving estates across Lagos, Ogun, and Enugu States.
+                </p>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  But Bereoth is more than estates — we solve problems. We
+                  address housing needs by providing affordable and accessible
+                  plots.
+                </p>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  We fight poverty and unemployment by creating job
+                  opportunities through our projects and engaging consultants.
+                </p>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  Over 6 years of steady growth, our reputation has been built
+                  on trust, transparency, and results. We have provided secure
+                  titles, flexible payment plans, and a stress-free process.
+                </p>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  Today, Bereoth is more than a company — it is a community of
+                  dreamers, investors, and achievers. ✨ At Bereoth, we don’t
+                  just sell land, we build people, wealth, and legacies.
+                </p>
+              </div>
+
+              <button
+                onClick={() => setShowFullContent((prev) => !prev)}
+                className="bg-primary text-accent py-2 px-4 font-semibold rounded-md my-4"
+              >
+                {showFullContent ? "Read Less" : "Read More"}
+              </button>
             </div>
-            <div className="relative">
-              <img
-                src="https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Modern building"
-                className="rounded-lg shadow-xl"
+
+            <div className="relative w-full max-w-3xl mx-auto md:rounded-2xl overflow-hidden group">
+              <video
+                ref={videoRef}
+                src="/ab-vid.mp4"
+                autoPlay
+                muted
+                playsInline
+                loop
+                className="w-full h-auto md:rounded-2xl"
               />
-              <div className="absolute inset-0 bg-blue-600 opacity-10 rounded-lg"></div>
+
+              {/* Center Play/Pause Button */}
+              <button
+                onClick={togglePlay}
+                className="absolute inset-0 flex items-center justify-center text-white text-7xl bg-black bg-opacity-40 hover:bg-opacity-60 transition duration-300 opacity-0 group-hover:opacity-100 rounded-2xl"
+              >
+                {isPlaying ? <Pause size={72} /> : <Play size={72} />}
+              </button>
+
+              {/* Mute/Unmute Button (bottom-right corner) */}
+              <button
+                onClick={toggleMute}
+                className="absolute bottom-4 right-4 bg-black bg-opacity-60 text-white p-3 rounded-full opacity-0 group-hover:opacity-100 transition duration-300"
+              >
+                {isMuted ? <VolumeX size={24} /> : <Volume2 size={24} />}
+              </button>
             </div>
           </div>
         </div>
@@ -140,7 +202,7 @@ const AboutPage = () => {
       {/* Mission & Vision */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div className="text-center">
               <div className="bg-primary w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Target className="h-10 w-10 text-white" />
@@ -149,10 +211,8 @@ const AboutPage = () => {
                 Our Mission
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                To democratize access to premium real estate opportunities in
-                Nigeria by providing transparent, reliable, and innovative
-                property solutions that empower our clients to achieve their
-                investment goals.
+                Providing Affordable Landed Properties for Interested
+                Subscribers at all levels.
               </p>
             </div>
             <div className="text-center">
@@ -163,9 +223,19 @@ const AboutPage = () => {
                 Our Vision
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                To become Nigeria's leading real estate company, recognized for
-                our integrity, innovation, and commitment to creating lasting
-                value for our clients, communities, and stakeholders.
+                To Provide Reliable Shelter For Future Relevance.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="bg-primary w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Stamp className="h-10 w-10 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-primary mb-4">
+                Our Mandate
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                We are developing 10,000 Homes across the country by 2031.
               </p>
             </div>
           </div>

@@ -60,31 +60,38 @@ const HeroSection = () => {
     //   </div>
     // </section>
 
-    <section className="relative bg-green-500">
-      <div className="flex">
-        <div className="w-[50%] h-[80vh] bg-primary flex justify-center flex-col items-center">
-          <h1 className="text-5xl text-white font-bold leading-tight">
-            Affordable Land. <br /> Trusted Investments. <br /> Lasting Value.
-          </h1>
-          <div className="flex gap-4 my-9">
-            <Link
-              to="/properties"
-              className="bg-blue-800 hover:bg-primary text-accent px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:transform hover:scale-105  space-x-2 flex items-center justify-center"
-            >
-              Explore Properties
-              <ArrowRight className="h-5 w-5" />
-            </Link>
+    <section className="relative">
+      <div
+        className="bg-no-repeat bg-center bg-cover h-screen"
+        style={{
+          backgroundImage:
+            "url(https://cdn.pixabay.com/photo/2016/11/29/03/53/house-1867187_1280.jpg)",
+        }}
+      >
+        <div className="md:w-[53%] h-full bg-primary clip-diagonal flex md:justify-center  flex-col md:pt-0 pt-8 items-center">
+          <div className="p-3">
+            <h1 className="text-4xl md:text-6xl text-white font-bold md:leading-snug leading-snug">
+              Affordable Land. <br /> Trusted Investments. <br /> Lasting Value.
+            </h1>
+            <div className="flex gap-4 my-9">
+              <Link
+                to="/properties"
+                className="bg-blue-800 hover:bg-white hover:text-primary text-accent px-6 md:px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:transform hover:scale-105  space-x-2 flex items-center justify-center"
+              >
+                Explore Properties
+                <ArrowRight className="h-5 w-5" />
+              </Link>
 
-            <button className="border-2 border-white text-white hover:bg-white hover:text-primary px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
-              Book Site Inspection
-            </button>
+              <button className="border-2 border-white text-white hover:bg-white hover:text-primary md:px-8 px-6 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
+                Book Site Inspection
+              </button>
+            </div>
           </div>
         </div>
-        <div className="bg-[(https://mbraizinnovations.com/wp-content/uploads/2024/06/BG_slide.jpg)] bg-no-repeat bg-center bg-cover h-[80vh] w-[50%]" style={{backgroundImage: "url(https://mbraizinnovations.com/wp-content/uploads/2024/06/BG_slide.jpg)"}}></div>
       </div>
 
       <div className="flex justify-center">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center w-[80%] absolute bottom-10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center md:w-[80%] p-3 absolute bottom-12">
           <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-6">
             <div className="text-3xl font-bold text-accent">500+</div>
             <div className="text-accent">Happy Clients</div>

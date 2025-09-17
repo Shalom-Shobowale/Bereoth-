@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.clip-diagonal {
+  clip-path: none;
+}
+
+/* Apply slant only at md and up (768px+) */
+@media (min-width: 768px) {
+  .clip-diagonal {
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+  }
+}

@@ -29,7 +29,7 @@ const PropertySearch = () => {
           </p>
         </div>
 
-        <div className="bg-gray-50 rounded-2xl p-8 shadow-lg">
+        <div className="bg-gray-50 rounded-2xl p-4 md:p-8 shadow-lg">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
             {/* Location */}
             <div className="relative">

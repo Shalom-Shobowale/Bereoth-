@@ -4,62 +4,6 @@ import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
-    // <section className="bg-red- text-white">
-    //   <div
-    //     className="h-[80vh] bg-cover bg-center bg-no-repeat "
-    //     style={{
-    //       backgroundImage: "url('bg3.png')",
-    //     }}
-    //   />
-    //   <div className=" ">
-    //     <div className=" ">
-    //       <h1 className="text-4xl md:text-6xl font-bold mb-6 ">
-    //         Affordable Land. <br />Trusted Investments. Lasting Value.
-    //         {/* <span className="text-secondary">
-    //           {" "}
-    //           B<span className="text-primary">ER</span>EOTH
-    //         </span> */}
-    //       </h1>
-    //       {/* <p className="text-xl md:text-2xl mb-8 text-accent">
-    //         Discover premium properties, secure investments, and exceptional
-    //         service in Lagos and beyond
-    //       </p> */}
-    //       <div className="flex flex-col sm:flex-row gap-4 justify-center">
-    //         <Link
-    //           to="/properties"
-    //           className="bg-blue-800 hover:bg-primary text-accent px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:transform hover:scale-105 flex items-center justify-center space-x-2"
-    //         >
-    //           Explore Properties
-    //           <ArrowRight className="h-5 w-5" />
-    //         </Link>
-    //         <button className="border-2 border-white hover:bg-white hover:text-primary px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
-    //           Book Site Inspection
-    //         </button>
-    //       </div>
-    //     </div>
-
-    //     {/* Stats */}
-    //     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-    //       <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-6">
-    //         <div className="text-3xl font-bold text-accent">500+</div>
-    //         <div className="text-accent">Happy Clients</div>
-    //       </div>
-    //       <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-6">
-    //         <div className="text-3xl font-bold text-accent">50+</div>
-    //         <div className="text-accent">Properties Sold</div>
-    //       </div>
-    //       <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-6">
-    //         <div className="text-3xl font-bold text-accent">10+</div>
-    //         <div className="text-accent">Years Experience</div>
-    //       </div>
-    //       <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-6">
-    //         <div className="text-3xl font-bold text-accent">100%</div>
-    //         <div className="text-accent">Secure Documentation</div>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </section>
-
     <section className="relative">
       <div
         className="bg-no-repeat bg-center bg-cover h-screen"
@@ -91,7 +35,7 @@ const HeroSection = () => {
       </div>
 
       <div className="flex justify-center">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center md:w-[80%] p-3 absolute bottom-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center md:w-[80%] p-3 absolute bottom-3 md:bottom-12">
           <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-6">
             <div className="text-3xl font-bold text-accent">500+</div>
             <div className="text-accent">Happy Clients</div>

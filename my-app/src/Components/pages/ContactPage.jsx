@@ -80,7 +80,10 @@ const ContactPage = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-[url('bg1.png')] bg-no-repeat bg-cover bg-center text-accent py-20">
+      <section
+        className=" bg-no-repeat bg-cover bg-center text-accent py-20"
+        style={{ backgroundImage: "url(bg1.png)" }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
@@ -148,7 +151,10 @@ const ContactPage = () => {
                   <h3 className="text-xl font-semibold text-primary mb-2">
                     Email Address
                   </h3>
-                  <a href="mailto:bereothproperty.com" className="text-gray-600">
+                  <a
+                    href="mailto:bereothproperty.com"
+                    className="text-gray-600"
+                  >
                     info@bereothproperty.com
                     <br />
                     bereothp@gmail.com

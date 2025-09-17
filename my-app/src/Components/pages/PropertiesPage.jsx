@@ -115,7 +115,10 @@ const PropertiesPage = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Hero Section */}
-      <section className="bg-[url('bg1.png')] bg-no-repeat bg-cover bg-center text-accent py-16">
+      <section
+        className="bg-no-repeat bg-cover bg-center text-accent py-16"
+        style={{ backgroundImage: "url(bg1.png)" }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Our Properties

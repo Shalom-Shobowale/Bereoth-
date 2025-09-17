@@ -73,7 +73,7 @@ const Navbar = () => {
       <nav className="flex justify-between items-center w-[92%] mx-auto h-24">
         <Link to="/" className="flex items-center space-x-2">
           <img
-            src={sticky ? "logo.png" : "logo1.png"}
+            src="/logo1.png"
             alt="bereoth estate development project"
             className="h-20"
           />

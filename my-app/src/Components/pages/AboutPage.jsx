@@ -65,31 +65,31 @@ const AboutPage = () => {
 
   const team = [
     {
-      name: "Adebayo Ogundimu",
-      role: "CEO & Founder",
+      name: "IKHAGHU OTHNIEL",
+      role: "Managing Director",
       image:
-        "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400",
-      bio: "15+ years in Nigerian real estate, former investment banker",
-    },
-    {
-      name: "Olamide Shobowale",
-      role: "Head of Sales",
-      image: "team1.jpg",
-      bio: "Expert in luxury property sales with 10+ years experience",
+        "md.jpeg",
+      bio: "15+ years experience in real estate development and investment",
     },
     {
       name: "Kemi Okafor",
-      role: "Legal Advisor",
+      role: "Chief Operating Officer",
       image:
         "https://images.pexels.com/photos/1065084/pexels-photo-1065084.jpeg?auto=compress&cs=tinysrgb&w=400",
       bio: "Property law specialist ensuring secure transactions",
     },
     {
       name: "Tunde Bakare",
-      role: "Investment Consultant",
+      role: "Human Resources Manager",
       image:
         "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=400",
       bio: "Strategic investment advisor with proven track record",
+    },
+    {
+      name: "Olamide Shobowale",
+      role: "Senior Consultant",
+      image: "team1.jpeg",
+      bio: "Expert in luxury property sales with 10+ years experience",
     },
   ];
 
@@ -295,6 +295,7 @@ const AboutPage = () => {
                   alt={member.name}
                   className="w-full h-48 object-cover"
                 />
+                {/* <div className={`w-full h-48 object-cover bg-cover bg-center bg-no-repeat`} style={{ backgroundImage: `url(${member.image})` }}></div> */}
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-primary mb-2">
                     {member.name}
@@ -332,7 +333,7 @@ const AboutPage = () => {
               <div className="text-blue-100">Property Value Sold</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-accent mb-2">15</div>
+              <div className="text-4xl font-bold text-accent mb-2">11</div>
               <div className="text-blue-100">Prime Locations</div>
             </div>
             <div>

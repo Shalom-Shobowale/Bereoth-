@@ -177,7 +177,7 @@ const BlogPage = () => {
         <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
-              Upcoming Events
+              {events.data != Date ? "Past Events" : "Upcoming Events"}
             </h2>
 
             {events.length === 0 ? (
@@ -211,13 +211,14 @@ const BlogPage = () => {
                         {event.excerpt}
                       </p>
 
-                      <Link
-                        to={`/event/${event.id}`}
+                      <a href={event.link} target="_blank" rel="noopener noreferrer"
+                        // to={`/event/${event.id}`}
+                        
                         className="w-full mt-4 inline-flex items-center justify-center space-x-2 bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-800 py-2 px-4 rounded-lg font-medium transition-colors"
                       >
                         <span>View Details</span>
                         <ArrowRight className="h-4 w-4" />
-                      </Link>
+                      </a>
                     </div>
                   </article>
                 ))}

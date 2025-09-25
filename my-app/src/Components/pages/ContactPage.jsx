@@ -25,7 +25,7 @@ const ContactPage = () => {
   const handleWhatsAppClick = () => {
     const message =
       "Hello! I would like to inquire about your real estate services.";
-    const url = `https://wa.me/2342347068752458?text=${encodeURIComponent(
+    const url = `https://wa.me/2347068752458?text=${encodeURIComponent(
       message
     )}`;
     window.open(url, "_blank");
@@ -103,9 +103,9 @@ const ContactPage = () => {
               Get in Touch
             </h2>
             <p className="text-lg text-gray-600 mb-8">
-              Whether you're looking to buy, sell, or invest in real estate, our
-              team is here to help. Contact us through any of the channels below
-              for immediate assistance.
+              Our professional team is here to help you achieve your housing
+              dreams and make the smartest real estate investments. Contact us
+              today and let’s bring your vision to life.
             </p>
 
             <div className="space-y-8">
@@ -119,8 +119,9 @@ const ContactPage = () => {
                     Office Address
                   </h3>
                   <p className="text-gray-600">
-                    123 Lekki Phase 1<br />
-                    Lagos State, Nigeria
+                    1/3 Suco Road Beside VIO Office,
+                    <br />
+                    Idi-Oparun Agege, Lagos State.
                   </p>
                 </div>
               </div>
@@ -136,8 +137,11 @@ const ContactPage = () => {
                   </h3>
                   <a href="tel:+2347068752458" className="text-gray-600">
                     +234 706 875 2458
-                    <br />
-                    +234 706 875 2458
+                  </a>
+                  <br />
+                  <a href="tel:+2349056057730" className="text-gray-600">
+                    {" "}
+                    +234 905 605 7730
                   </a>
                 </div>
               </div>
@@ -151,10 +155,7 @@ const ContactPage = () => {
                   <h3 className="text-xl font-semibold text-primary mb-2">
                     Email Address
                   </h3>
-                  <a
-                    href="mailto:bereothproperty.com"
-                    className="text-gray-600"
-                  >
+                  <a href="mailto:bereothp@gmail.com" className="text-gray-600">
                     info@bereothproperty.com
                     <br />
                     bereothp@gmail.com
@@ -172,9 +173,9 @@ const ContactPage = () => {
                     Business Hours
                   </h3>
                   <div className="text-gray-600">
-                    <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                    <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
                     <p>Saturday: 10:00 AM - 4:00 PM</p>
-                    <p>Sunday: Closed</p>
+                    <p>Sunday: 10:00 AM - 4:00 PM</p>
                   </div>
                 </div>
               </div>
@@ -194,7 +195,10 @@ const ContactPage = () => {
                   <span>Chat on WhatsApp</span>
                 </button>
 
-                <button className="bg-blue-800 hover:bg-primary text-white py-3 px-6 rounded-lg font-semibold flex items-center justify-center space-x-2 transition-colors">
+                <button
+                  onClick={handleWhatsAppClick}
+                  className="bg-blue-800 hover:bg-primary text-white py-3 px-6 rounded-lg font-semibold flex items-center justify-center space-x-2 transition-colors"
+                >
                   <Calendar className="h-5 w-5" />
                   <span>Book Consultation</span>
                 </button>
@@ -287,11 +291,12 @@ const ContactPage = () => {
                 >
                   <option value="">Select a subject</option>
                   <option value="buying">I want to buy a property</option>
-                  <option value="selling">I want to sell my property</option>
-                  <option value="investment">Investment consultation</option>
+                  <option value="investment">Investment Consultation</option>
+                  <option value="schedule-inspection">Schedule Site Inspection</option>
                   <option value="property-management">
                     Property management
                   </option>
+                  <option value="partnership">Partnership Inquiry</option>
                   <option value="general">General inquiry</option>
                 </select>
               </div>
@@ -324,7 +329,7 @@ const ContactPage = () => {
                   }
                 />
                 <label htmlFor="consent" className="text-sm text-gray-600">
-                  I agree to be contacted by PrimeEstate regarding my inquiry
+                  I agree to be contacted by BEREOTH property and investment Ltd. regarding my inquiry
                   and consent to the processing of my personal data for this
                   purpose.
                 </label>

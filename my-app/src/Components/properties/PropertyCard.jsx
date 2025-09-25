@@ -7,8 +7,8 @@ const PropertyCard = ({ property }) => {
     id,
     title,
     location,
-    price,
-    sold,
+    // price,
+    // sold,
     image,
     type,
     size,
@@ -33,10 +33,10 @@ const PropertyCard = ({ property }) => {
           <MapPin className="h-4 w-4 mr-1" />
           <span className="text-sm">{location}</span>
         </div>
-
+{/* 
         <div className="flex items-center justify-between mb-4">
           <div className="text-2xl font-bold text-primary">{sold ? "Sold Out" : price}</div>
-        </div>
+        </div> */}
 
         <div className="flex items-center space-x-4 mb-4 text-gray-600 text-sm">
           <div className="flex items-center">

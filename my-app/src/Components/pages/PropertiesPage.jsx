@@ -51,11 +51,11 @@ const PropertiesPage = () => {
       });
     }
 
-    if (filters.minBeds) {
-      filtered = filtered.filter((property) =>
-        property.beds ? property.beds >= parseInt(filters.minBeds) : true
-      );
-    }
+    // if (filters.minBeds) {
+    //   filtered = filtered.filter((property) =>
+    //     property.beds ? property.beds >= parseInt(filters.minBeds) : true
+    //   );
+    // }
 
     setFilteredProperties(filtered);
     setCurrentPage(1);
@@ -124,7 +124,7 @@ const PropertiesPage = () => {
             Our Properties
           </h1>
           <p className="text-xl text-accent">
-            Discover your perfect property from our curated collection
+            Discover your perfect property
           </p>
         </div>
       </section>

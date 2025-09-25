@@ -36,19 +36,19 @@ const ServicesPage = () => {
         "Exit strategy planning",
       ],
     },
-    {
-      icon: Building,
-      title: "Property Management",
-      description:
-        "Complete property management services to protect and optimize your real estate assets.",
-      features: [
-        "Tenant screening and placement",
-        "Rent collection and accounting",
-        "Property maintenance and repairs",
-        "Regular property inspections",
-        "24/7 emergency response",
-      ],
-    },
+    // {
+    //   icon: Building,
+    //   title: "Property Management",
+    //   description:
+    //     "Complete property management services to protect and optimize your real estate assets.",
+    //   features: [
+    //     "Tenant screening and placement",
+    //     "Rent collection and accounting",
+    //     "Property maintenance and repairs",
+    //     "Regular property inspections",
+    //     "24/7 emergency response",
+    //   ],
+    // },
     {
       icon: MapPin,
       title: "Land Banking & Development",
@@ -77,51 +77,51 @@ const ServicesPage = () => {
     },
     {
       icon: Shield,
-      title: "Property Documentation",
+      title: "Property Sales",
       description:
-        "Secure and efficient handling of all property-related documentation and legal processes.",
+        "Connecting you to lands and homes that build your future.",
       features: [
-        "Title verification and search",
-        "Survey plan preparation",
-        "Certificate of Occupancy processing",
-        "Deed of Assignment preparation",
-        "Perfection of property documents",
+        "Verified lands and estates with genuine titles (no hidden issues)",
+        "Flexible payment plans to suit your budget",
+        "Prime locations with high growth and landmark developments",
+        "Professional guidance from inspection to documentation",
+        "Transparent and stress-free transactions.",
       ],
     },
   ];
 
-  const process = [
-    {
-      step: "01",
-      title: "Initial Consultation",
-      description:
-        "We begin with a comprehensive consultation to understand your specific needs and objectives.",
-    },
-    {
-      step: "02",
-      title: "Market Analysis",
-      description:
-        "Our team conducts thorough market research and analysis to identify the best opportunities.",
-    },
-    {
-      step: "03",
-      title: "Customized Strategy",
-      description:
-        "We develop a tailored strategy that aligns with your goals, budget, and timeline.",
-    },
-    {
-      step: "04",
-      title: "Implementation",
-      description:
-        "Our experts execute the strategy with precision, keeping you informed every step of the way.",
-    },
-    {
-      step: "05",
-      title: "Ongoing Support",
-      description:
-        "We provide continuous support and monitoring to ensure optimal results and satisfaction.",
-    },
-  ];
+  // const process = [
+  //   {
+  //     step: "01",
+  //     title: "Initial Consultation",
+  //     description:
+  //       "We begin with a comprehensive consultation to understand your specific needs and objectives.",
+  //   },
+  //   {
+  //     step: "02",
+  //     title: "Market Analysis",
+  //     description:
+  //       "Our team conducts thorough market research and analysis to identify the best opportunities.",
+  //   },
+  //   {
+  //     step: "03",
+  //     title: "Customized Strategy",
+  //     description:
+  //       "We develop a tailored strategy that aligns with your goals, budget, and timeline.",
+  //   },
+  //   {
+  //     step: "04",
+  //     title: "Implementation",
+  //     description:
+  //       "Our experts execute the strategy with precision, keeping you informed every step of the way.",
+  //   },
+  //   {
+  //     step: "05",
+  //     title: "Ongoing Support",
+  //     description:
+  //       "We provide continuous support and monitoring to ensure optimal results and satisfaction.",
+  //   },
+  // ];
 
   return (
     <div>
@@ -184,7 +184,7 @@ const ServicesPage = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-16 bg-gray-50">
+      {/* <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
@@ -209,7 +209,7 @@ const ServicesPage = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Why Choose Our Services */}
       <section className="py-16 bg-white">

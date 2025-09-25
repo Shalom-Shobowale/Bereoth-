@@ -84,9 +84,9 @@ const FeaturedProperties = () => {
                   <MapPin className="h-4 w-4 mr-1" />
                   <span className="text-sm">{property.location}</span>
                 </div>
-                <div className="text-2xl font-bold text-primary mb-4">
+                {/* <div className="text-2xl font-bold text-primary mb-4">
                   {property.sold ? "Sold Out" : property.price}
-                </div>
+                </div> */}
                 <div className="flex items-center space-x-4 mb-4 text-gray-600 text-sm">
                   <div className="flex items-center">
                     <Square className="h-4 w-4 mr-1" />

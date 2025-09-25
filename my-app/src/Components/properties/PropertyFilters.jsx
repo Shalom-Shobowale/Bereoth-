@@ -48,12 +48,13 @@ const PropertyFilters = ({ onFilterChange }) => {
             className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           >
             <option value="">Any Location</option>
-            <option value="lekki">Lekki</option>
-            <option value="ikoyi">Ikoyi</option>
-            <option value="victoria-island">Victoria Island</option>
-            <option value="ikorodu">Ikorodu</option>
-            <option value="ajah">Ajah</option>
-            <option value="epe">Epe</option>
+            <option value="lekki">Ibeju Lekki</option>
+            <option value="atan">Atan Ota</option>
+            <option value="itori">Itori Ewakoro</option>
+            <option value="mowe">Mowe Ofada-mokoloki</option>
+            <option value="odeda">Odeda Abeokuta</option>
+            <option value="enugu">Enugu</option>
+            <option value="imota">Imota-Ikorodu</option>
           </select>
         </div>
 
@@ -68,11 +69,11 @@ const PropertyFilters = ({ onFilterChange }) => {
             className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           >
             <option value="">Any Type</option>
-            <option value="land">Land/Plot</option>
-            <option value="apartment">Apartment</option>
-            <option value="duplex">Duplex</option>
-            <option value="bungalow">Bungalow</option>
+            <option value="land">Residential/Plot</option>
+            <option value="acre">Residential/Acre</option>
             <option value="commercial">Commercial</option>
+            <option value="farmland">Farmland</option>
+            {/* <option value="commercial">Commercial</option> */}
           </select>
         </div>
 
@@ -86,34 +87,17 @@ const PropertyFilters = ({ onFilterChange }) => {
             onChange={(e) => handleFilterChange('priceRange', e.target.value)}
             className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
           >
-            <option value="">Any Price</option>
-            <option value="0-5">₦0 - ₦5M</option>
-            <option value="5-10">₦5M - ₦10M</option>
-            <option value="10-20">₦10M - ₦20M</option>
-            <option value="20-50">₦20M - ₦50M</option>
-            <option value="50-100">₦50M - ₦100M</option>
-            <option value="100+">₦100M+</option>
+             <option value="">Any Price</option>
+             <option value="0-0.4">₦400 - ₦950k</option>
+             <option value="0.45-1">₦1M - ₦2M</option>
+             <option value="2-2.1">₦2.1M - ₦3M</option>
+             <option value="3-3.5">₦3M - ₦5M</option>
+             <option value="5-12">₦5M - ₦12M</option>
+             <option value="5-12">₦12M - ₦20M</option>
+             <option value="12+">₦20M+</option>
           </select>
         </div>
 
-        {/* Bedrooms */}
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Minimum Bedrooms
-          </label>
-          <select
-            value={filters.minBeds}
-            onChange={(e) => handleFilterChange('minBeds', e.target.value)}
-            className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-          >
-            <option value="">Any</option>
-            <option value="1">1+</option>
-            <option value="2">2+</option>
-            <option value="3">3+</option>
-            <option value="4">4+</option>
-            <option value="5">5+</option>
-          </select>
-        </div>
 
         {/* Clear Filters */}
         <button

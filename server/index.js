@@ -12,20 +12,37 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Initialize Supabase client
+// Initialize Supabase client (use service role key on backend)
 export const supabase = createClient(
-  process.env.VITE_SUPABASE_URL || "https://your-project.supabase.co",
-  process.env.VITE_SUPABASE_ANON_KEY || "your-anon-key"
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_SERVICE_ROLE_KEY
 );
 
+console.log("Supabase URL:", process.env.SUPABASE_URL);
+console.log("Supabase Service Role Key Loaded:", !!process.env.SUPABASE_SERVICE_ROLE_KEY);
+
+
 // Middleware
-app.use(helmet());
+const allowedOrigins = [
+  "http://localhost:5173", // local frontend dev
+  "https://bereothadmin.vercel.app", // old/staging domain
+  "https://admin.bereoth.com", // ✅ your new custom production domain
+];
+
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || "http://localhost:5173",
+    origin: function (origin, callback) {
+      // Allow requests with no origin (like mobile apps or curl)
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS: " + origin));
+      }
+    },
     credentials: true,
   })
 );
+
 app.use(morgan("combined"));
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true }));

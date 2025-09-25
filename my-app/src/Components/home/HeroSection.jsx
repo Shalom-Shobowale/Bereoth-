@@ -35,7 +35,7 @@ const HeroSection = () => {
       </div>
 
       <div className="flex justify-center">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center md:w-[80%] p-3 absolute bottom-3 md:bottom-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center md:w-[80%] p-3 absolute bottom-10 md:bottom-12">
           <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-6">
             <div className="text-3xl font-bold text-accent">500+</div>
             <div className="text-accent">Happy Clients</div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import {
   Phone,
   Mail,
@@ -18,19 +18,22 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <img src="logo.jpg" alt="Bereoth Estate Development Project" className="h-12 w-12 rounded-full"/>
+              <img
+                src="logo.jpg"
+                alt="Bereoth Estate Development Project"
+                className="h-12 w-12 rounded-full"
+              />
               <span className="text-xl font-bold">
-                Bereoth Estate Development Project
+                BEREOTH Property and Investment Ltd.
               </span>
             </div>
             <p className="text-gray-300 mb-4">
               Your trusted partner in finding the perfect property. We
-              specialize in premium real estate solutions across Lagos and
-              surrounding areas.
+              specialize in premium real estate solutions in Nigeria.
             </p>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://www.facebook.com/share/1B4GoFjZfy/"
                 className="text-gray-300 hover:text-blue-400 transition-colors"
               >
                 <Facebook className="h-5 w-5" />
@@ -42,7 +45,7 @@ const Footer = () => {
                 <Twitter className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/bereothproperty?igsh=dzJ6NXB3M3pzd2hw&utm_source=ig_contact_invites&utm_medium=copy_link"
                 className="text-gray-300 hover:text-blue-400 transition-colors"
               >
                 <Instagram className="h-5 w-5" />
@@ -94,6 +97,14 @@ const Footer = () => {
               </li>
               <li>
                 <Link
+                  to="/partnership"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  Partnership
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/contact"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
@@ -120,9 +131,10 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
-                <MapPin className="h-5 w-5 text-blue-400" />
+                <MapPin className="h-9 w-9 text-blue-400" />
                 <span className="text-gray-300">
-                  123 Lekki Phase 1, Lagos, Nigeria
+                  1/3 Suco Road Beside VIO Office, Idi-Oparun Agege, Lagos
+                  State.
                 </span>
               </div>
               <div className="flex items-center space-x-3">
@@ -133,7 +145,10 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-blue-400" />
-                <span className="text-gray-300">info@bereothproperty.com</span>
+                <div>
+                  <a href="mailto:bereothp@gmail.com" className="text-gray-300">bereothp@gmail.com</a><br />
+                  <span className="text-gray-300">info@bereothproperty.com</span>
+                </div>
               </div>
             </div>
           </div>
@@ -141,8 +156,11 @@ const Footer = () => {
 
         <div className="border-t border-gray-700 mt-12 pt-8 text-center">
           <p className="text-gray-300">
-            &copy; {new Date().getFullYear()} Bereoth Estate Development Project. All
-            rights reserved. | <a href="/privacy-policy" className="hover:underline">Privacy Policy</a>
+            &copy; {new Date().getFullYear()} BEREOTH Property and Investment
+            Ltd. All rights reserved. |{" "}
+            <a href="/privacy-policy" className="hover:underline">
+              Privacy Policy
+            </a>
           </p>
         </div>
       </div>

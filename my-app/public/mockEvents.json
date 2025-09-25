@@ -1,26 +1,20 @@
 [
   {
     "id": 1,
-    "title": "Real Estate Investment Summit 2024",
-    "date": "March 5, 2024",
+    "title": "FIVE THURSDAY SALES CHALLENGE",
+    "date": "July 8, 2025",
     "location": "Eko Hotel, Lagos",
     "description": "Join industry leaders, investors, and developers for a full-day summit on the future of real estate in Nigeria.",
-    "image": "https://images.pexels.com/photos/1181395/pexels-photo-1181395.jpeg?auto=compress&cs=tinysrgb&w=800"
+    "image": "/event1.jpeg",
+    "link": "https://www.instagram.com/p/DMm-SZBBKpi/?igsh=MTllcnVyeDluNDI0bQ=="
   },
   {
     "id": 2,
-    "title": "First-Time Homebuyers Workshop",
-    "date": "April 20, 2024",
-    "location": "Lekki Phase 1, Lagos",
-    "description": "A practical workshop designed to help young professionals understand mortgages, inspections, and homeownership basics.",
-    "image": "https://images.pexels.com/photos/164516/pexels-photo-164516.jpeg?auto=compress&cs=tinysrgb&w=800"
-  },
-  {
-    "id": 3,
-    "title": "Property Law & Documentation Seminar",
-    "date": "May 12, 2024",
-    "location": "Abuja International Conference Centre",
-    "description": "Learn about Nigerian property law, documentation requirements, and how to avoid land scams.",
-    "image": "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800"
+    "title": "BEREOTH 6 YEARS ANNIVERSARY",
+    "date": "July 19, 2025",
+    "location": "Eko Hotel, Lagos",
+    "description": "Join industry leaders, investors, and developers for a full-day summit on the future of real estate in Nigeria.",
+    "image": "/event2.jpeg",
+    "link": "https://www.instagram.com/p/DMaT6kchVtZ/?igsh=MXAzdmw1aTlnYXo2OA=="
   }
 ]

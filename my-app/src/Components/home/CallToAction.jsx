@@ -5,7 +5,7 @@ const CallToAction = () => {
   const handleWhatsAppClick = () => {
     const message =
       "Hello! I would like to inquire about your real estate services.";
-    const url = `https://wa.me/2342347068752458?text=${encodeURIComponent(
+    const url = `https://wa.me/2347068752458?text=${encodeURIComponent(
       message
     )}`;
     window.open(url, "_blank");

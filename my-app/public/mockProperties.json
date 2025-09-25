@@ -7,8 +7,8 @@
     "image": "/card5.jpg",
     "type": "Land",
     "size": "450 - 225 sqm",
-    "features": ["Survey", "Deed of Assignment"],
-    "description": "Focus park estate is located in the heart of Ibeju-Lekki, Lagos. It is a serene and secure environment perfect for building your dream home, with high return on investment (ROI).\n\nFlexible payment plans available.",
+    "features": ["Survey", "Deed of Assignment","Excision "],
+    "description": "Focus park estate is located in the heart of Ibeju-Lekki, Lagos. It is a serene and secure environment perfect for building your dream home, with high return on investment (ROI).\n\n**Flexible payment plans available.**\n450sqm →₦11.5M (Outright, 1–3 months)\n225sqm → ₦6.05M (Outright, 1–3 months)\n\n📌 Secure yours with just 30% initial deposit.",
     "amenities": [
       "Good Security",
       "Good Road/Network",
@@ -64,25 +64,6 @@
     "deposite": "30%",
     "size": "450 - 225 sqm",
     "features": ["Survey", "Deed of Assignment"],
-    "description": "Prime commercial land in rapidly developing Ajah corridor, perfect for business ventures.",
-    "amenities": [
-      "Good Security",
-      "Good Road/Network",
-      "Recreational Center",
-      "CCTV Surveillance System"
-    ]
-  },
-  {
-    "id": 5,
-    "title": "Laurel's Court VIP ESTATE",
-    "location": "Imota-Ikorodu, Lagos",
-    "price": "₦9,500,000",
-    "image": "/card1.jpg",
-    "type": "Land",
-    "discount": "-30%",
-    "size": "1 Acre (6 Plots)",
-    "features": ["Survey ", "Deed of Assignment"],
-
     "description": "Invest Big, Reap Bigger.” Secure acres of premium land in the thriving Imota Ikorodu axis—perfect for large development, farming, or long-term wealth building. \n\n**Flexible payment plans available.**\nOutright (1–3 months): ₦9.5M per acre 6 months: ₦12.5M per acre\n\n📌 Secure yours with just 30% initial deposit.",
     "amenities": [
       "Good Security",
@@ -92,7 +73,7 @@
     ]
   },
   {
-    "id": 6,
+    "id": 5,
     "title": "Pine & Crest Estate,",
     "location": " Odeda Abeokuta – Majape, Ogun State",
     "price": "₦800,000",
@@ -110,7 +91,7 @@
     ]
   },
   {
-    "id": 7,
+    "id": 6,
     "title": "Bereoth FarmLand",
     "location": "Abeokuta, Ogun State",
     "price": "₦2,000,000",
@@ -120,6 +101,24 @@
     "size": "Per Acre",
     "features": ["Survey", "Deed of Assignment"],
     "description": "Step into sustainable wealth with Bereoth Farmlands, a fertile investment space in the heart of Abeokuta. Perfect for agriculture, future development, or land banking, this farmland guarantees value growth in a serene environment.\n\n**Flexible payment plans available.**\nOutright (1–3 months): Per Plot → ₦2M \n\n📌 Flexible payment available within 3 months max",
+    "amenities": [
+      "Fertile Soil",
+      "Good Road/Network",
+      "Recreational Center",
+      "CCTV Surveillance System"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Focus Park VIP Estate",
+    "location": "Mowe Ofada",
+    "price": "₦1,200,000",
+    "image": "/card11.jpeg",
+    "type": "Land",
+    "deposite": "30%",
+    "size": "Per Plot",
+    "features": ["Survey", "Deed of Assignment"],
+    "description": "...",
     "amenities": [
       "Good Security",
       "Good Road/Network",
@@ -132,15 +131,16 @@
     "title": "Focus Park VIP Estate",
     "location": "Mowe Ofada",
     "price": "₦1,200,000",
-    "image": "/card11.jpeg",
+    "image": "/card12.jpeg",
     "type": "Land",
     "deposite": "30%",
-    "size": "Per Plot",
+    "size": "Per Plot / Per Acre",
     "features": ["Survey", "Deed of Assignment"],
-    "description": "Excellent investment opportunity in fast-growing Epe area with high appreciation potential.",
+    "description": "...",
     "amenities": [
       "Good Security",
       "Good Road/Network",
+      "Street Lights",
       "Recreational Center",
       "CCTV Surveillance System"
     ]
@@ -150,31 +150,12 @@
     "title": "Focus Park VIP Estate",
     "location": "Mowe Ofada",
     "price": "₦1,200,000",
-    "image": "/card12.jpeg",
-    "type": "Land",
-    "deposite": "30%",
-    "size": "Per Plot / Per Acre",
-    "features": ["Survey", "Deed of Assignment"],
-    "description": "Excellent investment opportunity in fast-growing Epe area with high appreciation potential.",
-    "amenities": [
-      "Good Security",
-      "Good Road/Network",
-      "Street Lights",
-      "Recreational Center",
-      "CCTV Surveillance System"
-    ]
-  },
-  {
-    "id": 10,
-    "title": "Focus Park VIP Estate",
-    "location": "Mowe Ofada",
-    "price": "₦1,200,000",
     "image": "/card13.jpeg",
     "type": "Land",
     "deposite": "30%",
     "size": "Per Plot",
     "features": ["Survey", "Deed of Assignment"],
-    "description": "Excellent investment opportunity in fast-growing Epe area with high appreciation potential.",
+    "description": "...",
     "amenities": [
       "MAximum Security",
       "Good Road/Network",
@@ -184,7 +165,7 @@
     ]
   },
   {
-    "id": 11,
+    "id": 10,
     "title": "Focus Park VIP Estate",
     "location": "Atan-Ota, Ogun State",
     "price": "₦2,600,000",
@@ -203,7 +184,7 @@
   },
 
   {
-    "id": 12,
+    "id": 11,
     "title": "Focus Park Estate",
     "location": "Mowe Ofada",
     "price": "₦1,800,000",
@@ -212,7 +193,7 @@
     "deposite": "30%",
     "size": "450sqm - 225sqm",
     "features": ["Survey", "Deed of Assignment"],
-    "description": "Excellent investment opportunity in fast-growing Epe area with high appreciation potential.",
+    "description": "...",
     "amenities": [
       "Good Security",
       "Good Road/Network",
@@ -220,26 +201,9 @@
       "CCTV Surveillance System"
     ]
   },
+
   {
-    "id": 13,
-    "title": "Laurel's Court VIP ESTATE",
-    "location": "Imota-Ikorodu",
-    "price": "₦2,100,000",
-    "image": "/card17.jpeg",
-    "type": "Land",
-    "deposite": "30%",
-    "size": "450sqm - 225sqm",
-    "features": ["Survey", "Deed of Assignment"],
-    "description": "Excellent investment opportunity in fast-growing Epe area with high appreciation potential.",
-    "amenities": [
-      "Good Security",
-      "Good Road/Network",
-      "Recreational Center",
-      "CCTV Surveillance System"
-    ]
-  },
-  {
-    "id": 14,
+    "id": 12,
     "title": "Laurel's Court VIP ESTATE",
     "location": "Imota-Ikorodu",
     "price": "₦9,500,000",

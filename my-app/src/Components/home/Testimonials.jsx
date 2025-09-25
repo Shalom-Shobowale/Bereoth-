@@ -11,7 +11,7 @@ const Testimonials = () => {
       name: " Mr. Ade ",
       role: "Business Owner",
       image:
-        "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "/pics4.jpeg",
       rating: 5,
       text: "Buying land felt scary at first, but Bereoth made everything transparent and easy. Today, I’m a proud landowner. ",
     },
@@ -19,7 +19,7 @@ const Testimonials = () => {
       name: "Mrs. Chioma.",
       role: "Healthcare Professional",
       image:
-        "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "/pics3.jpeg",
       rating: 5,
       text: "From inspection to allocation, the process was smooth. The flexible payment plan was a lifesaver.",
     },
@@ -27,7 +27,7 @@ const Testimonials = () => {
       name: "Engineer Tunde",
       role: "Civil Engineer",
       image:
-        "https://images.pexels.com/photos/1065084/pexels-photo-1065084.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "/pics1.jpeg",
       rating: 5,
       text: "Bereoth is different, NO HIDDEN FEES, no stories. Just honesty and results. ",
     },
@@ -35,23 +35,23 @@ const Testimonials = () => {
       name: "Mrs. Funke",
       role: "Entrepreneur",
       image:
-        "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "pics2.jpeg",
       rating: 5,
       text: " I started with Bereoth Farmlands in Abeokuta, and today I’m running a small agribusiness. They made my farming dream possible. ",
     },
     {
-      name: "Miss. Blessing",
+      name: "Mr. Francis",
       role: "Real Estate Investor",
       image:
-        "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "pics6.jpeg",
       rating: 5,
       text: "I honestly didn’t believe land could be this easy to own. No omo onile wahala, Bereoth handled everything.",
     },
     {
-      name: "Mr. Emeka",
+      name: "Mr. Joseph",
       role: "Real Estate Investor",
       image:
-        "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "/pics5.jpeg",
       rating: 5,
       text: "What gave me peace of mind was the legit land title. I sleep well knowing my property is fully secured and documented.",
     },

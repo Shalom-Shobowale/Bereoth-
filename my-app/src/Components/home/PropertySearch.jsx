@@ -30,7 +30,7 @@ const PropertySearch = () => {
         </div>
 
         <div className="bg-gray-50 rounded-2xl p-4 md:p-8 shadow-lg">
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Location */}
             <div className="relative">
               <label className="block text-sm font-medium text-primary mb-2">
@@ -43,14 +43,16 @@ const PropertySearch = () => {
                   onChange={(e) =>
                     setSearchData({ ...searchData, location: e.target.value })
                   }
-                  className="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full pl-10 pr-3  py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 >
                   <option value="">Select Location</option>
-                  <option value="lekki">Lekki</option>
-                  <option value="ikoyi">Ikoyi</option>
-                  <option value="victoria-island">Victoria Island</option>
-                  <option value="ikorodu">Ikorodu</option>
-                  <option value="ajah">Ajah</option>
+                  <option value="lekki">Ibeju Lekki</option>
+                  <option value="atan">Atan Ota</option>
+                  <option value="itori">Itori Ewakoro</option>
+                  <option value="mowe">Mowe Ofada-mokoloki</option>
+                  <option value="odeda">Odeda Abeokuta</option>
+                  <option value="enugu">Enugu</option>
+                  <option value="imota">Imota-Ikorodu</option>
                 </select>
               </div>
             </div>
@@ -73,11 +75,10 @@ const PropertySearch = () => {
                   className="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 >
                   <option value="">Property Type</option>
-                  <option value="land">Land/Plot</option>
-                  <option value="apartment">Apartment</option>
-                  <option value="duplex">Duplex</option>
-                  <option value="bungalow">Bungalow</option>
+                  <option value="land">Residential/Plot</option>
+                  <option value="acre">Residential/Acre</option>
                   <option value="commercial">Commercial</option>
+                  <option value="farmland">Farmland</option>
                 </select>
               </div>
             </div>
@@ -88,7 +89,9 @@ const PropertySearch = () => {
                 Price Range
               </label>
               <div className="relative">
-                <DollarSign className="absolute left-3 top-4 h-5 w-5 text-gray-400" />
+                <p className="absolute left-3 top-3 h-5 w-5 text-gray-400">
+                  &#8358;
+                </p>
                 <select
                   value={searchData.priceRange}
                   onChange={(e) =>
@@ -97,17 +100,19 @@ const PropertySearch = () => {
                   className="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 >
                   <option value="">Price Range</option>
-                  <option value="0-5m">₦0 - ₦5M</option>
-                  <option value="5m-10m">₦5M - ₦10M</option>
-                  <option value="10m-20m">₦10M - ₦20M</option>
-                  <option value="20m-50m">₦20M - ₦50M</option>
-                  <option value="50m+">₦50M+</option>
+                  <option value="0-0.4">₦400 - ₦950k</option>
+                  <option value="0.45-1">₦1M - ₦2M</option>
+                  <option value="2-2.1">₦2.1M - ₦3M</option>
+                  <option value="3-3.5">₦3M - ₦5M</option>
+                  <option value="5-12">₦5M - ₦12M</option>
+                  <option value="5-12">₦12M - ₦20M</option>
+                  <option value="12+">₦20M+</option>
                 </select>
               </div>
             </div>
 
             {/* Min Beds */}
-            <div className="relative">
+            {/* <div className="relative">
               <label className="block text-sm font-medium text-primary mb-2">
                 Min Beds
               </label>
@@ -128,7 +133,7 @@ const PropertySearch = () => {
                   <option value="5">5+</option>
                 </select>
               </div>
-            </div>
+            </div> */}
 
             {/* Search Button */}
             <div className="flex items-end">

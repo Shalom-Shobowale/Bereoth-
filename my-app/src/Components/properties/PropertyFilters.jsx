@@ -30,7 +30,7 @@ const PropertyFilters = ({ onFilterChange }) => {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-lg p-6">
+    <div className="bg-white rounded-xl shadow-lg p-6 sticky top-28">
       <div className="flex items-center space-x-2 mb-6">
         <Filter className="h-5 w-5 text-blue-600" />
         <h3 className="text-lg font-semibold text-gray-900">Filter Properties</h3>

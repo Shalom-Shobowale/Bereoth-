@@ -12,6 +12,7 @@ import {
   Share2,
   Heart,
 } from "lucide-react";
+import EstateMap from "../EstateMap";
 
 const PropertyDetailPage = () => {
   const { id } = useParams();
@@ -179,7 +180,7 @@ const PropertyDetailPage = () => {
             <div className="bg-gray-50 rounded-xl p-6 mb-8">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                 <div className="text-3xl font-bold text-primary mb-2 md:mb-0">
-                  {property.sold ? "Sold Out" : property.price}
+                  {property.sold ? "Sold Out" : property.title}
                 </div>
                 <div className="flex items-center space-x-4 text-gray-600">
                   <div className="flex items-center">
@@ -207,8 +208,11 @@ const PropertyDetailPage = () => {
               <h2 className="text-2xl font-bold text-primary mb-4">
                 Description
               </h2>
-              <p className="text-gray-600 text-lg leading-relaxed whitespace-pre-line">
-                {property.description}
+              <p
+                className="text-gray-600 text-lg leading-relaxed whitespace-pre-line"
+                dangerouslySetInnerHTML={{ __html: property.description }}
+              >
+                {/* {property.description} */}
               </p>
             </div>
 
@@ -247,13 +251,15 @@ const PropertyDetailPage = () => {
             {/* Location Map Placeholder */}
             <div className="mb-8">
               <h2 className="text-2xl font-bold text-primary mb-4">Location</h2>
-              <div className="bg-gray-200 h-64 rounded-xl flex items-center justify-center">
-                <div className="text-center text-gray-600">
-                  <MapPin className="h-12 w-12 mx-auto mb-2" />
-                  <p>Interactive map will be integrated here</p>
-                  <p className="text-sm">Showing: {property.location}</p>
-                </div>
-              </div>
+
+              <EstateMap
+                coordinates={property.coordinates}
+                title={property.title}
+              />
+
+              <p className="text-sm mt-2 text-gray-600">
+                Showing: {property.location}
+              </p>
             </div>
           </div>
 

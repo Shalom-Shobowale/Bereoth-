@@ -65,7 +65,16 @@ const ContactPage = () => {
 
       if (response.ok) {
         toast.success("Your message has been sent!");
-        setFormData({ name: "", email: "", phone: "", message: "" });
+        // ✅ FIXED: Reset all form fields properly
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          subject: "",
+          message: "",
+          tick: false,
+        });
       } else {
         toast.error("Failed to send message. Try again.");
       }
@@ -292,7 +301,9 @@ const ContactPage = () => {
                   <option value="">Select a subject</option>
                   <option value="buying">I want to buy a property</option>
                   <option value="investment">Investment Consultation</option>
-                  <option value="schedule-inspection">Schedule Site Inspection</option>
+                  <option value="schedule-inspection">
+                    Schedule Site Inspection
+                  </option>
                   <option value="property-management">
                     Property management
                   </option>
@@ -329,9 +340,9 @@ const ContactPage = () => {
                   }
                 />
                 <label htmlFor="consent" className="text-sm text-gray-600">
-                  I agree to be contacted by BEREOTH property and investment Ltd. regarding my inquiry
-                  and consent to the processing of my personal data for this
-                  purpose.
+                  I agree to be contacted by BEREOTH property and investments
+                  Ltd. regarding my inquiry and consent to the processing of my
+                  personal data for this purpose.
                 </label>
               </div>
 
@@ -351,16 +362,13 @@ const ContactPage = () => {
           <h2 className="text-3xl font-bold text-primary mb-8 text-center">
             Find Us
           </h2>
-          <div className="bg-gray-200 h-96 rounded-2xl flex items-center justify-center">
-            <div className="text-center text-gray-600">
-              <MapPin className="h-12 w-12 mx-auto mb-4" />
-              <p className="text-lg font-semibold">Interactive Map</p>
-              <p>123 Lekki Phase 1, Lagos State, Nigeria</p>
-              <p className="text-sm mt-2">
-                Google Maps integration will be implemented here
-              </p>
-            </div>
-          </div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.0258477259317!2d3.3152572745538897!3d6.643712021755613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8fba5f545053%3A0x1e95f93a2e484866!2sBEREOTH%20PROPERTY%20%26%20INVESTMENTS%20LIMITED!5e0!3m2!1sen!2sng!4v1759463672698!5m2!1sen!2sng"
+            className="w-full h-96 rounded-2xl border-0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
       </div>
     </div>

@@ -24,7 +24,7 @@ const Footer = () => {
                 className="h-12 w-12 rounded-full"
               />
               <span className="text-xl font-bold">
-                BEREOTH Property and Investment Ltd.
+                BEREOTH Property and Investments Ltd.
               </span>
             </div>
             <p className="text-gray-300 mb-4">
@@ -156,7 +156,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-700 mt-12 pt-8 text-center">
           <p className="text-gray-300">
-            &copy; {new Date().getFullYear()} BEREOTH Property and Investment
+            &copy; {new Date().getFullYear()} BEREOTH Property and Investments
             Ltd. All rights reserved. |{" "}
             <a href="/privacy-policy" className="hover:underline">
               Privacy Policy

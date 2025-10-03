@@ -17,7 +17,7 @@ const HeroSection = () => {
             <h1 className="text-4xl md:text-6xl text-white font-bold md:leading-snug leading-snug">
               Affordable Land. <br /> Trusted Investments. <br /> Lasting Value.
             </h1>
-            <div className="flex gap-4 my-9">
+            <div className="flex gap-5 my-9">
               <Link
                 to="/properties"
                 className="bg-blue-800 hover:bg-white hover:text-primary text-accent px-6 md:px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:transform hover:scale-105  space-x-2 flex items-center justify-center"

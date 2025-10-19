@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Search, Filter } from 'lucide-react';
+import { useState } from 'react';
+import { Filter } from 'lucide-react';
 
 
 const PropertyFilters = ({ onFilterChange }) => {
@@ -93,8 +93,7 @@ const PropertyFilters = ({ onFilterChange }) => {
              <option value="2-2.1">₦2.1M - ₦3M</option>
              <option value="3-3.5">₦3M - ₦5M</option>
              <option value="5-12">₦5M - ₦12M</option>
-             <option value="5-12">₦12M - ₦20M</option>
-             <option value="12+">₦20M+</option>
+             <option value="5-12">₦12M - ₦35M</option>
           </select>
         </div>
 

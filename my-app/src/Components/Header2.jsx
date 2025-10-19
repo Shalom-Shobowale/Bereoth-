@@ -13,7 +13,7 @@ const Header2 = () => {
         <p>
           <Mail />
         </p>
-        <p>info@bereothproperty.com</p>
+        <a href="mailto:info@bereoth.com">info@bereoth.com</a>
       </div>
     </header>
   );

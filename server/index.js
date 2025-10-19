@@ -53,6 +53,7 @@ import propertyRoutes from "./routes/properties.js";
 import inquiryRoutes from "./routes/inquiries.js";
 import userRoutes from "./routes/users.js";
 import dashboardRoutes from "./routes/dashboard.js";
+import uploadRoutes from "./routes/upload.js"
 
 // Import error handler middleware
 import { errorHandler } from "./middleware/errorHandler.js";
@@ -63,6 +64,7 @@ app.use("/api/properties", propertyRoutes);
 app.use("/api/inquiries", inquiryRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/dashboard", dashboardRoutes);
+app.use("/api/upload", uploadRoutes)
 
 // Health check
 app.get("/api/health", (req, res) => {

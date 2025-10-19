@@ -18,16 +18,23 @@ const Navbar = () => {
 
   const isActive = (href) => location.pathname === href;
 
+  // Handle scroll for sticky navbar with buffer to prevent flicker
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       const threshold = window.innerHeight * 0.4;
-      setShowSticky(scrollY > threshold);
+
+      // Add a small buffer (20px) to avoid rapid toggling near the threshold
+      if (scrollY > threshold + 20 && !showSticky) {
+        setShowSticky(true);
+      } else if (scrollY < threshold - 20 && showSticky) {
+        setShowSticky(false);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [showSticky]);
 
   const NavLinks = ({ isMobile = false }) => (
     <ul
@@ -73,26 +80,22 @@ const Navbar = () => {
       <nav className="flex justify-between items-center w-[92%] mx-auto h-24">
         <Link to="/" className="flex items-center space-x-2">
           <img
-            src="/logo1.png"
+            src="/Logo2.png"
             alt="bereoth estate development project"
-            className="h-20"
+            className="h-40"
           />
         </Link>
 
         {/* Desktop nav */}
         <NavLinks />
 
-        {/* Mobile button */}
+        {/* Mobile menu button */}
         <div className="md:hidden">
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="text-gray-700 hover:text-blue-600 p-2"
           >
-            {isMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
+            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
       </nav>
@@ -102,12 +105,8 @@ const Navbar = () => {
     </div>
   );
 
-  return (
-    <>
-      {!showSticky && <NavbarContent sticky={false} />}
-      {showSticky && <NavbarContent sticky />}
-    </>
-  );
+  // ✅ Render only ONE navbar, not two (prevents blinking)
+  return <NavbarContent sticky={showSticky} />;
 };
 
 export default Navbar;

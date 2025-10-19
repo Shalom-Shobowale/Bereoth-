@@ -90,8 +90,8 @@ const ContactPage = () => {
     <div>
       {/* Hero Section */}
       <section
-        className=" bg-no-repeat bg-cover bg-center text-accent py-20"
-        style={{ backgroundImage: "url(bg1.png)" }}
+        className=" bg-no-repeat bg-cover bg-center text-accent py-28"
+        style={{ backgroundImage: "url(you.png)" }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">

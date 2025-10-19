@@ -22,12 +22,18 @@ const PropertyForm = () => {
     location: "",
     description: "",
     features: [],
+    amenities: [],
     images: [],
     status: "Available",
+    type: "land",
+    size: "",
+    coordinates: { lat: "", lng: "" },
   });
 
   const [newFeature, setNewFeature] = useState("");
   const [newImageUrl, setNewImageUrl] = useState("");
+  const [newAmenity, setNewAmenity] = useState("");
+  const [uploadingImage, setUploadingImage] = useState(false);
 
   useEffect(() => {
     if (isEditing && id) {
@@ -43,12 +49,19 @@ const PropertyForm = () => {
 
       setFormData({
         title: property.title,
-        price: property.price.toString(),
-        location: property.location,
-        description: property.description,
+        price: property.price?.toString() || "",
+        location: property.location || "",
+        description: property.description || "",
         features: property.features || [],
+        amenities: property.amenities || [],
         images: property.images || [],
-        status: property.status,
+        status: property.status || "Available",
+        type: property.type || "land",
+        size: property.size || "",
+        coordinates: {
+          lat: property.coordinates?.lat?.toString() || "",
+          lng: property.coordinates?.lng?.toString() || "",
+        },
       });
     } catch (error) {
       console.error("Error fetching property:", error);
@@ -59,12 +72,40 @@ const PropertyForm = () => {
     }
   };
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
+  const addAmenity = () => {
+    if (newAmenity.trim() && !formData.amenities.includes(newAmenity.trim())) {
+      setFormData((prev) => ({
+        ...prev,
+        amenities: [...prev.amenities, newAmenity.trim()],
+      }));
+      setNewAmenity("");
+    }
+  };
+
+  const removeAmenity = (index) => {
     setFormData((prev) => ({
       ...prev,
-      [name]: value,
+      amenities: prev.amenities.filter((_, i) => i !== index),
     }));
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+
+    if (name === "lat" || name === "lng") {
+      setFormData((prev) => ({
+        ...prev,
+        coordinates: {
+          ...prev.coordinates,
+          [name]: value,
+        },
+      }));
+    } else {
+      setFormData((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
+    }
   };
 
   const addFeature = () => {
@@ -161,6 +202,43 @@ const PropertyForm = () => {
     );
   }
 
+  const handleImageFileChange = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const formDataFile = new FormData();
+    formDataFile.append("image", file); // Must match backend field name
+
+    try {
+      setUploadingImage(true);
+
+      const response = await axios.post(
+        `${API_BASE_URL}/upload`,
+        formDataFile,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+
+      const imageUrl = response.data.imageUrl;
+
+      setFormData((prev) => ({
+        ...prev,
+        images: [...prev.images, imageUrl],
+      }));
+
+      addToast("Image uploaded successfully", "success");
+    } catch (error) {
+      console.error("Image upload failed:", error);
+      addToast("Image upload failed", "error");
+    } finally {
+      setUploadingImage(false);
+      e.target.value = ""; // Reset input
+    }
+  };
+
   return (
     <div className="space-y-6">
       {/* Page header */}
@@ -204,7 +282,7 @@ const PropertyForm = () => {
                 required
                 value={formData.title}
                 onChange={handleInputChange}
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-3 outline-none"
                 placeholder="Enter property title"
               />
             </div>
@@ -226,7 +304,7 @@ const PropertyForm = () => {
                 step="0.01"
                 value={formData.price}
                 onChange={handleInputChange}
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-3 outline-none"
                 placeholder="Enter price"
               />
             </div>
@@ -244,7 +322,7 @@ const PropertyForm = () => {
                 id="status"
                 value={formData.status}
                 onChange={handleInputChange}
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-3"
               >
                 <option value="Available">Available</option>
                 <option value="Sold">Sold</option>
@@ -267,7 +345,7 @@ const PropertyForm = () => {
                 required
                 value={formData.location}
                 onChange={handleInputChange}
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-3 outline-none"
                 placeholder="Enter property location"
               />
             </div>
@@ -287,8 +365,85 @@ const PropertyForm = () => {
                 rows="4"
                 value={formData.description}
                 onChange={handleInputChange}
-                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-3 outline-none"
                 placeholder="Enter property description"
+              />
+            </div>
+
+            {/* Type */}
+            <div>
+              <label
+                htmlFor="type"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Type
+              </label>
+              <select
+                name="type"
+                id="type"
+                value={formData.type}
+                onChange={handleInputChange}
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-3 outline-none"
+              >
+                <option value="land">Land</option>
+                <option value="commercial">Commercial</option>
+                <option value="farmland">Farmland</option>
+              </select>
+            </div>
+
+            {/* Size */}
+            <div>
+              <label
+                htmlFor="size"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Size (e.g., 450sqm)
+              </label>
+              <input
+                type="text"
+                name="size"
+                id="size"
+                value={formData.size}
+                onChange={handleInputChange}
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-3 outline-none"
+                placeholder="Enter property size"
+              />
+            </div>
+
+            {/* Coordinates */}
+            <div>
+              <label
+                htmlFor="lat"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Latitude
+              </label>
+              <input
+                type="text"
+                name="lat"
+                id="lat"
+                value={formData.coordinates.lat}
+                onChange={handleInputChange}
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-3 outline-none"
+                placeholder="Latitude"
+              />
+            </div>
+
+            <div>
+              <label
+                htmlFor="lng"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Longitude
+              </label>
+              <input
+                type="text"
+                name="lng"
+                id="lng"
+                value={formData.coordinates.lng}
+                onChange={handleInputChange}
+                className="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-3 outline-none"
+                placeholder="Longitude"
               />
             </div>
 
@@ -305,13 +460,13 @@ const PropertyForm = () => {
                   onKeyPress={(e) =>
                     e.key === "Enter" && (e.preventDefault(), addFeature())
                   }
-                  className="flex-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                  className="flex-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-3 outline-none"
                   placeholder="Add a feature"
                 />
                 <button
                   type="button"
                   onClick={addFeature}
-                  className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
+                  className="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
                 >
                   <Plus className="h-4 w-4" />
                 </button>
@@ -327,7 +482,52 @@ const PropertyForm = () => {
                       <button
                         type="button"
                         onClick={() => removeFeature(index)}
-                        className="ml-2 inline-flex items-center justify-center w-4 h-4 rounded-full text-blue-400 hover:text-blue-600"
+                        className="ml-2 inline-flex items-center justify-center w-4 h-4 rounded-full text-blue-400 hover:text-blue-600 p-3"
+                      >
+                        <Trash2 className="h-3 w-3" />
+                      </button>
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Amenities */}
+            <div className="sm:col-span-2">
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Amenities
+              </label>
+              <div className="flex gap-2 mb-3">
+                <input
+                  type="text"
+                  value={newAmenity}
+                  onChange={(e) => setNewAmenity(e.target.value)}
+                  onKeyPress={(e) =>
+                    e.key === "Enter" && (e.preventDefault(), addAmenity())
+                  }
+                  className="flex-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 p-3 outline-none"
+                  placeholder="Add an amenity"
+                />
+                <button
+                  type="button"
+                  onClick={addAmenity}
+                  className="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
+                >
+                  <Plus className="h-4 w-4" />
+                </button>
+              </div>
+              {formData.amenities.length > 0 && (
+                <div className="flex flex-wrap gap-2">
+                  {formData.amenities.map((amenity, index) => (
+                    <span
+                      key={index}
+                      className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800"
+                    >
+                      {amenity}
+                      <button
+                        type="button"
+                        onClick={() => removeAmenity(index)}
+                        className="ml-2 inline-flex items-center justify-center w-4 h-4 rounded-full text-green-400 hover:text-green-600"
                       >
                         <Trash2 className="h-3 w-3" />
                       </button>
@@ -343,20 +543,22 @@ const PropertyForm = () => {
                 Images (URLs)
               </label>
               <div className="flex gap-2 mb-3">
-                <input
-                  type="url"
-                  value={newImageUrl}
-                  onChange={(e) => setNewImageUrl(e.target.value)}
-                  onKeyPress={(e) =>
-                    e.key === "Enter" && (e.preventDefault(), addImageUrl())
-                  }
-                  className="flex-1 border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                  placeholder="Add image URL (e.g., https://example.com/image.jpg)"
-                />
+                {uploadingImage ? (
+                  <div className="text-sm text-gray-500">Uploading...</div>
+                ) : (
+                  <input
+                    type="file"
+                    accept="image/*"
+                    onChange={handleImageFileChange}
+                    className="flex-1 border-gray-300 rounded-md shadow-sm  focus:ring-blue-500 focus:border-blue-500  outline-none "
+                  />
+                )}
+
                 <button
                   type="button"
+                  disabled={uploadingImage}
                   onClick={addImageUrl}
-                  className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
+                  className="inline-flex items-center px-4 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 disabled:opacity-50"
                 >
                   <Upload className="h-4 w-4" />
                 </button>

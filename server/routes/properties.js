@@ -95,8 +95,19 @@ router.post(
   asyncHandler(async (req, res) => {
     console.log("✅ Authenticated user:", req.user);
 
-    const { title, price, location, description, features, images, status } =
-      req.body;
+    const {
+      title,
+      price,
+      location,
+      description,
+      features,
+      amenities,
+      images,
+      status,
+      type,
+      size,
+      coordinates,
+    } = req.body;
 
     const slug = title
       .toLowerCase()
@@ -112,9 +123,14 @@ router.post(
         location,
         description,
         features: features || [],
-        images: images || [],
+        images: images,
         status: status || "Available",
         user_id: req.user.id,
+        amenities: amenities || [],
+        type,
+        size,
+        coordinates,
+        // user_id: req.user.id,
         slug,
         created_by: req.user.id, // ✅ matches auth.uid()
       })
@@ -141,8 +157,19 @@ router.put(
   validateProperty,
   validateRequest,
   asyncHandler(async (req, res) => {
-    const { title, price, location, description, features, images, status } =
-      req.body;
+    const {
+      title,
+      price,
+      location,
+      description,
+      features,
+      amenities,
+      images,
+      status,
+      type,
+      size,
+      coordinates,
+    } = req.body;
 
     // Generate new slug if title changed
     const slug = title
@@ -159,8 +186,12 @@ router.put(
         location,
         description,
         features: features || [],
+        amenities: amenities || [],
         images: images || [],
         status,
+        type,
+        size,
+        coordinates,
         slug,
         updated_at: new Date().toISOString(),
       })

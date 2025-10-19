@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { MapPin, Bed, Bath, Square, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import LogoSpinner from "../LogoSpinner";
 
 const FeaturedProperties = () => {
   const [properties, setProperties] = useState([]);
@@ -10,10 +11,12 @@ const FeaturedProperties = () => {
   useEffect(() => {
     const fetchProperties = async () => {
       try {
-        const response = await fetch("/mockProperties.json"); // ✅ fetch from public folder
+        const response = await fetch(
+          "http://localhost:5000/api/properties?limit=1000"
+        ); // ✅ fetch from public folder
         if (!response.ok) throw new Error("Failed to load properties");
         const data = await response.json();
-        setProperties(data);
+        setProperties(data.properties);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -25,11 +28,7 @@ const FeaturedProperties = () => {
   }, []);
 
   if (loading) {
-    return (
-      <section className="py-16 text-center">
-        <p className="text-lg text-gray-600">Loading properties...</p>
-      </section>
-    );
+    return <LogoSpinner />
   }
 
   if (error) {
@@ -62,16 +61,16 @@ const FeaturedProperties = () => {
             >
               <Link to={`/property/${property.id}`} className="relative">
                 <img
-                  src={property.image}
+                  src={property.images}
                   alt={property.title}
                   className="w-full h-48 object-cover"
                 />
                 <div className="absolute top-4 left-4 bg-primary text-accent px-3 py-1 rounded-full text-sm font-semibold">
                   {property.type}
                 </div>
-                {property.deposite && (
+                {property.deposit && (
                   <div className="absolute top-4 right-4 text-secondary px-3 py-1 rounded-full text-sm font-bold">
-                    Deposit: {property.deposite}
+                    Deposit: {property.deposit}
                   </div>
                 )}
               </Link>
@@ -115,7 +114,10 @@ const FeaturedProperties = () => {
                     </span>
                   ))}
                 </div>
-                <Link to={`/property/${property.id}`} className="w-full bg-blue-800 hover:bg-primary text-white py-3 rounded-lg font-semibold transition-colors flex items-center justify-center space-x-2">
+                <Link
+                  to={`/property/${property.id}`}
+                  className="w-full bg-blue-800 hover:bg-primary text-white py-3 rounded-lg font-semibold transition-colors flex items-center justify-center space-x-2"
+                >
                   <span>View Details</span>
                   <ArrowRight className="h-4 w-4" />
                 </Link>

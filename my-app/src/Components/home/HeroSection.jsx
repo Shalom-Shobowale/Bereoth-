@@ -3,6 +3,14 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const HeroSection = () => {
+  const handleWhatsAppClick = () => {
+    const message =
+      "Hello! I would like to inquire about your real estate services.";
+    const url = `https://wa.me/2347068752458?text=${encodeURIComponent(
+      message
+    )}`;
+    window.open(url, "_blank");
+  };
   return (
     <section className="relative">
       <div
@@ -26,7 +34,7 @@ const HeroSection = () => {
                 <ArrowRight className="h-5 w-5" />
               </Link>
 
-              <button className="border-2 border-white text-white hover:bg-white hover:text-primary md:px-8 px-6 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
+              <button onClick={handleWhatsAppClick} className="border-2 border-white text-white hover:bg-white hover:text-primary md:px-8 px-6 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
                 Book Site Inspection
               </button>
             </div>

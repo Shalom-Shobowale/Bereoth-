@@ -12,7 +12,6 @@ import {
   VolumeX,
   Stamp,
 } from "lucide-react";
-import { Link } from "react-router-dom";
 const AboutPage = () => {
   const [showFullContent, setShowFullContent] = useState(false);
   const videoRef = useRef(null);
@@ -72,31 +71,25 @@ const AboutPage = () => {
       bio: "15+ years experience in real estate development and investment",
     },
     {
-      name: "Kemi Okafor",
-      role: "Chief Operating Officer",
+      name: "ADEBAYO MOHAMMED",
+      role: "Financial Administrator",
       image:
-        "https://images.pexels.com/photos/1065084/pexels-photo-1065084.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "team2.jpeg",
       bio: "Property law specialist ensuring secure transactions",
     },
     {
-      name: "Tunde Bakare",
+      name: "IKECHI EMMANUEL",
       role: "Human Resources Manager",
       image:
-        "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=400",
+        "team3.jpeg",
       bio: "Strategic investment advisor with proven track record",
-    },
-    {
-      name: "Olamide Shobowale",
-      role: "Senior Consultant",
-      image: "team1.jpeg",
-      bio: "Expert in luxury property sales with 10+ years experience",
     },
   ];
 
   return (
     <div>
       {/* Hero Section */}
-      <section className=" bg-no-repeat bg-cover bg-center text-accent py-16" style={{backgroundImage: 'url(bg1.png)'}}>
+      <section className=" bg-no-repeat bg-cover bg-center text-accent py-28" style={{backgroundImage: 'url(you.png)'}}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             About Bereoth
@@ -284,7 +277,7 @@ const AboutPage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {team.map((member, index) => (
               <div
                 key={index}
@@ -293,7 +286,7 @@ const AboutPage = () => {
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-[40vh] object-cover"
                 />
                 {/* <div className={`w-full h-48 object-cover bg-cover bg-center bg-no-repeat`} style={{ backgroundImage: `url(${member.image})` }}></div> */}
                 <div className="p-6">

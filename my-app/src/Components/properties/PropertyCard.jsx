@@ -9,7 +9,7 @@ const PropertyCard = ({ property }) => {
     location,
     // price,
     // sold,
-    image,
+    images,
     type,
     size,
     beds,
@@ -20,7 +20,7 @@ const PropertyCard = ({ property }) => {
   return (
     <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
       <Link to={`/property/${id}`} className="relative">
-        <img src={image} alt={title} className="w-full h-48 object-cover" />
+        <img src={images || "/fallback.jpg"} alt={title} className="w-full h-48 object-cover" />
         <div className="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
           {type}
         </div>

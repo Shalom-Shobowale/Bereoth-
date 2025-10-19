@@ -1,4 +1,3 @@
-import React from "react";
 import { Star, Quote } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -8,7 +7,7 @@ import "swiper/css";
 const Testimonials = () => {
   const testimonials = [
     {
-      name: " Mr. Ade ",
+      name: " Mr. Ibrahim ",
       role: "Business Owner",
       image:
         "/pics4.jpeg",
@@ -32,7 +31,7 @@ const Testimonials = () => {
       text: "Bereoth is different, NO HIDDEN FEES, no stories. Just honesty and results. ",
     },
     {
-      name: "Mrs. Funke",
+      name: "Mrs. Faith",
       role: "Entrepreneur",
       image:
         "pics2.jpeg",
@@ -48,8 +47,8 @@ const Testimonials = () => {
       text: "I honestly didn’t believe land could be this easy to own. No omo onile wahala, Bereoth handled everything.",
     },
     {
-      name: "Mr. Joseph",
-      role: "Real Estate Investor",
+      name: "Mrs. Joy",
+      role: "Trader",
       image:
         "/pics5.jpeg",
       rating: 5,

@@ -6,14 +6,8 @@ const BlogPage = () => {
   const [posts, setPosts] = useState([]);
   const [events, setEvents] = useState([]);
   const [activeTab, setActiveTab] = useState("articles");
-  const [categories] = useState([
-    "All",
-    "Investment",
-    "Guide",
-    "Location Guide",
-    "Tips",
-    "Legal",
-  ]);
+  const [activeEventTab, setActiveEventTab] = useState("upcoming");
+  const [categories] = useState(["All", "Investment", "Tips", "Legal"]);
   const [activeCategory, setActiveCategory] = useState("All");
 
   useEffect(() => {
@@ -30,7 +24,12 @@ const BlogPage = () => {
       .catch((err) => console.error("Failed to load events:", err));
   }, []);
 
-  // Filter posts by category
+  const today = new Date();
+  const upcomingEvents = events.filter(
+    (event) => new Date(event.date) >= today
+  );
+  const pastEvents = events.filter((event) => new Date(event.date) < today);
+
   const filteredPosts =
     activeCategory === "All"
       ? posts
@@ -39,7 +38,10 @@ const BlogPage = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className=" bg-no-repeat bg-cover bg-center text-accent py-20" style={{backgroundImage: 'url(bg1.png)'}}>
+      <section
+        className=" bg-no-repeat bg-cover bg-center text-accent py-28"
+        style={{ backgroundImage: "url(you.png)" }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
             Real Estate Blog & Events
@@ -121,11 +123,24 @@ const BlogPage = () => {
                       key={post.id}
                       className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
                     >
-                      <img
-                        src={post.image}
-                        alt={post.title}
-                        className="w-full h-48 object-cover"
-                      />
+                      {post.image.endsWith(".mp4") ? (
+                        <video
+                          className="w-full h-56 object-cover"
+                          controls
+                          muted
+                          preload="metadata"
+                        >
+                          <source src={post.image} type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
+                      ) : (
+                        <img
+                          src={post.image}
+                          alt={post.title}
+                          className="w-full h-48 object-cover"
+                        />
+                      )}
+
                       <div className="p-6">
                         <div className="flex items-center space-x-2 mb-4">
                           <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm font-semibold">
@@ -176,17 +191,41 @@ const BlogPage = () => {
       {activeTab === "events" && (
         <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
-              {events.data != Date ? "Past Events" : "Upcoming Events"}
-            </h2>
+            <div className="mb-8 text-center">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">Events</h2>
+              <div className="inline-flex rounded-md shadow-sm" role="group">
+                <button
+                  onClick={() => setActiveEventTab("upcoming")}
+                  className={`px-4 py-2 text-sm font-medium border border-gray-300 rounded-l-md ${
+                    activeEventTab === "upcoming"
+                      ? "bg-blue-600 text-white"
+                      : "bg-white text-gray-700 hover:bg-gray-100"
+                  }`}
+                >
+                  Upcoming Events
+                </button>
+                <button
+                  onClick={() => setActiveEventTab("past")}
+                  className={`px-4 py-2 text-sm font-medium border border-gray-300 rounded-r-md ${
+                    activeEventTab === "past"
+                      ? "bg-blue-600 text-white"
+                      : "bg-white text-gray-700 hover:bg-gray-100"
+                  }`}
+                >
+                  Past Events
+                </button>
+              </div>
+            </div>
 
-            {events.length === 0 ? (
-              <p className="text-center text-gray-600">
-                No upcoming events available.
-              </p>
+            {(activeEventTab === "upcoming" && upcomingEvents.length === 0) ||
+            (activeEventTab === "past" && pastEvents.length === 0) ? (
+              <p className="text-center text-gray-600">No events available.</p>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {events.map((event) => (
+                {(activeEventTab === "upcoming"
+                  ? upcomingEvents
+                  : pastEvents
+                ).map((event) => (
                   <article
                     key={event.id}
                     className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
@@ -208,12 +247,13 @@ const BlogPage = () => {
                         {event.title}
                       </h3>
                       <p className="text-gray-600 mb-4 line-clamp-3">
-                        {event.excerpt}
+                        {event.description}
                       </p>
 
-                      <a href={event.link} target="_blank" rel="noopener noreferrer"
-                        // to={`/event/${event.id}`}
-                        
+                      <a
+                        href={event.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="w-full mt-4 inline-flex items-center justify-center space-x-2 bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-800 py-2 px-4 rounded-lg font-medium transition-colors"
                       >
                         <span>View Details</span>
@@ -238,7 +278,7 @@ const BlogPage = () => {
           </p>
 
           <form
-            action="https://YOUR_MAILCHIMP_URL" // replace with Mailchimp or Formspree
+            action="https://YOUR_MAILCHIMP_URL"
             method="post"
             target="_blank"
             noValidate

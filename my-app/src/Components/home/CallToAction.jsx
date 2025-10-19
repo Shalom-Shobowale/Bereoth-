@@ -1,6 +1,4 @@
-import React from "react";
 import { Phone, MessageCircle, Calendar } from "lucide-react";
-
 const CallToAction = () => {
   const handleWhatsAppClick = () => {
     const message =
@@ -30,7 +28,10 @@ const CallToAction = () => {
             <p className="text-blue-100 mb-4">
               Get instant responses to your questions
             </p>
-            <button onClick={handleWhatsAppClick} className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-bold transition">
+            <button
+              onClick={handleWhatsAppClick}
+              className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-bold transition"
+            >
               Chat Now
             </button>
           </div>
@@ -55,7 +56,10 @@ const CallToAction = () => {
             <Calendar className="h-12 w-12 text-secondary mx-auto mb-4" />
             <h3 className="text-xl font-semibold mb-2">Book Site Inspection</h3>
             <p className="text-blue-100 mb-4">Schedule a free property tour</p>
-            <button className="bg-accent text-primary hover:text-accent hover:bg-primary px-6 py-3 rounded-lg font-bold transition">
+            <button
+              onClick={handleWhatsAppClick}
+              className="bg-accent text-primary hover:text-accent hover:bg-primary px-6 py-3 rounded-lg font-bold transition"
+            >
               Book Now
             </button>
           </div>

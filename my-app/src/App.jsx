@@ -1,5 +1,10 @@
 import { useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import Footer from "./Components/Footer";
 import HomePage from "./Components/pages/HomePage";
 import AboutPage from "./Components/pages/AboutPage";
@@ -9,20 +14,20 @@ import ServicesPage from "./Components/pages/ServicesPage";
 import BlogPage from "./Components/pages/BlogPage";
 import BlogDetailPage from "./Components/pages/BlogDetailPage";
 import EventDetailPage from "./Components/pages/EventDetailPage";
+import Partnership from "./Components/pages/Partnership";
 import ContactPage from "./Components/pages/ContactPage";
 import WhatsAppButton from "./Components/WhatsAppButton";
 import Header2 from "./Components/Header2";
 import Navbar from "./Components/Navbar";
 
-
-function ScrollToTop(){
+function ScrollToTop() {
   const { pathname } = useLocation();
 
-  useEffect(()=>{
-    window.scrollTo(0, 0)
-  },[pathname])
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return null;
- }
+}
 
 function App() {
   return (
@@ -31,7 +36,7 @@ function App() {
         <Header2 />
         <Navbar />
         <main>
-          <ScrollToTop/>
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
@@ -41,6 +46,7 @@ function App() {
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:id" element={<BlogDetailPage />} />
             <Route path="/event/:id" element={<EventDetailPage />} />
+            <Route path="/partnership" element={<Partnership />} />
             <Route path="/contact" element={<ContactPage />} />
           </Routes>
         </main>

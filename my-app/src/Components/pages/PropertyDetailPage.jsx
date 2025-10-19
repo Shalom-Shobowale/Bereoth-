@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { toast } from "react-toastify";
+import LogoSpinner from "../LogoSpinner";
+
 import {
   MapPin,
   Bed,
@@ -32,9 +34,11 @@ const PropertyDetailPage = () => {
   useEffect(() => {
     const fetchProperty = async () => {
       try {
-        const response = await fetch("/mockProperties.json");
+        const response = await fetch(
+          "http://localhost:5000/api/properties?limit=1000"
+        );
         const data = await response.json();
-        const found = data.find((p) => p.id === parseInt(id || "", 10));
+        const found = data.properties.find((p) => p.id === id);
         setProperty(found || null);
       } catch (error) {
         console.error("Failed to fetch property:", error);
@@ -47,11 +51,7 @@ const PropertyDetailPage = () => {
   }, [id]);
 
   if (loading) {
-    return (
-      <div className=" min-h-screen flex items-center justify-center">
-        <p className="text-gray-600 text-lg">Loading property...</p>
-      </div>
-    );
+    return <LogoSpinner />;
   }
 
   if (!property) {
@@ -142,7 +142,7 @@ const PropertyDetailPage = () => {
       {/* Hero Image */}
       <div className="relative h-96 md:h-[500px]">
         <img
-          src={property.image}
+          src={property.images[0]}
           alt={property.title}
           className="w-full h-full object-cover"
         />
@@ -208,12 +208,14 @@ const PropertyDetailPage = () => {
               <h2 className="text-2xl font-bold text-primary mb-4">
                 Description
               </h2>
-              <p
-                className="text-gray-600 text-lg leading-relaxed whitespace-pre-line"
-                dangerouslySetInnerHTML={{ __html: property.description }}
-              >
-                {/* {property.description} */}
-              </p>
+              <div className="text-gray-600 text-lg leading-relaxed prose prose-lg max-w-none">
+                {property.description?.split("\n").map((para, index) => (
+                  <p
+                    key={index}
+                    dangerouslySetInnerHTML={{ __html: para.trim() }}
+                  />
+                ))}
+              </div>
             </div>
 
             {/* Features */}
@@ -355,7 +357,7 @@ const PropertyDetailPage = () => {
                     }
                     className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     placeholder="I'm interested in this property..."
-                    defaultValue={`I'm interested in ${property.title}. Please provide more information.`}
+                    // defaultValue={`I'm interested in ${property.title}. Please provide more information.`}
                     required
                   />
                 </div>

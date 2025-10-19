@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import PropertyCard from "../properties/PropertyCard";
 import PropertyFilters from "../properties/PropertyFilters";
+import LogoSpinner from "../LogoSpinner";
 
 const PropertiesPage = () => {
   const [properties, setProperties] = useState([]);
@@ -65,18 +66,28 @@ const PropertiesPage = () => {
   useEffect(() => {
     const fetchProperties = async () => {
       try {
-        const response = await fetch("/mockProperties.json");
-        const data = await response.json();
-        setProperties(data);
-
-        const hasActiveFilters = Object.values(initialFilters).some(
-          (val) => val && val.trim() !== ""
+        const response = await fetch(
+          "http://localhost:5000/api/properties?limit=1000"
         );
+        const result = await response.json();
 
-        if (hasActiveFilters) {
-          applyFilters(data, initialFilters);
+        console.log("Backend response:", result);
+
+        if (result && result.properties) {
+          setProperties(result.properties);
+
+          const hasActiveFilters = Object.values(initialFilters).some(
+            (val) => val && val.trim() !== ""
+          );
+
+          if (hasActiveFilters) {
+            applyFilters(result.properties, initialFilters);
+          } else {
+            setFilteredProperties(result.properties);
+          }
         } else {
-          setFilteredProperties(data); // Show all by default
+          setProperties([]);
+          setFilteredProperties([]);
         }
       } catch (error) {
         console.error("Failed to fetch properties:", error);
@@ -105,27 +116,21 @@ const PropertiesPage = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <p className="text-gray-600 text-lg">Loading properties...</p>
-      </div>
-    );
+    return <LogoSpinner />
   }
 
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Hero Section */}
       <section
-        className="bg-no-repeat bg-cover bg-center text-accent py-16"
-        style={{ backgroundImage: "url(bg1.png)" }}
+        className="bg-no-repeat bg-cover bg-center text-accent py-28"
+        style={{ backgroundImage: "url(you.png)" }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Our Properties
           </h1>
-          <p className="text-xl text-accent">
-            Discover your perfect property
-          </p>
+          <p className="text-xl text-accent">Discover your perfect property</p>
         </div>
       </section>
 

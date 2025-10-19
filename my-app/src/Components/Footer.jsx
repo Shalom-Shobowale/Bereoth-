@@ -19,11 +19,11 @@ const Footer = () => {
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <img
-                src="logo.jpg"
+                src="logo.jpeg"
                 alt="Bereoth Estate Development Project"
-                className="h-12 w-12 rounded-full"
+                className="h-10 w-10 rounded-full"
               />
-              <span className="text-xl font-bold">
+              <span className="text-lg font-bold">
                 BEREOTH Property and Investments Ltd.
               </span>
             </div>
@@ -147,7 +147,7 @@ const Footer = () => {
                 <Mail className="h-5 w-5 text-blue-400" />
                 <div>
                   <a href="mailto:bereothp@gmail.com" className="text-gray-300">bereothp@gmail.com</a><br />
-                  <span className="text-gray-300">info@bereothproperty.com</span>
+                  <a href="mailto:info@bereoth.com" className="text-gray-300">info@bereoth.com</a>
                 </div>
               </div>
             </div>

@@ -19,14 +19,17 @@ export const supabase = createClient(
 );
 
 console.log("Supabase URL:", process.env.SUPABASE_URL);
-console.log("Supabase Service Role Key Loaded:", !!process.env.SUPABASE_SERVICE_ROLE_KEY);
-
+console.log(
+  "Supabase Service Role Key Loaded:",
+  !!process.env.SUPABASE_SERVICE_ROLE_KEY
+);
 
 // Middleware
 const allowedOrigins = [
-  "http://localhost:5173", // local frontend dev
-  "https://bereothadmin.vercel.app", // old/staging domain
-  "https://admin.bereoth.com", // ✅ your new custom production domain
+  "http://localhost:5173", 
+  "https://bereothadmin.vercel.app", 
+  "https://admin.bereoth.com", 
+  "https://www.bereoth.com",
 ];
 
 app.use(
@@ -53,7 +56,7 @@ import propertyRoutes from "./routes/properties.js";
 import inquiryRoutes from "./routes/inquiries.js";
 import userRoutes from "./routes/users.js";
 import dashboardRoutes from "./routes/dashboard.js";
-import uploadRoutes from "./routes/upload.js"
+import uploadRoutes from "./routes/upload.js";
 
 // Import error handler middleware
 import { errorHandler } from "./middleware/errorHandler.js";
@@ -64,7 +67,7 @@ app.use("/api/properties", propertyRoutes);
 app.use("/api/inquiries", inquiryRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/dashboard", dashboardRoutes);
-app.use("/api/upload", uploadRoutes)
+app.use("/api/upload", uploadRoutes);
 
 // Health check
 app.get("/api/health", (req, res) => {

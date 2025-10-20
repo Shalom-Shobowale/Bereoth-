@@ -67,7 +67,7 @@ const PropertiesPage = () => {
     const fetchProperties = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5000/api/properties?limit=1000"
+          "https://api.bereoth.com/api/properties?limit=1000"
         );
         const result = await response.json();
 

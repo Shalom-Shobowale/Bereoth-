@@ -14,7 +14,7 @@ const HeroSection = () => {
   return (
     <section className="relative">
       <div
-        className="bg-no-repeat bg-center bg-cover h-screen"
+        className="bg-no-repeat bg-center bg-cover h-[95vh] sm:h-[85vh]  md:h-screen"
         style={{
           backgroundImage:
             "url(https://cdn.pixabay.com/photo/2016/11/29/03/53/house-1867187_1280.jpg)",
@@ -22,7 +22,7 @@ const HeroSection = () => {
       >
         <div className="md:w-[53%] h-full bg-primary clip-diagonal flex md:justify-center  flex-col md:pt-0 pt-8 items-center">
           <div className="p-3">
-            <h1 className="text-4xl md:text-6xl text-white font-bold md:leading-snug leading-snug">
+            <h1 className="text-4xl md:text-6xl text-white font-bold md:leading-snug leading-snug md:text-justify text-center">
               Affordable Land. <br /> Trusted Investments. <br /> Lasting Value.
             </h1>
             <div className="flex gap-5 my-9">
@@ -43,20 +43,20 @@ const HeroSection = () => {
       </div>
 
       <div className="flex justify-center">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center md:w-[80%] p-3 absolute bottom-10 md:bottom-12">
-          <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center md:w-[80%] p-3 bg-blue-950 absolute bottom-10 sm:bottom-12  ">
+          <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-3 md:p-6">
             <div className="text-3xl font-bold text-accent">500+</div>
             <div className="text-accent">Happy Clients</div>
           </div>
-          <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-6">
+          <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-3 md:p-6">
             <div className="text-3xl font-bold text-accent">50+</div>
             <div className="text-accent">Properties Sold</div>
           </div>
-          <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-6">
+          <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-3 md:p-6">
             <div className="text-3xl font-bold text-accent">10+</div>
             <div className="text-accent">Years Experience</div>
           </div>
-          <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-6">
+          <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-3 md:p-6">
             <div className="text-3xl font-bold text-accent">100%</div>
             <div className="text-accent">Secure Documentation</div>
           </div>

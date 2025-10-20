@@ -12,7 +12,7 @@ const FeaturedProperties = () => {
     const fetchProperties = async () => {
       try {
         const response = await fetch(
-          "http://localhost:5000/api/properties?limit=1000"
+          "https://api.bereoth.com/api/properties?limit=1000"
         ); // ✅ fetch from public folder
         if (!response.ok) throw new Error("Failed to load properties");
         const data = await response.json();

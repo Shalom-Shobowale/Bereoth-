@@ -19,7 +19,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <img
-                src="logo.jpeg"
+                src="/logo.jpeg"
                 alt="Bereoth Estate Development Project"
                 className="h-10 w-10 rounded-full"
               />

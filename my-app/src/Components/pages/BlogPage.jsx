@@ -125,7 +125,7 @@ const BlogPage = () => {
                     >
                       {post.image.endsWith(".mp4") ? (
                         <video
-                          className="w-full h-56 object-cover"
+                          className="w-full h-56 object-cover "
                           controls
                           muted
                           preload="metadata"

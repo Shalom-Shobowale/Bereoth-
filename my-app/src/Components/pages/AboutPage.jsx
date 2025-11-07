@@ -67,7 +67,7 @@ const AboutPage = () => {
       name: "IKHAGHU OTHNIEL",
       role: "Managing Director",
       image:
-        "md.jpeg",
+        "md.jpg",
       bio: "15+ years experience in real estate development and investment",
     },
     {
@@ -286,7 +286,7 @@ const AboutPage = () => {
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-[40vh] object-cover"
+                  className="w-full h-64 object-cover object-top"
                 />
                 {/* <div className={`w-full h-48 object-cover bg-cover bg-center bg-no-repeat`} style={{ backgroundImage: `url(${member.image})` }}></div> */}
                 <div className="p-6">

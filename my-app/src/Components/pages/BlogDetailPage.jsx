@@ -87,7 +87,7 @@ const BlogDetailPage = () => {
         <div className="rounded-xl overflow-hidden mb-10 shadow-md">
           {post.image.endsWith(".mp4") ? (
             <video
-              className="w-full h-96 object-cover"
+              className="w-full h-[60vh] object-contain"
               controls
               muted
               preload="metadata"

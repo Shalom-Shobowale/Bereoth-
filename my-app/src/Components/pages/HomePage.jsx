@@ -5,12 +5,14 @@ import FeaturedProperties from "../home/FeaturedProperties.";
 import WhyChooseUs from "../home/WhyChooseUs";
 import Testimonials from "../home/Testimonials";
 import CallToAction from "../home/CallToAction";
+import Promo from "../home/Promo";
 
 const HomePage = () => {
   return (
-    <div >
+    <div>
       <HeroSection />
       <PropertySearch />
+      <Promo />
       <FeaturedProperties />
       <WhyChooseUs />
       <Testimonials />

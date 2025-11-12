@@ -8,6 +8,9 @@ export default {
         secondary: "#d90429",
         accent: "#ffffff",
       },
+      fontFamily: {
+        sans: ["Roboto", "Arial", "sans-serif"],
+      },
       animation: {
         "fade-slide": "fadeSlide 0.4s ease-out",
         "spin-slow": "spin 5s linear infinite",

@@ -16,7 +16,7 @@ const Promo = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h1 className="text-3xl md:text-4xl font-bold text-primary text-center mt-10 mb-4">
-        Launch Promo
+        Ember Special Promo Sales
       </h1>
       <p className="text-xl text-gray-600  mb-8 flex items-center gap-4 justify-center">
         <House />

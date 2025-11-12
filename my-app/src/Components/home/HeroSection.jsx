@@ -14,7 +14,7 @@ const HeroSection = () => {
   return (
     <section className="relative">
       <div
-        className="bg-no-repeat bg-center bg-cover h-[90vh] sm:h-[95vh]  md:h-screen"
+        className="bg-no-repeat bg-center bg-cover h-[95vh] sm:h-[85vh]  md:h-screen"
         style={{
           backgroundImage:
             "url(https://cdn.pixabay.com/photo/2016/11/29/03/53/house-1867187_1280.jpg)",

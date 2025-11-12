@@ -198,7 +198,7 @@ const ContactPage = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <button
                   onClick={handleWhatsAppClick}
-                  className="bg-green-500 hover:bg-green-600 text-white py-3 px-6 rounded-lg font-semibold flex items-center justify-center space-x-2 transition-colors"
+                  className="bg-blue-800 hover:bg-blue-900 text-white py-3 px-6 rounded-lg font-semibold flex items-center justify-center space-x-2 transition-colors"
                 >
                   <MessageCircle className="h-5 w-5" />
                   <span>Chat on WhatsApp</span>

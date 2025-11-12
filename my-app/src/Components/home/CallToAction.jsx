@@ -9,7 +9,7 @@ const CallToAction = () => {
     window.open(url, "_blank");
   };
   return (
-    <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-16">
+    <section className="bg-gradient-to-br from-blue-800 to-blue-900 text-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
           Ready to Find Your Perfect Property?
@@ -23,14 +23,14 @@ const CallToAction = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {/* WhatsApp */}
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:bg-white/20 transition duration-300">
-            <MessageCircle className="h-12 w-12 text-green-400 mx-auto mb-4" />
+            <MessageCircle className="h-12 w-12 text-primary mx-auto mb-4" />
             <h3 className="text-xl font-semibold mb-2">Chat on WhatsApp</h3>
             <p className="text-blue-100 mb-4">
               Get instant responses to your questions
             </p>
             <button
               onClick={handleWhatsAppClick}
-              className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-bold transition"
+              className="bg-accent text-primary hover:bg-primary hover:text-accent px-6 py-3 rounded-lg font-bold transition inline-block text-center"
             >
               Chat Now
             </button>
@@ -53,7 +53,7 @@ const CallToAction = () => {
 
           {/* Site Inspection */}
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:bg-white/20 transition duration-300">
-            <Calendar className="h-12 w-12 text-secondary mx-auto mb-4" />
+            <Calendar className="h-12 w-12 text-primary mx-auto mb-4" />
             <h3 className="text-xl font-semibold mb-2">Book Site Inspection</h3>
             <p className="text-blue-100 mb-4">Schedule a free property tour</p>
             <button
@@ -66,7 +66,7 @@ const CallToAction = () => {
         </div>
 
         {/* Emergency Contact */}
-        <div className="mt-12 p-6 border border-blue-300 rounded-2xl bg-blue-700">
+        <div className="mt-12 p-6 border border-blue-300 rounded-2xl bg-blue-800">
           <p className="text-lg font-semibold mb-2">🚀 Limited Time Offer!</p>
           <p className="text-blue-100">
             Get 10% off on your first property purchase this month. Terms and

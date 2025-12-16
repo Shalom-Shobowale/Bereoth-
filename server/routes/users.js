@@ -1,6 +1,6 @@
 import express from 'express';
 import bcrypt from 'bcryptjs';
-import { supabase } from '../index.js';
+import { supabase } from '../config/supabase.js';
 import { authenticateToken, requireAdmin } from '../middleware/auth.js';
 import { validateUser, validateRequest } from '../middleware/validation.js';
 import { asyncHandler } from '../middleware/errorHandler.js';

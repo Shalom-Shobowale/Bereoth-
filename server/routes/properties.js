@@ -1,5 +1,5 @@
 import express from "express";
-import { supabase } from "../index.js";
+import { supabase } from "../config/supabase.js";
 import { authenticateToken, requireAdminOrEditor } from "../middleware/auth.js";
 import { validateProperty, validateRequest } from "../middleware/validation.js";
 import { asyncHandler } from "../middleware/errorHandler.js";

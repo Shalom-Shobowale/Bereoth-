@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import { supabase } from "../index.js";
+import { supabase } from "../config/supabase.js"
 
 export const authenticateToken = async (req, res, next) => {
   try {

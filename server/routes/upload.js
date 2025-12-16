@@ -1,7 +1,7 @@
 // routes/upload.js
 import express from "express";
 import multer from "multer";
-import { supabase } from "../index.js"; // adjust if your supabase init is elsewhere
+import { supabase } from "../config/supabase.js"; 
 import { v4 as uuidv4 } from "uuid";
 
 const router = express.Router();

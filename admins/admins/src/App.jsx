@@ -5,7 +5,7 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import { AuthProvider } from "./context/AuthContext";
+import { AuthProvider } from "./context/AuthProvider";
 import { ToastProvider } from "./context/ToastContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Layout from "./components/Layout";

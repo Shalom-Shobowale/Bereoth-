@@ -1,7 +1,7 @@
 import express from 'express';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
-import { supabase } from '../index.js';
+import { supabase } from '../config/supabase.js';
 import { validateLogin, validateRequest } from '../middleware/validation.js';
 import { authenticateToken } from '../middleware/auth.js';
 import { asyncHandler } from '../middleware/errorHandler.js';

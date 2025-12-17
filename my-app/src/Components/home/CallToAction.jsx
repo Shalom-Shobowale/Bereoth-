@@ -3,7 +3,7 @@ const CallToAction = () => {
   const handleWhatsAppClick = () => {
     const message =
       "Hello! I would like to inquire about your real estate services.";
-    const url = `https://wa.me/2347068752458?text=${encodeURIComponent(
+    const url = `https://wa.me/2348134967650?text=${encodeURIComponent(
       message
     )}`;
     window.open(url, "_blank");
@@ -44,7 +44,7 @@ const CallToAction = () => {
               Speak directly with our property consultants
             </p>
             <a
-              href="tel:+2347068752458"
+              href="tel:+2348134967650"
               className="bg-accent text-primary hover:bg-primary hover:text-accent px-6 py-3 rounded-lg font-bold transition inline-block text-center"
             >
               Call Now
@@ -67,7 +67,7 @@ const CallToAction = () => {
 
         {/* Emergency Contact */}
         <div className="mt-12 p-6 border border-blue-300 rounded-2xl bg-blue-800">
-          <p className="text-lg font-semibold mb-2">🚀 Limited Time Offer!</p>
+          <p className="text-lg font-semibold mb-2"> Limited Time Offer!</p>
           <p className="text-blue-100">
             Get 10% off on your first property purchase this month. Terms and
             conditions apply.

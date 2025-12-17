@@ -28,7 +28,7 @@ const FeaturedProperties = () => {
   }, []);
 
   if (loading) {
-    return <LogoSpinner />
+    return <LogoSpinner />;
   }
 
   if (error) {
@@ -57,6 +57,7 @@ const FeaturedProperties = () => {
           {properties.slice(0, 6).map((property) => (
             <div
               key={property.id}
+              data-aos="zoom-in" data-aos-delay="100"
               className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
             >
               <Link to={`/property/${property.id}`} className="relative">

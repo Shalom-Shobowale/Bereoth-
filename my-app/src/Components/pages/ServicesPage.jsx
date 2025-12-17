@@ -161,6 +161,7 @@ const ServicesPage = () => {
               <div
                 key={index}
                 className="bg-white border border-gray-200 rounded-xl p-8 hover:shadow-lg transition-shadow duration-300"
+                data-aos="zoom-in-up" data-aos-delay={index * 150}
               >
                 <div className="bg-blue-50 w-16 h-16 rounded-full flex items-center justify-center mb-6">
                   <service.icon className="h-8 w-8 text-primary" />
@@ -221,7 +222,7 @@ const ServicesPage = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="text-center">
+            <div className="text-center" data-aos="fade-up">
               <div className="bg-blue-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Shield className="h-10 w-10 text-primary" />
               </div>
@@ -234,7 +235,7 @@ const ServicesPage = () => {
               </p>
             </div>
 
-            <div className="text-center">
+            <div className="text-center" data-aos="fade-up" data-aos-delay="150">
               <div className="bg-blue-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Users className="h-10 w-10 text-primary" />
               </div>
@@ -247,7 +248,7 @@ const ServicesPage = () => {
               </p>
             </div>
 
-            <div className="text-center">
+            <div className="text-center" data-aos="fade-up" data-aos-delay="300">
               <div className="bg-blue-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <TrendingUp className="h-10 w-10 text-primary" />
               </div>
@@ -278,10 +279,10 @@ const ServicesPage = () => {
               Schedule Consultation
             </button>
             <a
-              href="tel:+2347068752458"
+              href="tel:+2348134967650"
               className="border-2 border-white hover:bg-white hover:text-blue-900 px-8 py-3 rounded-lg font-semibold text-lg transition-colors"
             >
-              Call +234 706 875 2458
+              Call +234 813 496 7650
             </a>
           </div>
         </div>

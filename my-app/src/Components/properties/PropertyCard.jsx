@@ -18,9 +18,17 @@ const PropertyCard = ({ property }) => {
   } = property;
 
   return (
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <div
+      className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+      data-aos="zoom-in"
+      data-aos-delay="100"
+    >
       <Link to={`/property/${id}`} className="relative">
-        <img src={images || "/fallback.jpg"} alt={title} className="w-full h-48 object-cover" />
+        <img
+          src={images || "/fallback.jpg"}
+          alt={title}
+          className="w-full h-48 object-cover"
+        />
         <div className="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-semibold">
           {type}
         </div>
@@ -33,7 +41,7 @@ const PropertyCard = ({ property }) => {
           <MapPin className="h-4 w-4 mr-1" />
           <span className="text-sm">{location}</span>
         </div>
-{/* 
+        {/* 
         <div className="flex items-center justify-between mb-4">
           <div className="text-2xl font-bold text-primary">{sold ? "Sold Out" : price}</div>
         </div> */}

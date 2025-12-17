@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import {
   BrowserRouter as Router,
   Routes,
@@ -30,6 +32,15 @@ function ScrollToTop() {
 }
 
 function App() {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: "ease-in-out",
+    });
+  }, []);
+
   return (
     <Router>
       <div className="min-h-screen bg-white">

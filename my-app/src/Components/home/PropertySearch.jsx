@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Search, MapPin, Home, DollarSign, Bed } from "lucide-react";
+import { Search, MapPin, Home } from "lucide-react";
 
 const PropertySearch = () => {
   const [searchData, setSearchData] = useState({

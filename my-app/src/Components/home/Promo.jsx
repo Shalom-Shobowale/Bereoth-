@@ -19,12 +19,19 @@ const Promo = () => {
         Ember Special Promo Sales
       </h1>
       <p className="text-xl text-gray-600  mb-8 flex items-center gap-4 justify-center">
-        <p className="md:flex hidden"> <House /></p>
-       <p className="text-center"> Get Your Land at an Affordable Price Today!</p>
+        <p className="md:flex hidden">
+          {" "}
+          <House />
+        </p>
+        <p className="text-center">
+          {" "}
+          Get Your Land at an Affordable Price Today!
+        </p>
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {promoImages.map((image, index) => (
           <img
+            data-aos="zoom-in-up" data-aos-delay={index * 150}
             key={index}
             src={image}
             alt={`Promo ${index + 1}`}

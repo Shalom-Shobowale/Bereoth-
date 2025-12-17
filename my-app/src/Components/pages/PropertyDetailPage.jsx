@@ -72,7 +72,7 @@ const PropertyDetailPage = () => {
   // WhatsApp contact
   const handleWhatsAppContact = () => {
     const message = `Hi! I'm interested in the ${property.title} listed for ${property.price}. Can you provide more information?`;
-    const url = `https://wa.me/2347068752458?text=${encodeURIComponent(
+    const url = `https://wa.me/2348134967650?text=${encodeURIComponent(
       message
     )}`;
     window.open(url, "_blank");
@@ -251,12 +251,13 @@ const PropertyDetailPage = () => {
             </div>
 
             {/* Location Map Placeholder */}
-            <div className="mb-8">
+            <div className="mb-8 ">
               <h2 className="text-2xl font-bold text-primary mb-4">Location</h2>
 
               <EstateMap
                 coordinates={property.coordinates}
                 title={property.title}
+                className="z-auto"
               />
 
               <p className="text-sm mt-2 text-gray-600">
@@ -376,10 +377,10 @@ const PropertyDetailPage = () => {
                   Need immediate assistance?
                 </p>
                 <a
-                  href="tel:+2347068752458"
+                  href="tel:+2348134967650"
                   className="text-lg font-semibold text-blue-600"
                 >
-                  +234 706 875 2458
+                  +234 813 496 7650
                 </a>
               </div>
             </div>

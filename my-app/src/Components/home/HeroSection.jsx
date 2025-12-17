@@ -6,7 +6,7 @@ const HeroSection = () => {
   const handleWhatsAppClick = () => {
     const message =
       "Hello! I would like to inquire about your real estate services.";
-    const url = `https://wa.me/2347068752458?text=${encodeURIComponent(
+    const url = `https://wa.me/2348134967650?text=${encodeURIComponent(
       message
     )}`;
     window.open(url, "_blank");
@@ -44,19 +44,19 @@ const HeroSection = () => {
 
       <div className="flex justify-center">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center md:w-[80%] p-3 absolute bottom-10 sm:bottom-12  ">
-          <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-3 md:p-6">
+          <div data-aos="fade-up" className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-3 md:p-6">
             <div className="text-3xl font-bold text-accent">500+</div>
             <div className="text-accent">Happy Clients</div>
           </div>
-          <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-3 md:p-6">
+          <div data-aos="fade-up" data-aos-delay="150" className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-3 md:p-6">
             <div className="text-3xl font-bold text-accent">50+</div>
             <div className="text-accent">Properties Sold</div>
           </div>
-          <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-3 md:p-6">
+          <div data-aos="fade-up" data-aos-delay="300" className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-3 md:p-6">
             <div className="text-3xl font-bold text-accent">10+</div>
             <div className="text-accent">Years Experience</div>
           </div>
-          <div className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-3 md:p-6">
+          <div data-aos="fade-up" data-aos-delay="450" className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-3 md:p-6">
             <div className="text-3xl font-bold text-accent">100%</div>
             <div className="text-accent">Secure Documentation</div>
           </div>

@@ -25,11 +25,12 @@ const ContactPage = () => {
   const handleWhatsAppClick = () => {
     const message =
       "Hello! I would like to inquire about your real estate services.";
-    const url = `https://wa.me/2347068752458?text=${encodeURIComponent(
+    const url = `https://wa.me/2348134967650?text=${encodeURIComponent(
       message
     )}`;
     window.open(url, "_blank");
   };
+
 
   const handleContact = async (e) => {
     e.preventDefault();
@@ -144,13 +145,13 @@ const ContactPage = () => {
                   <h3 className="text-xl font-semibold text-primary mb-2">
                     Phone Number
                   </h3>
-                  <a href="tel:+2347068752458" className="text-gray-600">
-                    +234 706 875 2458
+                  <a href="tel:+2348134967650" className="text-gray-600">
+                    +234 813 496 7650
                   </a>
                   <br />
-                  <a href="tel:+2349056057730" className="text-gray-600">
+                  <a href="tel:+2348134967650" className="text-gray-600">
                     {" "}
-                    +234 905 605 7730
+                    +234 813 496 7650
                   </a>
                 </div>
               </div>
@@ -165,7 +166,7 @@ const ContactPage = () => {
                     Email Address
                   </h3>
                   <a href="mailto:bereothp@gmail.com" className="text-gray-600">
-                    info@bereothproperty.com
+                    info@bereoth.com
                     <br />
                     bereothp@gmail.com
                   </a>
@@ -183,8 +184,6 @@ const ContactPage = () => {
                   </h3>
                   <div className="text-gray-600">
                     <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
-                    <p>Saturday: 10:00 AM - 4:00 PM</p>
-                    <p>Sunday: 10:00 AM - 4:00 PM</p>
                   </div>
                 </div>
               </div>

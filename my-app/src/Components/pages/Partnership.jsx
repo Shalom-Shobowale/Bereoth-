@@ -1,4 +1,11 @@
-import { GraduationCap, Send, HandCoins, LaptopMinimal, BriefcaseBusiness, House } from "lucide-react";
+import {
+  GraduationCap,
+  Send,
+  HandCoins,
+  LaptopMinimal,
+  BriefcaseBusiness,
+  House,
+} from "lucide-react";
 
 const Partnership = () => {
   return (
@@ -24,7 +31,9 @@ const Partnership = () => {
       <section className="py-16 px-6 bg-white">
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 items-center">
           <div>
-            <h2 className="text-3xl font-bold mb-4 text-primary">Why Partner with Us</h2>
+            <h2 className="text-3xl font-bold mb-4 text-primary">
+              Why Partner with Us
+            </h2>
             <p className="text-lg">
               At Bereoth Property & Investments Ltd, we believe in the power of
               shared growth, because wealth becomes more meaningful when it
@@ -56,7 +65,7 @@ const Partnership = () => {
               {
                 title: "Structured Income & Rewards",
                 desc: "Earn from successful collaborations and referrals.",
-                icon:  <HandCoins />,
+                icon: <HandCoins />,
               },
               {
                 title: "Training & Mentorship",
@@ -85,7 +94,9 @@ const Partnership = () => {
       {/* Who Can Join */}
       <section className="py-16 px-6 bg-white">
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl text-primary font-bold mb-6">Who Can Join?</h2>
+          <h2 className="text-3xl text-primary font-bold mb-6">
+            Who Can Join?
+          </h2>
           <div className="flex flex-wrap justify-center gap-6">
             {[
               { label: "9–5 Professionals", icon: <GraduationCap /> },
@@ -106,17 +117,24 @@ const Partnership = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 px-6 bg-gradient-to-br from-blue-600 to-blue-800 text-center text-white">
-        <h2 className="text-3xl font-semibold mb-4">
-          Ready to Build Wealth and Impact Lives?
-        </h2>
-        <p className="mb-6">
-          Join a family that’s passionate about excellence, integrity, and
-          building lasting legacies.
-        </p>
-        <a href="https://docs.google.com/forms/d/1AwzasW-xIHaajm1EPOyJwxKFncmyelYxSkLjP2scHfE/viewform" className="bg-white font-bold text-primary hover:bg-primary hover:text-white px-6 py-3 rounded transition">
-          Become a Bereoth Partner
-        </a>
+      <section className=" w-[80%] mx-auto mb-16 text-center text-primary flex justify-between items-center">
+        <div>
+          <h2 className="text-3xl font-semibold mb-4">
+            Ready to Build Wealth and Impact Lives?
+          </h2>
+          <p className="mb-6">
+            Join a family that’s passionate about excellence, integrity, and
+            building lasting legacies.
+          </p>
+        </div>
+        <div>
+          <a
+            href="https://docs.google.com/forms/d/1AwzasW-xIHaajm1EPOyJwxKFncmyelYxSkLjP2scHfE/viewform"
+            className="bg-primary hover:bg-transparent font-bold text-white hover:text-primary hover:border-2 hover:border-primary px-6 py-3 rounded transition"
+          >
+            Become a Bereoth Partner
+          </a>
+        </div>
       </section>
     </>
   );

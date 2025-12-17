@@ -79,7 +79,7 @@ const AboutPage = () => {
     },
     {
       name: "IKECHI EMMANUEL",
-      role: "Human Resources Manager",
+      role: "Chief Operating Officer",
       image:
         "team3.jpeg",
       bio: "Strategic investment advisor with proven track record",
@@ -196,7 +196,7 @@ const AboutPage = () => {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div className="text-center">
+            <div className="text-center" data-aos="fade-up">
               <div className="bg-primary w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Target className="h-10 w-10 text-white" />
               </div>
@@ -208,7 +208,7 @@ const AboutPage = () => {
                 Subscribers at all levels.
               </p>
             </div>
-            <div className="text-center">
+            <div className="text-center" data-aos="fade-up" data-aos-delay="150">
               <div className="bg-primary w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Eye className="h-10 w-10 text-white" />
               </div>
@@ -220,7 +220,7 @@ const AboutPage = () => {
               </p>
             </div>
 
-            <div className="text-center">
+            <div className="text-center" data-aos="fade-up" data-aos-delay="300">
               <div className="bg-primary w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Stamp className="h-10 w-10 text-white" />
               </div>
@@ -249,7 +249,7 @@ const AboutPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <div key={index} className="text-center">
+              <div key={index} className="text-center" data-aos="fade-up" data-aos-delay={index * 150}>
                 <div className="bg-blue-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-100 transition-colors">
                   <value.icon className="h-10 w-10 text-primary" />
                 </div>
@@ -282,6 +282,7 @@ const AboutPage = () => {
               <div
                 key={index}
                 className="bg-white rounded-xl shadow-lg overflow-hidden text-center"
+                data-aos="fade-up" data-aos-delay={index * 150}
               >
                 <img
                   src={member.image}
@@ -305,33 +306,33 @@ const AboutPage = () => {
       </section>
 
       {/* Track Record */}
-      <section className="py-16 bg-blue-800 text-white">
+      <section className="py-16 text-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Our Track Record
             </h2>
-            <p className="text-xl text-blue-100">
+            <p className="text-xl text-primary">
               Numbers that speak for themselves
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold text-accent mb-2">500+</div>
-              <div className="text-blue-100">Happy Clients</div>
+              <div className="text-4xl font-bold text-primary mb-2">500+</div>
+              <div className="text-primary font-semibold">Happy Clients</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-accent mb-2">₦50B+</div>
-              <div className="text-blue-100">Property Value Sold</div>
+              <div className="text-4xl font-bold text-primary mb-2">₦50B+</div>
+              <div className="text-primary font-semibold">Property Value Sold</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-accent mb-2">11</div>
-              <div className="text-blue-100">Prime Locations</div>
+              <div className="text-4xl font-bold text-primary mb-2">11</div>
+              <div className="text-primary font-semibold">Prime Locations</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-accent mb-2">10+</div>
-              <div className="text-blue-100">Years of Excellence</div>
+              <div className="text-4xl font-bold text-primary mb-2">10+</div>
+              <div className="text-primary font-semibold">Years of Excellence</div>
             </div>
           </div>
         </div>

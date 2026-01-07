@@ -161,7 +161,7 @@ const ServicesPage = () => {
               <div
                 key={index}
                 className="bg-white border border-gray-200 rounded-xl p-8 hover:shadow-lg transition-shadow duration-300"
-                data-aos="zoom-in-up" data-aos-delay={index * 150}
+                data-aos="zoom-in-up" data-aos-delay={index * 100}
               >
                 <div className="bg-blue-50 w-16 h-16 rounded-full flex items-center justify-center mb-6">
                   <service.icon className="h-8 w-8 text-primary" />
@@ -235,7 +235,7 @@ const ServicesPage = () => {
               </p>
             </div>
 
-            <div className="text-center" data-aos="fade-up" data-aos-delay="150">
+            <div className="text-center" data-aos="fade-up" data-aos-delay="125">
               <div className="bg-blue-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Users className="h-10 w-10 text-primary" />
               </div>
@@ -248,7 +248,7 @@ const ServicesPage = () => {
               </p>
             </div>
 
-            <div className="text-center" data-aos="fade-up" data-aos-delay="300">
+            <div className="text-center" data-aos="fade-up" data-aos-delay="250">
               <div className="bg-blue-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <TrendingUp className="h-10 w-10 text-primary" />
               </div>

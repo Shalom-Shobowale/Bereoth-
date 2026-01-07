@@ -48,15 +48,15 @@ const HeroSection = () => {
             <div className="text-3xl font-bold text-accent">500+</div>
             <div className="text-accent">Happy Clients</div>
           </div>
-          <div data-aos="fade-up" data-aos-delay="150" className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-3 md:p-6">
+          <div data-aos="fade-up" data-aos-delay="125" className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-3 md:p-6">
             <div className="text-3xl font-bold text-accent">50+</div>
             <div className="text-accent">Properties Sold</div>
           </div>
-          <div data-aos="fade-up" data-aos-delay="300" className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-3 md:p-6">
+          <div data-aos="fade-up" data-aos-delay="250" className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-3 md:p-6">
             <div className="text-3xl font-bold text-accent">10+</div>
             <div className="text-accent">Years Experience</div>
           </div>
-          <div data-aos="fade-up" data-aos-delay="450" className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-3 md:p-6">
+          <div data-aos="fade-up" data-aos-delay="400" className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-3 md:p-6">
             <div className="text-3xl font-bold text-accent">100%</div>
             <div className="text-accent">Secure Documentation</div>
           </div>

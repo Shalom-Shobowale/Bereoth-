@@ -208,7 +208,7 @@ const AboutPage = () => {
                 Subscribers at all levels.
               </p>
             </div>
-            <div className="text-center" data-aos="fade-up" data-aos-delay="150">
+            <div className="text-center" data-aos="fade-up" data-aos-delay="125">
               <div className="bg-primary w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Eye className="h-10 w-10 text-white" />
               </div>
@@ -220,7 +220,7 @@ const AboutPage = () => {
               </p>
             </div>
 
-            <div className="text-center" data-aos="fade-up" data-aos-delay="300">
+            <div className="text-center" data-aos="fade-up" data-aos-delay="250">
               <div className="bg-primary w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Stamp className="h-10 w-10 text-white" />
               </div>
@@ -249,7 +249,7 @@ const AboutPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <div key={index} className="text-center" data-aos="fade-up" data-aos-delay={index * 150}>
+              <div key={index} className="text-center" data-aos="fade-up" data-aos-delay={index * 100}>
                 <div className="bg-blue-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-100 transition-colors">
                   <value.icon className="h-10 w-10 text-primary" />
                 </div>
@@ -282,7 +282,7 @@ const AboutPage = () => {
               <div
                 key={index}
                 className="bg-white rounded-xl shadow-lg overflow-hidden text-center"
-                data-aos="fade-up" data-aos-delay={index * 150}
+                data-aos="fade-up" data-aos-delay={index * 100}
               >
                 <img
                   src={member.image}

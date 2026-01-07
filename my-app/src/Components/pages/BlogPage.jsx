@@ -120,7 +120,7 @@ const BlogPage = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {filteredPosts.map((post, index) => (
                     <article
-                      data-aos="zoom-in-down" data-aos-delay={index * 150}
+                      data-aos="zoom-in-down" data-aos-delay={index * 100}
                       key={post.id}
                       className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
                     >
@@ -230,7 +230,7 @@ const BlogPage = () => {
                   <article
                     key={event.id}
                     className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
-                    data-aos="zoom-in-down" data-aos-delay={event.id * 150}
+                    data-aos="zoom-in-down" data-aos-delay={event.id * 100}
                   >
                     <img
                       src={event.image}

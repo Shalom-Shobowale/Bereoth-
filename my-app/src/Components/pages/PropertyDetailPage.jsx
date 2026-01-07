@@ -71,7 +71,7 @@ const PropertyDetailPage = () => {
 
   // WhatsApp contact
   const handleWhatsAppContact = () => {
-    const message = `Hi! I'm interested in the ${property.title} listed for ${property.price}. Can you provide more information?`;
+    const message = `Hi! I'm interested in the ${property.title} listed. Can you provide more information?`;
     const url = `https://wa.me/2348134967650?text=${encodeURIComponent(
       message
     )}`;

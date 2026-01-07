@@ -61,8 +61,8 @@ const Sidebar = ({ isOpen, onClose }) => {
         {/* Logo and close button */}
         <div className="flex items-center justify-between p-4 border-b border-gray-200">
           <div className="flex items-center">
-            <Home className="h-8 w-8 text-blue-600" />
-            <h1 className="ml-2 text-xl font-bold text-gray-900">RealEstate Admin</h1>
+            <img src="logo1.png" className="h-8 w-8 text-blue-600" />
+            <h1 className="ml-2 font-bold text-gray-900">Bereoth Real Estate Admin</h1>
           </div>
           <button
             onClick={onClose}

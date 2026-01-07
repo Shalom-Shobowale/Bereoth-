@@ -27,7 +27,7 @@ const Header = ({ onMenuClick }) => {
             <Menu className="h-6 w-6" />
           </button>
           <h2 className="ml-4 lg:ml-0 text-2xl font-semibold text-gray-900">
-            Real Estate Admin Dashboard
+            Bereoth Real Estate Admin Dashboard
           </h2>
         </div>
 

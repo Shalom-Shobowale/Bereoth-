@@ -26,7 +26,7 @@ const BlogPage = () => {
 
   const today = new Date();
   const upcomingEvents = events.filter(
-    (event) => new Date(event.date) >= today
+    (event) => new Date(event.date) >= today,
   );
   const pastEvents = events.filter((event) => new Date(event.date) < today);
 
@@ -120,7 +120,8 @@ const BlogPage = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {filteredPosts.map((post, index) => (
                     <article
-                      data-aos="zoom-in-down" data-aos-delay={index * 100}
+                      data-aos="zoom-in-down"
+                      data-aos-delay={index * 100}
                       key={post.id}
                       className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
                     >
@@ -230,7 +231,8 @@ const BlogPage = () => {
                   <article
                     key={event.id}
                     className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
-                    data-aos="zoom-in-down" data-aos-delay={event.id * 100}
+                    data-aos="zoom-in-down"
+                    data-aos-delay={event.id * 100}
                   >
                     <img
                       src={event.image}
@@ -248,7 +250,7 @@ const BlogPage = () => {
                       <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
                         {event.title}
                       </h3>
-                      <p className="text-gray-600 mb-4 line-clamp-3">
+                      <p className="text-gray-600 mb-4 line-clamp-3 whitespace-pre-line">
                         {event.description}
                       </p>
 

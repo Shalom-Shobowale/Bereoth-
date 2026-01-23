@@ -64,7 +64,7 @@ const EventDetailPage = () => {
           </div>
         </div>
 
-        <p className="text-lg text-gray-700 leading-relaxed mb-8">
+        <p className="text-lg text-gray-700 leading-relaxed mb-8 whitespace-pre-line">
           {event.description}
         </p>
 

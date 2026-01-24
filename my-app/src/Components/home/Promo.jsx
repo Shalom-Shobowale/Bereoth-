@@ -8,6 +8,7 @@ const Promo = () => {
     "three.jpg",
     "five.jpg",
     "six.jpg",
+    "seven.jpg",
   ];
 
   return (

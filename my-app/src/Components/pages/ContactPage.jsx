@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import HeroSection2 from "../home/HeroSection2";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({

@@ -11,21 +11,11 @@ const Partnership = () => {
   return (
     <>
       {/* Hero Section */}
-      <section
-        className=" bg-no-repeat bg-cover bg-center text-accent py-28"
-        style={{ backgroundImage: "url(you.png)" }}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-2xl md:text-5xl font-bold mb-6">
-              Partner With Bereoth
-            </h1>
-            <p className="text-xl text-accent max-w-3xl mx-auto">
-              Where vision meets opportunity, and collaboration births success.
-            </p>
-          </div>
-        </div>
-      </section>
+      <HeroSection2
+        title="Partner With Bereoth"
+        description="Where vision meets opportunity, and collaboration births success."
+        image="/you.png" py="py-28"
+      />
 
       {/* Introduction */}
       <section className="py-16 px-6 bg-white">

@@ -19,6 +19,7 @@ import EventDetailPage from "./Components/pages/EventDetailPage";
 import Partnership from "./Components/pages/Partnership";
 import ContactPage from "./Components/pages/ContactPage";
 import WhatsAppButton from "./Components/WhatsAppButton";
+import AgroFarm from "./Components/pages/AgroFarm";
 import Header2 from "./Components/Header2";
 import Navbar from "./Components/Navbar";
 
@@ -58,7 +59,9 @@ function App() {
             <Route path="/blog/:id" element={<BlogDetailPage />} />
             <Route path="/event/:id" element={<EventDetailPage />} />
             <Route path="/partnership" element={<Partnership />} />
+            <Route path="/agro-farm" element={<AgroFarm />} />
             <Route path="/contact" element={<ContactPage />} />
+
           </Routes>
         </main>
         <Footer />

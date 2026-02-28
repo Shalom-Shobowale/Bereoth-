@@ -219,7 +219,7 @@ const PropertyForm = () => {
           headers: {
             "Content-Type": "multipart/form-data",
           },
-        }
+        },
       );
 
       const imageUrl = response.data.imageUrl;

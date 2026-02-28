@@ -78,8 +78,9 @@ const LogoSpinner = () => {
                   : "bg-blue-900/20"
               }`}
               style={{
-                animation:
-                  i * 2 < displayedText.length ? "pulse 1.5s infinite" : "none",
+                animationName: i * 2 < displayedText.length ? "pulse" : "none",
+                animationDuration: "1.5s",
+                animationIterationCount: "infinite",
                 animationDelay: `${i * 0.2}s`,
               }}
             />

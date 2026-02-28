@@ -12,6 +12,7 @@ import {
   VolumeX,
   Stamp,
 } from "lucide-react";
+import HeroSection2 from "../home/HeroSection2";
 const AboutPage = () => {
   const [showFullContent, setShowFullContent] = useState(false);
   const videoRef = useRef(null);
@@ -66,22 +67,19 @@ const AboutPage = () => {
     {
       name: "IKHAGHU OTHNIEL",
       role: "Managing Director",
-      image:
-        "md.jpg",
+      image: "md.jpg",
       bio: "15+ years experience in real estate development and investment",
     },
     {
       name: "ADEBAYO MOHAMMED",
       role: "Financial Administrator",
-      image:
-        "team2.jpeg",
+      image: "team2.jpeg",
       bio: "Property law specialist ensuring secure transactions",
     },
     {
       name: "IKECHI EMMANUEL",
       role: "Chief Operating Officer",
-      image:
-        "team3.jpeg",
+      image: "team3.jpeg",
       bio: "Strategic investment advisor with proven track record",
     },
   ];
@@ -89,16 +87,12 @@ const AboutPage = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className=" bg-no-repeat bg-cover bg-center text-accent py-28" style={{backgroundImage: 'url(you.png)'}}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            About Bereoth
-          </h1>
-          <p className="text-xl text-accent">
-            At Bereoth, we don’t just sell land, we build people, wealth, and legacies.
-          </p>
-        </div>
-      </section>
+      <HeroSection2
+        title="About Bereoth"
+        description="At Bereoth, we don’t just sell land, we build people, wealth, and legacies."
+        image="/you.png"
+        py="py-28"
+      />
 
       {/* Company Story */}
       <section className=" my-12">
@@ -208,7 +202,11 @@ const AboutPage = () => {
                 Subscribers at all levels.
               </p>
             </div>
-            <div className="text-center" data-aos="fade-up" data-aos-delay="125">
+            <div
+              className="text-center"
+              data-aos="fade-up"
+              data-aos-delay="125"
+            >
               <div className="bg-primary w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Eye className="h-10 w-10 text-white" />
               </div>
@@ -220,7 +218,11 @@ const AboutPage = () => {
               </p>
             </div>
 
-            <div className="text-center" data-aos="fade-up" data-aos-delay="250">
+            <div
+              className="text-center"
+              data-aos="fade-up"
+              data-aos-delay="250"
+            >
               <div className="bg-primary w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Stamp className="h-10 w-10 text-white" />
               </div>
@@ -249,7 +251,12 @@ const AboutPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <div key={index} className="text-center" data-aos="fade-up" data-aos-delay={index * 100}>
+              <div
+                key={index}
+                className="text-center"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+              >
                 <div className="bg-blue-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-100 transition-colors">
                   <value.icon className="h-10 w-10 text-primary" />
                 </div>
@@ -282,7 +289,8 @@ const AboutPage = () => {
               <div
                 key={index}
                 className="bg-white rounded-xl shadow-lg overflow-hidden text-center"
-                data-aos="fade-up" data-aos-delay={index * 100}
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
               >
                 <img
                   src={member.image}
@@ -324,7 +332,9 @@ const AboutPage = () => {
             </div>
             <div>
               <div className="text-4xl font-bold text-primary mb-2">₦50B+</div>
-              <div className="text-primary font-semibold">Property Value Sold</div>
+              <div className="text-primary font-semibold">
+                Property Value Sold
+              </div>
             </div>
             <div>
               <div className="text-4xl font-bold text-primary mb-2">11</div>
@@ -332,7 +342,9 @@ const AboutPage = () => {
             </div>
             <div>
               <div className="text-4xl font-bold text-primary mb-2">10+</div>
-              <div className="text-primary font-semibold">Years of Excellence</div>
+              <div className="text-primary font-semibold">
+                Years of Excellence
+              </div>
             </div>
           </div>
         </div>

@@ -7,6 +7,7 @@ import {
   Shield,
   MapPin,
 } from "lucide-react";
+import HeroSection2 from "../home/HeroSection2";
 
 const ServicesPage = () => {
   const services = [
@@ -126,22 +127,11 @@ const ServicesPage = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section
-        className="bg-no-repeat bg-cover bg-center text-accent py-28"
-        style={{ backgroundImage: "url(you.png)" }}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Our Services
-            </h1>
-            <p className="text-xl text-accent max-w-3xl mx-auto">
-              Comprehensive real estate solutions tailored to meet your unique
-              needs and investment goals
-            </p>
-          </div>
-        </div>
-      </section>
+      <HeroSection2
+        title="Our Services"
+        description="Comprehensive real estate solutions tailored to meet your unique needs and investment goals"
+        image="/you.png" py="py-28"
+      />
 
       {/* Services Grid */}
       <section className="py-16 bg-white">

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Calendar, User, Clock, ArrowRight, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
+import HeroSection2 from "../home/HeroSection2";
 
 const BlogPage = () => {
   const [posts, setPosts] = useState([]);
@@ -38,20 +39,11 @@ const BlogPage = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section
-        className=" bg-no-repeat bg-cover bg-center text-accent py-28"
-        style={{ backgroundImage: "url(you.png)" }}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Real Estate Blog & Events
-          </h1>
-          <p className="text-xl text-accent max-w-3xl mx-auto">
-            Insights, guides, and events to help you make smart real estate
-            decisions.
-          </p>
-        </div>
-      </section>
+     <HeroSection2
+        title="Real Estate Blog & Events"
+        description="Insights, guides, and events to help you make smart real estate decisions."
+        image="/you.png" py="py-28"
+      />
 
       {/* Tabs */}
       <section className="bg-white border-b">

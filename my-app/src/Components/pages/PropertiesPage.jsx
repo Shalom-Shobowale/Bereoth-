@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import PropertyCard from "../properties/PropertyCard";
 import PropertyFilters from "../properties/PropertyFilters";
 import LogoSpinner from "../LogoSpinner";
+import HeroSection2 from "../home/HeroSection2";
 
 const PropertiesPage = () => {
   const [properties, setProperties] = useState([]);
@@ -122,17 +123,7 @@ const PropertiesPage = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Hero Section */}
-      <section
-        className="bg-no-repeat bg-cover bg-center text-accent py-28"
-        style={{ backgroundImage: "url(you.png)" }}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Our Properties
-          </h1>
-          <p className="text-xl text-accent">Discover your perfect property</p>
-        </div>
-      </section>
+      <HeroSection2 title="Our Properties" description="Discover your perfect property" image="/you.png" py="28" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="lg:grid lg:grid-cols-4 lg:gap-8">

@@ -123,7 +123,7 @@ const PropertiesPage = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
       {/* Hero Section */}
-      <HeroSection2 title="Our Properties" description="Discover your perfect property" image="/you.png" py="28" />
+      <HeroSection2 title="Our Properties" description="Discover your perfect property" image="/you.png" py="py-28" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="lg:grid lg:grid-cols-4 lg:gap-8">

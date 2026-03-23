@@ -79,8 +79,7 @@ const ServicesPage = () => {
     {
       icon: Shield,
       title: "Property Sales",
-      description:
-        "Connecting you to lands and homes that build your future.",
+      description: "Connecting you to lands and homes that build your future.",
       features: [
         "Verified lands and estates with genuine titles (no hidden issues)",
         "Flexible payment plans to suit your budget",
@@ -130,7 +129,8 @@ const ServicesPage = () => {
       <HeroSection2
         title="Our Services"
         description="Comprehensive real estate solutions tailored to meet your unique needs and investment goals"
-        image="/you.png" py="py-28"
+        image="/you.png"
+        py="py-28"
       />
 
       {/* Services Grid */}
@@ -151,7 +151,8 @@ const ServicesPage = () => {
               <div
                 key={index}
                 className="bg-white border border-gray-200 rounded-xl p-8 hover:shadow-lg transition-shadow duration-300"
-                data-aos="zoom-in-up" data-aos-delay={index * 100}
+                data-aos="zoom-in-up"
+                data-aos-delay={index * 100}
               >
                 <div className="bg-blue-50 w-16 h-16 rounded-full flex items-center justify-center mb-6">
                   <service.icon className="h-8 w-8 text-primary" />
@@ -225,7 +226,11 @@ const ServicesPage = () => {
               </p>
             </div>
 
-            <div className="text-center" data-aos="fade-up" data-aos-delay="125">
+            <div
+              className="text-center"
+              data-aos="fade-up"
+              data-aos-delay="125"
+            >
               <div className="bg-blue-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Users className="h-10 w-10 text-primary" />
               </div>
@@ -238,7 +243,11 @@ const ServicesPage = () => {
               </p>
             </div>
 
-            <div className="text-center" data-aos="fade-up" data-aos-delay="250">
+            <div
+              className="text-center"
+              data-aos="fade-up"
+              data-aos-delay="250"
+            >
               <div className="bg-blue-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
                 <TrendingUp className="h-10 w-10 text-primary" />
               </div>
@@ -265,9 +274,12 @@ const ServicesPage = () => {
             services can help you achieve your real estate goals.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-blue-800 hover:bg-primary text-accent px-8 py-3 rounded-lg font-semibold text-lg transition-colors">
+            <a
+              href="tel:+2348134967650"
+              className="bg-blue-800 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold text-lg transition-colors"
+            >
               Schedule Consultation
-            </button>
+            </a>
             <a
               href="tel:+2348134967650"
               className="border-2 border-white hover:bg-white hover:text-blue-900 px-8 py-3 rounded-lg font-semibold text-lg transition-colors"

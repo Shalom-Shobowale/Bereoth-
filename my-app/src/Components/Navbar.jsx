@@ -42,7 +42,7 @@ const Navbar = () => {
       className={`${
         isMobile
           ? "px-2 pt-2 pb-3 space-y-1 bg-accent absolute left-0 top-24 w-full"
-          : "hidden md:flex space-x-8"
+          : "hidden md:flex space-x-8 "
       }`}
     >
       {navigation.map((item) => (

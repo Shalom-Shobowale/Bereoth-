@@ -109,38 +109,38 @@ const AboutPage = () => {
                 <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">
                   Our Story
                 </h2>
-                <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                <p className="text-lg text-gray-600 mb-6 leading-relaxed text-justify">
                   Bereoth Property & Investments Ltd is more than a real estate
                   company — we are a movement transforming lives through
                   property, investment, and empowerment.
                 </p>
-                <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                <p className="text-lg text-gray-600 mb-6 leading-relaxed text-justify">
                   From the very beginning, our vision has been clear: to make
                   land ownership simple, transparent, and rewarding for
                   Nigerians everywhere. We believe land is not just about
                   building houses, but about building wealth, security, and
                   legacies.
                 </p>
-                <p className="text-lg text-gray-600 leading-relaxed">
+                <p className="text-lg text-gray-600 leading-relaxed text-justify">
                   In 2018, we took our first bold step with Focus Park Estate,
                   Mowe Ofada. What started as a single project has now expanded
                   into 11 thriving estates across Lagos, Ogun, and Enugu States.
                 </p>
-                <p className="text-lg text-gray-600 leading-relaxed">
+                <p className="text-lg text-gray-600 leading-relaxed text-justify">
                   But Bereoth is more than estates — we solve problems. We
                   address housing needs by providing affordable and accessible
                   plots.
                 </p>
-                <p className="text-lg text-gray-600 leading-relaxed">
+                <p className="text-lg text-gray-600 leading-relaxed text-justify">
                   We fight poverty and unemployment by creating job
                   opportunities through our projects and engaging consultants.
                 </p>
-                <p className="text-lg text-gray-600 leading-relaxed">
+                <p className="text-lg text-gray-600 leading-relaxed text-justify">
                   Over 6 years of steady growth, our reputation has been built
                   on trust, transparency, and results. We have provided secure
                   titles, flexible payment plans, and a stress-free process.
                 </p>
-                <p className="text-lg text-gray-600 leading-relaxed">
+                <p className="text-lg text-gray-600 leading-relaxed text-justify">
                   Today, Bereoth is more than a company — it is a community of
                   dreamers, investors, and achievers. ✨ At Bereoth, we don’t
                   just sell land, we build people, wealth, and legacies.

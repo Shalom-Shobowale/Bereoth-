@@ -135,9 +135,9 @@ const PropertiesPage = () => {
           {/* Properties Grid */}
           <div className="lg:col-span-3">
             <div className="flex justify-between items-center mb-6">
-              <h2 className="text-2xl font-bold text-primary">
+              {/* <h2 className="text-2xl font-bold text-primary">
                 {filteredProperties.length} Properties Found
-              </h2>
+              </h2> */}
               <select className="border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                 <option>Sort by: Latest</option>
                 <option>Price: Low to High</option>

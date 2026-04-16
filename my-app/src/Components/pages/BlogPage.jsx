@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Calendar, User, Clock, ArrowRight, MapPin } from "lucide-react";
+import { Calendar, User, Clock, ArrowRight, MapPin, ChevronRight, Mail, Bell } from "lucide-react";
 import { Link } from "react-router-dom";
 import HeroSection2 from "../home/HeroSection2";
 
@@ -12,13 +12,11 @@ const BlogPage = () => {
   const [activeCategory, setActiveCategory] = useState("All");
 
   useEffect(() => {
-    // Load blog posts
     fetch("/mockPosts.json")
       .then((res) => res.json())
       .then((data) => setPosts(data))
       .catch((err) => console.error("Failed to load posts:", err));
 
-    // Load events
     fetch("/mockEvents.json")
       .then((res) => res.json())
       .then((data) => setEvents(data))
@@ -39,35 +37,42 @@ const BlogPage = () => {
   return (
     <div>
       {/* Hero Section */}
-     <HeroSection2
+      <HeroSection2
         title="Real Estate Blog & Events"
         description="Insights, guides, and events to help you make smart real estate decisions."
-        image="/you.png" py="py-28"
+        image="/you.png" 
+        py="py-28"
       />
 
-      {/* Tabs */}
-      <section className="bg-white border-b">
+      {/* Tabs - Clean Design */}
+      <section className="bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-center space-x-6">
+          <div className="flex justify-center space-x-8">
             <button
               onClick={() => setActiveTab("articles")}
-              className={`py-4 px-6 font-semibold border-b-2 transition-colors ${
+              className={`py-4 px-2 font-semibold text-base transition-all duration-300 relative ${
                 activeTab === "articles"
-                  ? "border-blue-600 text-blue-600"
-                  : "border-transparent text-gray-600 hover:text-blue-600"
+                  ? "text-primary"
+                  : "text-gray-500 hover:text-primary"
               }`}
             >
               Articles
+              {activeTab === "articles" && (
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-full"></div>
+              )}
             </button>
             <button
               onClick={() => setActiveTab("events")}
-              className={`py-4 px-6 font-semibold border-b-2 transition-colors ${
+              className={`py-4 px-2 font-semibold text-base transition-all duration-300 relative ${
                 activeTab === "events"
-                  ? "border-blue-600 text-blue-600"
-                  : "border-transparent text-gray-600 hover:text-blue-600"
+                  ? "text-primary"
+                  : "text-gray-500 hover:text-primary"
               }`}
             >
               Events
+              {activeTab === "events" && (
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-full"></div>
+              )}
             </button>
           </div>
         </div>
@@ -76,18 +81,18 @@ const BlogPage = () => {
       {/* Articles Tab */}
       {activeTab === "articles" && (
         <>
-          {/* Categories Filter */}
-          <section className="py-8 bg-white border-b">
+          {/* Categories Filter - Clean Chips */}
+          <section className="py-8 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="flex flex-wrap justify-center gap-4">
+              <div className="flex flex-wrap justify-center gap-3">
                 {categories.map((category) => (
                   <button
                     key={category}
                     onClick={() => setActiveCategory(category)}
-                    className={`px-4 py-2 rounded-full border transition-colors ${
+                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                       activeCategory === category
-                        ? "bg-blue-600 text-white border-blue-600"
-                        : "border-gray-300 text-gray-700 hover:bg-blue-600 hover:text-white hover:border-blue-600"
+                        ? "bg-primary text-white shadow-sm"
+                        : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                     }`}
                   >
                     {category}
@@ -97,79 +102,85 @@ const BlogPage = () => {
             </div>
           </section>
 
-          {/* Blog Posts Grid */}
-          <section className="py-16 bg-gray-50">
+          {/* Blog Posts Grid - Clean Cards */}
+          <section className="py-12 bg-gray-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
-                Latest Articles
-              </h2>
+              <div className="text-center mb-10">
+                <h2 className="text-2xl md:text-3xl font-bold text-primary mb-2">
+                  Latest Articles
+                </h2>
+                <div className="w-12 h-0.5 bg-primary/30 mx-auto rounded-full"></div>
+              </div>
 
               {filteredPosts.length === 0 ? (
-                <p className="text-center text-gray-600">
-                  No posts available for this category.
-                </p>
+                <p className="text-center text-gray-500 py-12">No posts available for this category.</p>
               ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {filteredPosts.map((post, index) => (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {filteredPosts.map((post) => (
                     <article
-                      data-aos="zoom-in-down"
-                      data-aos-delay={index * 100}
                       key={post.id}
-                      className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                      className="group bg-white rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 border border-gray-100"
                     >
-                      {post.image.endsWith(".mp4") ? (
-                        <video
-                          className="w-full h-56 object-cover "
-                          controls
-                          muted
-                          preload="metadata"
-                        >
-                          <source src={post.image} type="video/mp4" />
-                          Your browser does not support the video tag.
-                        </video>
-                      ) : (
-                        <img
-                          src={post.image}
-                          alt={post.title}
-                          className="w-full h-48 object-cover"
-                        />
-                      )}
+                      {/* Image */}
+                      <Link to={`/blog/${post.id}`} className="block overflow-hidden">
+                        {post.image?.endsWith(".mp4") ? (
+                          <video
+                            className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                            muted
+                            preload="metadata"
+                          >
+                            <source src={post.image} type="video/mp4" />
+                          </video>
+                        ) : (
+                          <img
+                            src={post.image}
+                            alt={post.title}
+                            className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                          />
+                        )}
+                      </Link>
 
-                      <div className="p-6">
-                        <div className="flex items-center space-x-2 mb-4">
-                          <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm font-semibold">
+                      <div className="p-5">
+                        {/* Meta info */}
+                        <div className="flex items-center gap-3 mb-3">
+                          <span className="bg-primary/10 text-primary px-2 py-0.5 rounded text-xs font-medium">
                             {post.category}
                           </span>
-                          <div className="flex items-center text-sm text-gray-600">
+                          <div className="flex items-center text-gray-400 text-xs">
                             <Clock className="h-3 w-3 mr-1" />
                             <span>{post.readTime}</span>
                           </div>
                         </div>
 
-                        <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
-                          {post.title}
+                        {/* Title */}
+                        <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-primary transition-colors">
+                          <Link to={`/blog/${post.id}`}>{post.title}</Link>
                         </h3>
-                        <p className="text-gray-600 mb-4 line-clamp-3">
+                        
+                        {/* Excerpt */}
+                        <p className="text-gray-500 text-sm mb-4 line-clamp-2">
                           {post.excerpt}
                         </p>
 
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center text-sm text-gray-600">
-                            <User className="h-4 w-4 mr-1" />
+                        {/* Author & Date */}
+                        <div className="flex items-center justify-between text-xs text-gray-400 mb-4">
+                          <div className="flex items-center gap-1">
+                            <User className="h-3 w-3" />
                             <span>{post.author}</span>
                           </div>
-                          <div className="flex items-center text-sm text-gray-600">
-                            <Calendar className="h-4 w-4 mr-1" />
+                          <div className="flex items-center gap-1">
+                            <Calendar className="h-3 w-3" />
                             <span>{post.date}</span>
                           </div>
                         </div>
 
+                        {/* Read More Link */}
                         <Link
                           to={`/blog/${post.id}`}
-                          className="w-full mt-4 inline-flex items-center justify-center space-x-2 bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-800 py-2 px-4 rounded-lg font-medium transition-colors"
+                          className="inline-flex items-center gap-1 text-primary text-sm font-medium hover:gap-2 transition-all"
                         >
-                          <span>Read More</span>
-                          <ArrowRight className="h-4 w-4" />
+                          Read More
+                          <ArrowRight className="h-3.5 w-3.5" />
                         </Link>
                       </div>
                     </article>
@@ -181,29 +192,32 @@ const BlogPage = () => {
         </>
       )}
 
-      {/* Events Tab */}
+      {/* Events Tab - Clean Design */}
       {activeTab === "events" && (
-        <section className="py-16 bg-gray-50">
+        <section className="py-12 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="mb-8 text-center">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Events</h2>
-              <div className="inline-flex rounded-md shadow-sm" role="group">
+            {/* Event Tabs */}
+            <div className="text-center mb-10">
+              <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">
+                Events
+              </h2>
+              <div className="inline-flex rounded-lg bg-white p-1 shadow-sm border border-gray-100">
                 <button
                   onClick={() => setActiveEventTab("upcoming")}
-                  className={`px-4 py-2 text-sm font-medium border border-gray-300 rounded-l-md ${
+                  className={`px-6 py-2 text-sm font-medium rounded-md transition-all duration-300 ${
                     activeEventTab === "upcoming"
-                      ? "bg-blue-600 text-white"
-                      : "bg-white text-gray-700 hover:bg-gray-100"
+                      ? "bg-primary text-white shadow-sm"
+                      : "text-gray-600 hover:text-primary"
                   }`}
                 >
-                  Upcoming Events
+                  Upcoming
                 </button>
                 <button
                   onClick={() => setActiveEventTab("past")}
-                  className={`px-4 py-2 text-sm font-medium border border-gray-300 rounded-r-md ${
+                  className={`px-6 py-2 text-sm font-medium rounded-md transition-all duration-300 ${
                     activeEventTab === "past"
-                      ? "bg-blue-600 text-white"
-                      : "bg-white text-gray-700 hover:bg-gray-100"
+                      ? "bg-primary text-white shadow-sm"
+                      : "text-gray-600 hover:text-primary"
                   }`}
                 >
                   Past Events
@@ -213,36 +227,40 @@ const BlogPage = () => {
 
             {(activeEventTab === "upcoming" && upcomingEvents.length === 0) ||
             (activeEventTab === "past" && pastEvents.length === 0) ? (
-              <p className="text-center text-gray-600">No events available.</p>
+              <p className="text-center text-gray-500 py-12">No events available.</p>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {(activeEventTab === "upcoming"
                   ? upcomingEvents
                   : pastEvents
                 ).map((event) => (
                   <article
                     key={event.id}
-                    className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
-                    data-aos="zoom-in-down"
-                    data-aos-delay={event.id * 100}
+                    className="group bg-white rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 border border-gray-100"
                   >
                     <img
                       src={event.image}
                       alt={event.title}
-                      className="w-full h-48 object-cover"
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="p-6">
-                      <div className="flex items-center space-x-2 mb-4 text-sm text-gray-600">
-                        <Calendar className="h-4 w-4 mr-1" />
-                        <span>{event.date}</span>
-                        <MapPin className="h-4 w-4 ml-4 mr-1" />
-                        <span>{event.location}</span>
+                    <div className="p-5">
+                      {/* Date & Location */}
+                      <div className="flex items-center gap-3 text-xs text-gray-500 mb-3">
+                        <div className="flex items-center gap-1">
+                          <Calendar className="h-3 w-3" />
+                          <span>{event.date}</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <MapPin className="h-3 w-3" />
+                          <span className="line-clamp-1">{event.location}</span>
+                        </div>
                       </div>
 
-                      <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
+                      <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-2">
                         {event.title}
                       </h3>
-                      <p className="text-gray-600 mb-4 line-clamp-3 whitespace-pre-line">
+                      
+                      <p className="text-gray-500 text-sm mb-4 line-clamp-2">
                         {event.description}
                       </p>
 
@@ -250,10 +268,10 @@ const BlogPage = () => {
                         href={event.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full mt-4 inline-flex items-center justify-center space-x-2 bg-gray-100 hover:bg-blue-600 hover:text-white text-gray-800 py-2 px-4 rounded-lg font-medium transition-colors"
+                        className="inline-flex items-center gap-1 text-primary text-sm font-medium hover:gap-2 transition-all"
                       >
-                        <span>View Details</span>
-                        <ArrowRight className="h-4 w-4" />
+                        View Details
+                        <ArrowRight className="h-3.5 w-3.5" />
                       </a>
                     </div>
                   </article>
@@ -264,40 +282,51 @@ const BlogPage = () => {
         </section>
       )}
 
-      {/* Newsletter Signup */}
-      <section className="py-16 bg-blue-800 text-white">
+      {/* Newsletter Signup - Clean Design */}
+      <section className="py-16 bg-white border-t border-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Stay Updated</h2>
-          <p className="text-xl text-blue-100 mb-8">
-            Get the latest real estate insights, market updates, and event
-            invites delivered to your inbox.
-          </p>
+          <div className="bg-gray-50 rounded-2xl p-8 md:p-10">
+            <div className="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Bell className="h-6 w-6 text-primary" />
+            </div>
+            
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+              Stay Updated
+            </h2>
+            
+            <p className="text-gray-500 mb-8 max-w-md mx-auto">
+              Get the latest real estate insights, market updates, and event invites delivered to your inbox.
+            </p>
 
-          <form
-            action="https://YOUR_MAILCHIMP_URL"
-            method="post"
-            target="_blank"
-            noValidate
-            className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
-          >
-            <input
-              type="email"
-              name="EMAIL"
-              placeholder="Enter your email address"
-              required
-              className="flex-1 px-4 py-3 rounded-lg text-gray-900 placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-yellow-400"
-            />
-            <button
-              type="submit"
-              className="border-white border hover:bg-accent hover:text-primary text-accent px-6 py-3 rounded-lg font-semibold transition-colors"
+            <form
+              action="https://YOUR_MAILCHIMP_URL"
+              method="post"
+              target="_blank"
+              noValidate
+              className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
             >
-              Subscribe
-            </button>
-          </form>
+              <div className="flex-1 relative">
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
+                <input
+                  type="email"
+                  name="EMAIL"
+                  placeholder="Enter your email address"
+                  required
+                  className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
+                />
+              </div>
+              <button
+                type="submit"
+                className="bg-primary text-white hover:bg-primary/90 px-6 py-3 rounded-lg font-semibold transition-all duration-300"
+              >
+                Subscribe
+              </button>
+            </form>
 
-          <p className="text-blue-200 text-sm mt-4">
-            No spam, unsubscribe at any time. We respect your privacy.
-          </p>
+            <p className="text-gray-400 text-xs mt-4">
+              No spam, unsubscribe at any time. We respect your privacy.
+            </p>
+          </div>
         </div>
       </section>
     </div>

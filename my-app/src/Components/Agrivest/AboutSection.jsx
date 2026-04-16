@@ -32,10 +32,9 @@ const AboutSection = () => {
 
   return (
     <section ref={sectionRef} className="w-[85%] mx-auto py-16 overflow-hidden">
-      {/* Header with CSS Animation */}
       <div className="text-center mb-12">
         <h1
-          className="relative inline-block text-4xl md:text-5xl font-bold text-primary pb-4 
+          className="relative inline-block text-3xl md:text-4xl font-bold text-primary pb-4 
                        animate-slideDown"
         >
           ABOUT SECTION
@@ -47,9 +46,7 @@ const AboutSection = () => {
         </h1>
       </div>
 
-      {/* Main Content */}
       <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
-        {/* Text Content */}
         <div className="space-y-6 animate-on-scroll animate-fadeInLeft">
           <div>
             <h2
@@ -102,7 +99,6 @@ const AboutSection = () => {
             </p>
           </div>
 
-          {/* CTA Button */}
           <button
             onClick={handleWhatsAppClick}
             className="mt-8 px-8 py-3 bg-blue-900 text-white rounded-full 
@@ -118,22 +114,18 @@ const AboutSection = () => {
           </button>
         </div>
 
-        {/* Image Container */}
         <div className="relative group animate-on-scroll animate-fadeInRight">
           <div className="relative h-[60vh] rounded-2xl overflow-hidden shadow-2xl">
-            {/* Background Image */}
             <div
               className="absolute inset-0 bg-[url('/seven.jpg')] bg-cover bg-center
                           transition-transform duration-700 group-hover:scale-110"
             ></div>
 
-            {/* Overlay Gradient */}
             <div
               className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent 
                           opacity-0 group-hover:opacity-100 transition-opacity duration-500"
             ></div>
 
-            {/* Floating Badge */}
             <div
               className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm 
                           px-6 py-3 rounded-lg shadow-xl transform 
@@ -143,7 +135,6 @@ const AboutSection = () => {
               <p className="text-sm text-gray-600">Since 2024</p>
             </div>
 
-            {/* Decorative Elements */}
             <div
               className="absolute -top-4 -right-4 w-24 h-24 bg-primary/20 
                           rounded-full blur-2xl animate-pulse"

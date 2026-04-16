@@ -6,6 +6,8 @@ import {
   Clock,
   MessageCircle,
   Calendar,
+  Send,
+  CheckCircle,
 } from "lucide-react";
 import { useState } from "react";
 import { toast } from "react-toastify";
@@ -27,11 +29,10 @@ const ContactPage = () => {
     const message =
       "Hello! I would like to inquire about your real estate services.";
     const url = `https://wa.me/2348134967650?text=${encodeURIComponent(
-      message
+      message,
     )}`;
     window.open(url, "_blank");
   };
-
 
   const handleContact = async (e) => {
     e.preventDefault();
@@ -67,7 +68,6 @@ const ContactPage = () => {
 
       if (response.ok) {
         toast.success("Your message has been sent!");
-        // ✅ FIXED: Reset all form fields properly
         setFormData({
           firstName: "",
           lastName: "",
@@ -88,139 +88,142 @@ const ContactPage = () => {
     }
   };
 
+  const contactInfo = [
+    {
+      icon: MapPin,
+      title: "Visit Our Office",
+      details: [
+        "1/3 Suco Road Beside VIO Office",
+        "Idi-Oparun Agege, Lagos State",
+      ],
+      link: null,
+    },
+    {
+      icon: Phone,
+      title: "Call Us",
+      details: ["+234 813 496 7650", "+234 813 496 7650"],
+      link: "tel:+2348134967650",
+    },
+    {
+      icon: Mail,
+      title: "Email Us",
+      details: ["info@bereoth.com", "bereothp@gmail.com"],
+      link: "mailto:info@bereoth.com",
+    },
+    {
+      icon: Clock,
+      title: "Business Hours",
+      details: ["Monday - Friday: 9:00 AM - 5:00 PM"],
+      link: null,
+    },
+  ];
+
   return (
     <div>
-      {/* Hero Section */}
       <HeroSection2
         title="Contact Us"
         description="Ready to start your real estate journey? Get in touch with our expert team today."
-        image="/you.png" py="py-28"
+        image="/you.png"
+        py="py-28"
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 ">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          {/* Contact Information */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
-            <h2 className="text-3xl font-bold text-primary mb-8">
-              Get in Touch
-            </h2>
-            <p className="text-lg text-gray-600 mb-8">
-              Our professional team is here to help you achieve your housing
-              dreams and make the smartest real estate investments. Contact us
-              today and let’s bring your vision to life.
-            </p>
-
-            <div className="space-y-8">
-              {/* Office Address */}
-              <div className="flex items-start space-x-4">
-                <div className="bg-blue-100 p-3 rounded-lg">
-                  <MapPin className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-primary mb-2">
-                    Office Address
-                  </h3>
-                  <p className="text-gray-600">
-                    1/3 Suco Road Beside VIO Office,
-                    <br />
-                    Idi-Oparun Agege, Lagos State.
-                  </p>
-                </div>
-              </div>
-
-              {/* Phone */}
-              <div className="flex items-start space-x-4">
-                <div className="bg-blue-100 p-3 rounded-lg">
-                  <Phone className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-primary mb-2">
-                    Phone Number
-                  </h3>
-                  <a href="tel:+2348134967650" className="text-gray-600">
-                    +234 813 496 7650
-                  </a>
-                  <br />
-                  <a href="tel:+2348134967650" className="text-gray-600">
-                    {" "}
-                    +234 813 496 7650
-                  </a>
-                </div>
-              </div>
-
-              {/* Email */}
-              <div className="flex items-start space-x-4">
-                <div className="bg-blue-100 p-3 rounded-lg">
-                  <Mail className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-primary mb-2">
-                    Email Address
-                  </h3>
-                  <a href="mailto:bereothp@gmail.com" className="text-gray-600">
-                    info@bereoth.com
-                    <br />
-                    bereothp@gmail.com
-                  </a>
-                </div>
-              </div>
-
-              {/* Business Hours */}
-              <div className="flex items-start space-x-4">
-                <div className="bg-blue-100 p-3 rounded-lg">
-                  <Clock className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-primary mb-2">
-                    Business Hours
-                  </h3>
-                  <div className="text-gray-600">
-                    <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
-                  </div>
-                </div>
-              </div>
+            <div className="mb-8">
+              <span className="text-primary font-semibold text-sm tracking-wider uppercase">
+                Get in Touch
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-4">
+                Let's Talk About Your{" "}
+                <span className="text-primary">Dream Property</span>
+              </h2>
+              <div className="w-16 h-0.5 bg-primary/30 rounded-full mb-4"></div>
+              <p className="text-gray-600 leading-relaxed">
+                Our professional team is here to help you achieve your housing
+                dreams and make the smartest real estate investments. Contact us
+                today and let's bring your vision to life.
+              </p>
             </div>
 
-            {/* Quick Action Buttons */}
-            <div className="mt-12 space-y-4">
-              <h3 className="text-xl font-semibold text-primary mb-4">
+            {/* Contact Info Cards */}
+            <div className="space-y-4 mb-8">
+              {contactInfo.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all duration-300 group"
+                >
+                  <div className="bg-primary/10 p-3 rounded-lg group-hover:bg-primary/20 transition-colors">
+                    <item.icon className="h-5 w-5 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">
+                      {item.title}
+                    </h3>
+                    {item.details.map((detail, i) =>
+                      item.link ? (
+                        <a
+                          key={i}
+                          href={item.link}
+                          className="text-gray-600 text-sm hover:text-primary transition-colors block"
+                        >
+                          {detail}
+                        </a>
+                      ) : (
+                        <p key={i} className="text-gray-600 text-sm">
+                          {detail}
+                        </p>
+                      ),
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">
                 Quick Actions
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <button
                   onClick={handleWhatsAppClick}
-                  className="bg-blue-800 hover:bg-blue-900 text-white py-3 px-6 rounded-lg font-semibold flex items-center justify-center space-x-2 transition-colors"
+                  className="group flex items-center justify-center gap-2 bg-primary/10 hover:bg-primary text-primary hover:text-white px-4 py-3 rounded-lg font-medium transition-all duration-300"
                 >
-                  <MessageCircle className="h-5 w-5" />
+                  <MessageCircle className="h-4 w-4" />
                   <span>Chat on WhatsApp</span>
                 </button>
-
                 <button
                   onClick={handleWhatsAppClick}
-                  className="bg-blue-800 hover:bg-primary text-white py-3 px-6 rounded-lg font-semibold flex items-center justify-center space-x-2 transition-colors"
+                  className="group flex items-center justify-center gap-2 border border-primary/30 hover:bg-primary text-primary hover:text-white px-4 py-3 rounded-lg font-medium transition-all duration-300"
                 >
-                  <Calendar className="h-5 w-5" />
+                  <Calendar className="h-4 w-4" />
                   <span>Book Consultation</span>
                 </button>
               </div>
             </div>
           </div>
 
-          {/* Contact Form */}
-          <div className="bg-gray-50 p-8 rounded-2xl">
-            <h2 className="text-2xl font-bold text-primary mb-6">
-              Send us a Message
-            </h2>
-            <form onSubmit={handleContact} className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-6 md:p-8">
+            <div className="text-center mb-6">
+              <h2 className="text-2xl font-bold text-gray-900 mb-2">
+                Send us a Message
+              </h2>
+              <p className="text-gray-500 text-sm">
+                Fill out the form below and we'll get back to you within 24
+                hours
+              </p>
+            </div>
+
+            <form onSubmit={handleContact} className="space-y-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
                     First Name *
                   </label>
                   <input
                     type="text"
                     required
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full border border-gray-200 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                     placeholder="Enter your first name"
                     value={formData.firstName}
                     onChange={(e) =>
@@ -228,15 +231,14 @@ const ContactPage = () => {
                     }
                   />
                 </div>
-
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
                     Last Name *
                   </label>
                   <input
                     type="text"
                     required
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full border border-gray-200 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                     placeholder="Enter your last name"
                     value={formData.lastName}
                     onChange={(e) =>
@@ -247,13 +249,13 @@ const ContactPage = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 mb-1">
                   Email Address *
                 </label>
                 <input
                   type="email"
                   required
-                  className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full border border-gray-200 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                   placeholder="Enter your email address"
                   value={formData.email}
                   onChange={(e) =>
@@ -263,13 +265,13 @@ const ContactPage = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 mb-1">
                   Phone Number *
                 </label>
                 <input
                   type="tel"
                   required
-                  className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full border border-gray-200 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                   placeholder="Enter your phone number"
                   value={formData.phone}
                   onChange={(e) =>
@@ -279,11 +281,12 @@ const ContactPage = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Subject
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Subject *
                 </label>
                 <select
-                  className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  required
+                  className="w-full border border-gray-200 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all"
                   value={formData.subject}
                   onChange={(e) =>
                     setFormData({ ...formData, subject: e.target.value })
@@ -296,21 +299,21 @@ const ContactPage = () => {
                     Schedule Site Inspection
                   </option>
                   <option value="property-management">
-                    Property management
+                    Property Management
                   </option>
                   <option value="partnership">Partnership Inquiry</option>
-                  <option value="general">General inquiry</option>
+                  <option value="general">General Inquiry</option>
                 </select>
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-gray-700 mb-1">
                   Message *
                 </label>
                 <textarea
-                  rows={6}
+                  rows={5}
                   required
-                  className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full border border-gray-200 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none"
                   placeholder="Tell us about your requirements or questions..."
                   value={formData.message}
                   onChange={(e) =>
@@ -319,47 +322,68 @@ const ContactPage = () => {
                 ></textarea>
               </div>
 
-              <div className="flex items-start">
+              <div className="flex items-start gap-3">
                 <input
                   type="checkbox"
                   id="consent"
-                  className="mt-1 mr-3"
+                  className="mt-0.5 w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary/20"
                   required
                   checked={formData.tick}
                   onChange={(e) =>
                     setFormData({ ...formData, tick: e.target.checked })
                   }
                 />
-                <label htmlFor="consent" className="text-sm text-gray-600">
-                  I agree to be contacted by BEREOTH property and investments
+                <label
+                  htmlFor="consent"
+                  className="text-sm text-gray-500 leading-relaxed"
+                >
+                  I agree to be contacted by BEREOTH Property and Investments
                   Ltd. regarding my inquiry and consent to the processing of my
-                  personal data for this purpose.
+                  personal data.
                 </label>
               </div>
 
               <button
                 type="submit"
                 disabled={formSubmitted}
-                className="w-full bg-blue-800 hover:bg-primary text-white py-4 px-6 rounded-lg font-semibold text-lg transition-colors"
+                className="w-full bg-primary hover:bg-primary/90 text-white py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center gap-2 group"
               >
-                {formSubmitted ? "Sending..." : "Send Message"}
+                {formSubmitted ? (
+                  <>
+                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                    <span>Sending...</span>
+                  </>
+                ) : (
+                  <>
+                    <Send className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    <span>Send Message</span>
+                  </>
+                )}
               </button>
             </form>
           </div>
         </div>
 
-        {/* Map Section */}
         <div className="mt-16">
-          <h2 className="text-3xl font-bold text-primary mb-8 text-center">
-            Find Us
-          </h2>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.0258477259317!2d3.3152572745538897!3d6.643712021755613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8fba5f545053%3A0x1e95f93a2e484866!2sBEREOTH%20PROPERTY%20%26%20INVESTMENTS%20LIMITED!5e0!3m2!1sen!2sng!4v1759463672698!5m2!1sen!2sng"
-            className="w-full h-96 rounded-2xl border-0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
+          <div className="text-center mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+              Find Us Here
+            </h2>
+            <div className="w-12 h-0.5 bg-primary/30 mx-auto rounded-full"></div>
+            <p className="text-gray-500 mt-3">
+              Visit our office for a personal consultation
+            </p>
+          </div>
+          <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.0258477259317!2d3.3152572745538897!3d6.643712021755613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8fba5f545053%3A0x1e95f93a2e484866!2sBEREOTH%20PROPERTY%20%26%20INVESTMENTS%20LIMITED!5e0!3m2!1sen!2sng!4v1759463672698!5m2!1sen!2sng"
+              className="w-full h-80 md:h-96 border-0"
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Bereoth Property Office Location"
+            ></iframe>
+          </div>
         </div>
       </div>
     </div>

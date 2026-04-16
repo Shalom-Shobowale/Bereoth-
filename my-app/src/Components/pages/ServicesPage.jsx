@@ -203,7 +203,6 @@ const ServicesPage = () => {
         </div>
       </section> */}
 
-      {/* Why Choose Our Services */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -263,30 +262,64 @@ const ServicesPage = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-800 to-blue-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Get Started?
-          </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Contact us today for a free consultation and discover how our
-            services can help you achieve your real estate goals.
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-primary font-semibold text-sm uppercase tracking-wider mb-3">
+            Start Your Journey Today
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Ready to Find Your{" "}
+            <span className="text-primary">Perfect Property</span>?
+          </h2>
+          <p className="text-lg text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+            Contact us today for a free consultation. No pressure, no hidden
+            fees — just honest advice from experts who care.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
               href="tel:+2348134967650"
-              className="bg-blue-800 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold text-lg transition-colors"
+              className="group bg-primary text-white hover:bg-primary/90 px-8 py-3.5 rounded-xl font-semibold text-lg transition-all duration-300 inline-flex items-center gap-2 shadow-md hover:shadow-lg"
             >
-              Schedule Consultation
+              Schedule Free Consultation
+              <svg
+                className="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
             </a>
+
             <a
               href="tel:+2348134967650"
-              className="border-2 border-white hover:bg-white hover:text-blue-900 px-8 py-3 rounded-lg font-semibold text-lg transition-colors"
+              className="group text-gray-700 hover:text-primary px-8 py-3.5 rounded-xl font-medium text-lg transition-all duration-300 inline-flex items-center gap-2"
             >
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                />
+              </svg>
               Call +234 813 496 7650
             </a>
           </div>
+          <p className="text-sm text-gray-400 mt-8">
+            • Free consultation • No obligation • Expert advice
+          </p>
         </div>
       </section>
     </div>

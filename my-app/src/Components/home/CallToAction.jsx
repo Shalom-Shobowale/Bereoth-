@@ -1,76 +1,106 @@
-import { Phone, MessageCircle, Calendar } from "lucide-react";
+import { Phone, MessageCircle, Calendar, ChevronRight } from "lucide-react";
+
 const CallToAction = () => {
   const handleWhatsAppClick = () => {
     const message =
       "Hello! I would like to inquire about your real estate services.";
     const url = `https://wa.me/2348134967650?text=${encodeURIComponent(
-      message
+      message,
     )}`;
     window.open(url, "_blank");
   };
-  return (
-    <section className="bg-gradient-to-br from-blue-800 to-blue-900 text-white py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          Ready to Find Your Perfect Property?
-        </h2>
-        <p className="text-lg md:text-xl mb-8 text-blue-100 max-w-2xl mx-auto">
-          Don't wait for the perfect moment. Start your real estate journey
-          today and let us help you secure your dream property at the best
-          prices.
-        </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+  const handleBookInspection = () => {
+    const message =
+      "Hello! I would like to schedule a site inspection for a property.";
+    const url = `https://wa.me/2348134967650?text=${encodeURIComponent(
+      message,
+    )}`;
+    window.open(url, "_blank");
+  };
+
+  return (
+    <section className="py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+            Ready to Find Your Perfect Property?
+          </h2>
+          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+            Don't wait for the perfect moment. Start your real estate journey
+            today and let us help you secure your dream property at the best
+            prices.
+          </p>
+        </div>
+
+        {/* Simple 3 Column Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
           {/* WhatsApp */}
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:bg-white/20 transition duration-300">
-            <MessageCircle className="h-12 w-12 text-primary mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Chat on WhatsApp</h3>
-            <p className="text-blue-100 mb-4">
+          <div className="bg-gray-50 rounded-xl p-6 text-center hover:bg-gray-100 transition-all duration-300">
+            <div className="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
+              <MessageCircle className="h-7 w-7 text-primary" />
+            </div>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              Chat on WhatsApp
+            </h3>
+            <p className="text-gray-500 text-sm mb-4">
               Get instant responses to your questions
             </p>
             <button
               onClick={handleWhatsAppClick}
-              className="bg-accent text-primary hover:bg-primary hover:text-accent px-6 py-3 rounded-lg font-bold transition inline-block text-center"
+              className="bg-primary text-white hover:bg-primary/90 px-6 py-2 rounded-lg font-semibold transition inline-flex items-center gap-1"
             >
-              Chat Now
+              Chat Now <ChevronRight className="h-4 w-4" />
             </button>
           </div>
 
           {/* Phone Call */}
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:bg-white/20 transition duration-300">
-            <Phone className="h-12 w-12 text-primary mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Call Our Experts</h3>
-            <p className="text-blue-100 mb-4">
+          <div className="bg-gray-50 rounded-xl p-6 text-center hover:bg-gray-100 transition-all duration-300">
+            <div className="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Phone className="h-7 w-7 text-primary" />
+            </div>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              Call Our Experts
+            </h3>
+            <p className="text-gray-500 text-sm mb-4">
               Speak directly with our property consultants
             </p>
             <a
               href="tel:+2348134967650"
-              className="bg-accent text-primary hover:bg-primary hover:text-accent px-6 py-3 rounded-lg font-bold transition inline-block text-center"
+              className="bg-primary text-white hover:bg-primary/90 px-6 py-2 rounded-lg font-semibold transition inline-flex items-center gap-1"
             >
-              Call Now
+              Call Now <ChevronRight className="h-4 w-4" />
             </a>
           </div>
 
           {/* Site Inspection */}
-          <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 hover:bg-white/20 transition duration-300">
-            <Calendar className="h-12 w-12 text-primary mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Book Site Inspection</h3>
-            <p className="text-blue-100 mb-4">Schedule a free property tour</p>
+          <div className="bg-gray-50 rounded-xl p-6 text-center hover:bg-gray-100 transition-all duration-300">
+            <div className="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Calendar className="h-7 w-7 text-primary" />
+            </div>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              Book Site Inspection
+            </h3>
+            <p className="text-gray-500 text-sm mb-4">
+              Schedule a free property tour
+            </p>
             <button
-              onClick={handleWhatsAppClick}
-              className="bg-accent text-primary hover:text-accent hover:bg-primary px-6 py-3 rounded-lg font-bold transition"
+              onClick={handleBookInspection}
+              className="bg-primary text-white hover:bg-primary/90 px-6 py-2 rounded-lg font-semibold transition inline-flex items-center gap-1"
             >
-              Book Now
+              Book Now <ChevronRight className="h-4 w-4" />
             </button>
           </div>
         </div>
 
-        {/* Emergency Contact */}
-        <div className="mt-12 p-6 border border-blue-300 rounded-2xl bg-blue-800">
-          <p className="text-lg font-semibold mb-2"> Limited Time Offer!</p>
-          <p className="text-blue-100">
-            Get 10% off on your first property purchase this month. Terms and
-            conditions apply.
+        {/* Simple Offer Banner */}
+        <div className="max-w-2xl mx-auto text-center pt-8">
+          <p className="text-gray-500">
+            <span className="font-semibold text-primary">
+              Limited Time Offer:
+            </span>{" "}
+            Get 10% off on your first property purchase this month.
           </p>
         </div>
       </div>

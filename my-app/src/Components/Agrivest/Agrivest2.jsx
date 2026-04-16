@@ -35,13 +35,13 @@ const agrivestData = [
 const InvestmentCard = ({ item, index }) => {
   return (
     <div
-      className={`bg-green-950 rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-700 hover:scale-105 hover:shadow-3xl animate-on-scroll ${
+      className={`bg-[#001d3d] rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-700 hover:scale-105 hover:shadow-3xl animate-on-scroll ${
         index % 2 === 0 ? "animate-fadeInLeft" : "animate-fadeInRight"
       }`}
       style={{ animationDelay: `${index * 200}ms` }}
     >
       {/* Card Header */}
-      <div className="bg-green-900/50 backdrop-blur-sm p-6 border-b border-green-800">
+      <div className="bg-[#001d3d] backdrop-blur-sm p-6 border-b border-[#001d3d]">
         <div className="flex items-center gap-3">
           <span className="text-4xl">{item.icon}</span>
           <h2 className="text-2xl md:text-3xl font-bold text-white">
@@ -50,19 +50,17 @@ const InvestmentCard = ({ item, index }) => {
         </div>
       </div>
 
-      {/* Card Content */}
       <div className="p-6">
         <div className="grid grid-cols-2 gap-8">
-          {/* Investment Column */}
           <div className="text-center">
-            <h3 className="text-xl font-bold text-green-300 mb-4 pb-2 border-b border-green-800">
+            <h3 className="text-xl font-bold text-blue-300 mb-4 pb-2 border-b border-[#001d3d]">
               INVESTMENT (₦)
             </h3>
             <div className="space-y-3">
               {item.investments.map((amount, i) => (
                 <div
                   key={i}
-                  className="text-white font-medium hover:text-green-300 transition-colors duration-300 investment-row"
+                  className="text-white font-medium hover:text-blue-300 transition-colors duration-300 investment-row"
                   style={{ animationDelay: `${i * 50}ms` }}
                 >
                   {amount.toLocaleString()}
@@ -73,14 +71,14 @@ const InvestmentCard = ({ item, index }) => {
 
           {/* Returns Column */}
           <div className="text-center">
-            <h3 className="text-xl font-bold text-green-300 mb-4 pb-2 border-b border-green-800">
+            <h3 className="text-xl font-bold text-blue-300 mb-4 pb-2 border-b border-[#001d3d]">
               RETURNS (₦)
             </h3>
             <div className="space-y-3">
               {item.returns.map((amount, i) => (
                 <div
                   key={i}
-                  className="text-white font-medium hover:text-green-300 transition-colors duration-300 returns-row"
+                  className="text-white font-medium hover:text-blue-300 transition-colors duration-300 returns-row"
                   style={{ animationDelay: `${i * 50}ms` }}
                 >
                   {amount.toLocaleString()}
@@ -128,22 +126,22 @@ function Agrivest2() {
   return (
     <section
       ref={sectionRef}
-      className="py-8 mt-12 bg-gradient-to-b from-green-100 to-white overflow-hidden relative"
+      className="py-8 mt-12 bg-gradient-to-b from-blue-100 to-white overflow-hidden relative"
     >
       {/* Background Decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-green-800/10 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-green-900/10 rounded-full blur-3xl animate-pulse-slow"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#001d3d] rounded-full blur-3xl animate-pulse-slow"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#001d3d] rounded-full blur-3xl animate-pulse-slow"></div>
       </div>
 
       <div className="w-[98%] mx-auto relative z-10">
         {/* Header Section */}
         <div className="text-center mb-12 animate-on-scroll animate-slideDown">
-          <h1 className="relative inline-block text-4xl md:text-5xl lg:text-6xl font-bold text-green-950 pb-4">
+          <h1 className="relative inline-block text-3xl md:text-4xl font-bold text-[#001d3d] pb-4">
             BEREOTH AGRIVEST
-            <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-32 h-1.5 bg-gradient-to-r from-green-700 to-green-900 rounded-full animate-expandWidth"></span>
+            <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-32 h-1.5 bg-gradient-to-r from-blue-700 to-[#001d3d] rounded-full animate-expandWidth"></span>
           </h1>
-          <p className="text-xl text-green-800 mt-6 max-w-2xl mx-auto">
+          <p className="text-xl text-[#001d3d] mt-6 max-w-2xl mx-auto">
             Secure your future by investing in BEREOTH Agrivest & Farmland
           </p>
         </div>

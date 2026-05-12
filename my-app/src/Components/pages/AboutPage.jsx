@@ -79,13 +79,13 @@ const AboutPage = () => {
     {
       name: "ADEBAYO MOHAMMED",
       role: "Financial Administrator",
-      image: "team2.jpeg",
+      image: "man1.jpeg",
       bio: "Property law specialist ensuring secure transactions",
     },
     {
       name: "IKECHI EMMANUEL",
       role: "Chief Operating Officer",
-      image: "team3.jpeg",
+      image: "man2.jpeg",
       bio: "Strategic investment advisor with proven track record",
     },
   ];
@@ -100,11 +100,9 @@ const AboutPage = () => {
         py="py-28"
       />
 
-      {/* Company Story - Redesigned */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            {/* Content Side */}
             <div>
               <div className="mb-4">
                 <span className="text-primary font-semibold text-sm tracking-wider">
@@ -223,25 +221,23 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Mission, Vision, Mandate - Redesigned Cards */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Mission */}
-            <div className="bg-white rounded-xl p-8 text-center shadow-sm hover:shadow-md transition-shadow">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
+            <div className="bg-white rounded-xl p-5 text-center shadow-sm hover:shadow-md transition-shadow">
               <div className="bg-primary/10 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5">
                 <Target className="h-8 w-8 text-primary" />
               </div>
               <h3 className="text-xl font-bold text-primary mb-3">
                 Our Mission
               </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Providing Affordable Landed Properties for Interested
-                Subscribers at all levels.
+              <p className="text-gray-600 leading-relaxed text-sm">
+                To empower people at all social strata with reliable properties,
+                investment, and wealth solutions that are effective and
+                affordable.
               </p>
             </div>
 
-            {/* Vision */}
             <div className="bg-white rounded-xl p-8 text-center shadow-sm hover:shadow-md transition-shadow">
               <div className="bg-primary/10 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5">
                 <Eye className="h-8 w-8 text-primary" />
@@ -249,12 +245,11 @@ const AboutPage = () => {
               <h3 className="text-xl font-bold text-primary mb-3">
                 Our Vision
               </h3>
-              <p className="text-gray-600 leading-relaxed">
-                To Provide Reliable Shelter For Future Relevance.
+              <p className="text-gray-600 leading-relaxed text-sm">
+                To provide affordable properties that transcend generations.
               </p>
             </div>
 
-            {/* Mandate */}
             <div className="bg-white rounded-xl p-8 text-center shadow-sm hover:shadow-md transition-shadow">
               <div className="bg-primary/10 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5">
                 <Stamp className="h-8 w-8 text-primary" />
@@ -262,15 +257,29 @@ const AboutPage = () => {
               <h3 className="text-xl font-bold text-primary mb-3">
                 Our Mandate
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed text-sm">
                 We are developing 10,000 Homes across the country by 2031.
+              </p>
+            </div>
+            <div className="bg-white rounded-xl p-8 text-center shadow-sm hover:shadow-md transition-shadow">
+              <div className="bg-primary/10 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-5">
+                <Stamp className="h-8 w-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold text-primary mb-3">
+                Our Core Value
+              </h3>
+              <p className="text-gray-600 leading-relaxed text-sm">
+                <span className="font-bold">CORE VALUES : PATI </span><br />
+                <li className="list-none">Professionalism </li>
+                <li className="list-none">Affordability</li>
+                <li className="list-none">Transparency</li>
+                <li className="list-none">Integrity</li>
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Core Values - Redesigned */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -307,7 +316,6 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Meet Our Team - Redesigned */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -354,7 +362,6 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Track Record - Redesigned as clean stats section */}
       <section className="py-16 bg-white border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">

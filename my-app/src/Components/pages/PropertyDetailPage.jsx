@@ -211,7 +211,7 @@ const PropertyDetailPage = () => {
                 </div>
                 <div className="text-right">
                   <div className="text-2xl font-bold text-primary">
-                    {property.price}
+                    {Number(property.price).toLocaleString()}
                   </div>
                   <p className="text-xs text-gray-400">Starting price</p>
                 </div>
@@ -340,7 +340,7 @@ const PropertyDetailPage = () => {
               <div className="bg-white rounded-xl p-5 shadow-sm border border-gray-100 text-center">
                 <p className="text-xs text-gray-500 mb-1">Starting Price</p>
                 <div className="text-2xl font-bold text-primary">
-                  {property.price}
+                  {Number(property.price).toLocaleString()}
                 </div>
               </div>
 

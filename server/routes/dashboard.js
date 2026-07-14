@@ -3,9 +3,96 @@ import { supabase } from '../config/supabase.js';
 import { authenticateToken, requireAdminOrEditor } from '../middleware/auth.js';
 import { asyncHandler } from '../middleware/errorHandler.js';
 
+/**
+ * @swagger
+ * tags:
+ *   name: Dashboard
+ *   description: Dashboard statistics endpoints
+ */
 const router = express.Router();
 
-// Get dashboard statistics (admin/editor only)
+/**
+ * @swagger
+ * /dashboard/stats:
+ *   get:
+ *     summary: Get dashboard statistics
+ *     description: Retrieve property, inquiry, user statistics and recent activity
+ *     tags:
+ *       - Dashboard
+ *
+ *     security:
+ *       - bearerAuth: []
+ *
+ *     responses:
+ *       200:
+ *         description: Dashboard statistics retrieved successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *
+ *                 stats:
+ *                   type: object
+ *                   properties:
+ *                     totalProperties:
+ *                       type: integer
+ *                       example: 25
+ *
+ *                     totalInquiries:
+ *                       type: integer
+ *                       example: 120
+ *
+ *                     totalUsers:
+ *                       type: integer
+ *                       example: 5
+ *
+ *                     propertiesByStatus:
+ *                       type: object
+ *                       example:
+ *                         Available: 15
+ *                         Sold: 5
+ *                         Pending: 5
+ *
+ *                 recentProperties:
+ *                   type: array
+ *                   items:
+ *                     type: object
+ *                     properties:
+ *                       id:
+ *                         type: string
+ *                         example: property-id
+ *
+ *                       title:
+ *                         type: string
+ *                         example: Luxury Apartment
+ *
+ *                       price:
+ *                         type: number
+ *                         example: 250000
+ *
+ *                       location:
+ *                         type: string
+ *                         example: Lagos
+ *
+ *                       status:
+ *                         type: string
+ *                         example: Available
+ *
+ *                 recentInquiries:
+ *                   type: array
+ *                   items:
+ *                     type: object
+ *
+ *       401:
+ *         description: Unauthorized
+ *
+ *       403:
+ *         description: Admin or editor access required
+ *
+ *       500:
+ *         description: Server error
+ */
 router.get('/stats', authenticateToken, requireAdminOrEditor, asyncHandler(async (req, res) => {
   // Get total properties
   const { count: totalProperties } = await supabase

@@ -5,16 +5,51 @@ const options = {
     openapi: "3.0.0",
 
     info: {
-      title: "Real Estate Management API",
+      title: "Bereoth Real Estate API",
       version: "1.0.0",
       description:
-        "API documentation for the Real Estate Management backend system",
+        "API documentation for Bereoth real estate management platform.",
+      contact: {
+        name: "Bereoth Development Team",
+        email: "support@bereoth.com",
+      },
     },
 
     servers: [
       {
-        url: "http://localhost:5000/api",
-        description: "Local development server",
+        url: "https://api.bereoth.com/api",
+        description: "Production server",
+      },
+      //   {
+      //     url: "http://localhost:5000/api",
+      //     description: "Local development server",
+      //   },
+    ],
+
+    tags: [
+      {
+        name: "Authentication",
+        description: "User authentication endpoints",
+      },
+      {
+        name: "Properties",
+        description: "Property management endpoints",
+      },
+      {
+        name: "Inquiries",
+        description: "Customer inquiry endpoints",
+      },
+      {
+        name: "Users",
+        description: "Admin user management endpoints",
+      },
+      {
+        name: "Dashboard",
+        description: "Dashboard analytics endpoints",
+      },
+      {
+        name: "Upload",
+        description: "Property image upload endpoints",
       },
     ],
 
@@ -28,9 +63,9 @@ const options = {
       },
 
       schemas: {
-
         User: {
           type: "object",
+          required: ["id", "name", "email", "role"],
           properties: {
             id: {
               type: "string",
@@ -51,11 +86,9 @@ const options = {
           },
         },
 
-
         Property: {
           type: "object",
           properties: {
-
             id: {
               type: "string",
               example: "property-id",
@@ -78,8 +111,7 @@ const options = {
 
             description: {
               type: "string",
-              example:
-                "Beautiful apartment with modern facilities",
+              example: "Beautiful apartment with modern facilities",
             },
 
             status: {
@@ -92,56 +124,79 @@ const options = {
               example: "Apartment",
             },
 
+            size: {
+              type: "string",
+              example: "250 sqm",
+            },
+
+            features: {
+              type: "array",
+              items: {
+                type: "string",
+              },
+              example: ["Swimming Pool", "Parking", "Security"],
+            },
+
+            amenities: {
+              type: "array",
+              items: {
+                type: "string",
+              },
+            },
+
             images: {
               type: "array",
-              items:{
-                type:"string"
-              }
-            }
-
+              items: {
+                type: "string",
+              },
+            },
           },
         },
 
-
-        Inquiry:{
-          type:"object",
-          properties:{
-            id:{
-              type:"string",
-              example:"123"
+        Inquiry: {
+          type: "object",
+          properties: {
+            id: {
+              type: "string",
+              example: "123",
             },
 
-            name:{
-              type:"string",
-              example:"Michael"
+            name: {
+              type: "string",
+              example: "Michael",
             },
 
-            email:{
-              type:"string",
-              example:"michael@gmail.com"
+            email: {
+              type: "string",
+              example: "michael@gmail.com",
             },
 
-            phone:{
-              type:"string",
-              example:"+2348000000000"
+            phone: {
+              type: "string",
+              example: "+2348000000000",
             },
 
-            message:{
-              type:"string",
-              example:"I want to inspect this property"
-            }
-          }
-        }
+            message: {
+              type: "string",
+              example: "I want to inspect this property",
+            },
+          },
+        },
 
-      }
+        UploadResponse: {
+          type: "object",
+          properties: {
+            imageUrl: {
+              type: "string",
+              example: "https://xyz.supabase.co/storage/property-image.jpg",
+            },
+          },
+        },
+      },
     },
-
   },
 
-  apis: [
-    "./routes/*.js",
-  ],
+  apis: ["./routes/*.js"],
 };
-
 
 export const swaggerSpec = swaggerJsdoc(options);

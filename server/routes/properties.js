@@ -4,9 +4,73 @@ import { authenticateToken, requireAdminOrEditor } from "../middleware/auth.js";
 import { validateProperty, validateRequest } from "../middleware/validation.js";
 import { asyncHandler } from "../middleware/errorHandler.js";
 
+/**
+ * @swagger
+ * tags:
+ *   name: Properties
+ *   description: Property management endpoints
+ */
 const router = express.Router();
 
-// Get all properties (public route with pagination and filtering)
+/**
+ * @swagger
+ * /properties:
+ *   get:
+ *     summary: Get all properties
+ *     description: Retrieve properties with pagination, search and filters
+ *     tags:
+ *       - Properties
+ *
+ *     parameters:
+ *       - in: query
+ *         name: page
+ *         schema:
+ *           type: integer
+ *           example: 1
+ *
+ *       - in: query
+ *         name: limit
+ *         schema:
+ *           type: integer
+ *           example: 10
+ *
+ *       - in: query
+ *         name: search
+ *         schema:
+ *           type: string
+ *           example: apartment
+ *
+ *       - in: query
+ *         name: status
+ *         schema:
+ *           type: string
+ *           example: Available
+ *
+ *       - in: query
+ *         name: location
+ *         schema:
+ *           type: string
+ *           example: Lagos
+ *
+ *       - in: query
+ *         name: minPrice
+ *         schema:
+ *           type: number
+ *           example: 100000
+ *
+ *       - in: query
+ *         name: maxPrice
+ *         schema:
+ *           type: number
+ *           example: 500000
+ *
+ *     responses:
+ *       200:
+ *         description: List of properties returned successfully
+ *
+ *       500:
+ *         description: Server error
+ */
 router.get(
   "/",
   asyncHandler(async (req, res) => {
@@ -25,7 +89,7 @@ router.get(
     // Apply filters
     if (search) {
       query = query.or(
-        `title.ilike.%${search}%,description.ilike.%${search}%,location.ilike.%${search}%`
+        `title.ilike.%${search}%,description.ilike.%${search}%,location.ilike.%${search}%`,
       );
     }
 
@@ -67,10 +131,33 @@ router.get(
         itemsPerPage: limit,
       },
     });
-  })
+  }),
 );
 
-// Get single property
+
+/**
+ * @swagger
+ * /properties/{id}:
+ *   get:
+ *     summary: Get single property
+ *     tags:
+ *       - Properties
+ *
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         example: property-id
+ *
+ *     responses:
+ *       200:
+ *         description: Property returned successfully
+ *
+ *       404:
+ *         description: Property not found
+ */
 router.get(
   "/:id",
   asyncHandler(async (req, res) => {
@@ -85,9 +172,37 @@ router.get(
     }
 
     res.json({ property });
-  })
+  }),
 );
 
+/**
+ * @swagger
+ * /properties:
+ *   post:
+ *     summary: Create a property
+ *     tags:
+ *       - Properties
+ *
+ *     security:
+ *       - bearerAuth: []
+ *
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/Property'
+ *
+ *     responses:
+ *       201:
+ *         description: Property created successfully
+ *
+ *       401:
+ *         description: Unauthorized
+ *
+ *       500:
+ *         description: Server error
+ */
 router.post(
   "/",
   authenticateToken,
@@ -146,10 +261,45 @@ router.post(
       message: "Property created successfully",
       property,
     });
-  })
+  }),
 );
 
-// Update property (admin/editor only)
+/**
+ * @swagger
+ * /properties/{id}:
+ *   put:
+ *     summary: Update a property
+ *     tags:
+ *       - Properties
+ *
+ *     security:
+ *       - bearerAuth: []
+ *
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         example: property-id
+ *
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             $ref: '#/components/schemas/Property'
+ *
+ *     responses:
+ *       200:
+ *         description: Property updated successfully
+ *
+ *       404:
+ *         description: Property not found
+ *
+ *       500:
+ *         description: Server error
+ */
 router.put(
   "/:id",
   authenticateToken,
@@ -212,10 +362,38 @@ router.put(
       message: "Property updated successfully",
       property,
     });
-  })
+  }),
 );
 
-// Delete property (admin/editor only)
+/**
+ * @swagger
+ * /properties/{id}:
+ *   delete:
+ *     summary: Delete a property
+ *     tags:
+ *       - Properties
+ *
+ *     security:
+ *       - bearerAuth: []
+ *
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: string
+ *         example: property-id
+ *
+ *     responses:
+ *       200:
+ *         description: Property deleted successfully
+ *
+ *       404:
+ *         description: Property not found
+ *
+ *       500:
+ *         description: Server error
+ */
 router.delete(
   "/:id",
   authenticateToken,
@@ -232,7 +410,7 @@ router.delete(
     }
 
     res.json({ message: "Property deleted successfully" });
-  })
+  }),
 );
 
 export default router;

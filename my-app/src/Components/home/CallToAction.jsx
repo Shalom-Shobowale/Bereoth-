@@ -27,7 +27,8 @@ const CallToAction = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
             Ready to Find Your Perfect Property?
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+          <div className="w-16 h-0.5 bg-primary/30 mx-auto rounded-full mb-4"></div>
+          <p className="text-sm text-gray-600 max-w-2xl mx-auto">
             Don't wait for the perfect moment. Start your real estate journey
             today and let us help you secure your dream property at the best
             prices.

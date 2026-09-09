@@ -45,17 +45,18 @@ const WhyChooseUs = () => {
         {/* Header with accent line */}
         <div className="text-center mb-16">
           <div className="inline-block">
-            <div className="flex justify-center mb-4">
+            {/* <div className="flex justify-center mb-4">
               <div className="h-1 w-12 bg-primary rounded-full"></div>
-            </div>
+            </div> */}
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
               Why Choose Bereoth?
             </h2>
-            <div className="flex justify-center">
+            <div className="w-16 h-0.5 bg-primary/30 mx-auto rounded-full mb-4"></div>
+            {/* <div className="flex justify-center">
               <div className="h-1 w-20 bg-primary rounded-full"></div>
-            </div>
+            </div> */}
           </div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mt-6">
+          <p className="text-sm text-gray-600 max-w-2xl mx-auto">
             At Bereoth Property & Investments Ltd, we make land ownership
             simple, transparent, and rewarding. Here's why hundreds trust us:
           </p>

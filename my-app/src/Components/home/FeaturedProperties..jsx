@@ -63,7 +63,7 @@ const FeaturedProperties = () => {
             Featured Properties
           </h2>
           <div className="w-16 h-0.5 bg-primary/30 mx-auto rounded-full mb-4"></div>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <p className="text-sm text-gray-600 max-w-2xl mx-auto">
             Discover our handpicked selection of premium properties
           </p>
         </div>

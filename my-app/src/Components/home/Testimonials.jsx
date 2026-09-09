@@ -64,7 +64,8 @@ const Testimonials = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
             What Our Clients Say
           </h2>
-          <p className="text-xl text-gray-600">
+          <div className="w-16 h-0.5 bg-primary/30 mx-auto rounded-full mb-4"></div>
+          <p className="text-sm text-gray-600 max-w-2xl mx-auto">
             Don't just take our word for it – hear from our satisfied clients
           </p>
         </div>
@@ -127,7 +128,7 @@ const Testimonials = () => {
 
         {/* Call to Action */}
         <div className="text-center">
-          <p className="text-lg text-gray-600 my-6">
+          <p className="text-sm text-gray-600 my-6">
             With Bereoth, every client becomes a success story. Ready to join
             our satisfied clients?
           </p>

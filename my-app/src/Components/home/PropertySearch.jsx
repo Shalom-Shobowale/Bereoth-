@@ -24,7 +24,8 @@ const PropertySearch = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
             Find Your Perfect Property
           </h2>
-          <p className="text-xl text-gray-600">
+          <div className="w-16 h-0.5 bg-primary/30 mx-auto rounded-full mb-4"></div>
+          <p className="text-sm text-gray-600 max-w-2xl mx-auto">
             Search through our premium collection of properties
           </p>
         </div>

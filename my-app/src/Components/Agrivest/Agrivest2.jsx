@@ -141,7 +141,7 @@ function Agrivest2() {
             BEREOTH AGRIVEST
             <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-32 h-1.5 bg-gradient-to-r from-blue-700 to-[#001d3d] rounded-full animate-expandWidth"></span>
           </h1>
-          <p className="text-xl text-[#001d3d] mt-6 max-w-2xl mx-auto">
+          <p className="text-sm text-[#001d3d] mt-6 max-w-2xl mx-auto">
             Secure your future by investing in BEREOTH Agrivest & Farmland
           </p>
         </div>

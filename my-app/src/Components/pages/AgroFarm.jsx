@@ -67,7 +67,7 @@ const AgroFarm = () => {
               </span>
             </h1>
 
-            <p className="text-xl md:text-xl text-gray-200 mb-8 max-w-2xl animate-hero animate-fadeIn">
+            <p className="text-sm md:text-xl text-gray-200 mb-8 max-w-2xl animate-hero animate-fadeIn">
               Join Bereoth AgriVest in revolutionizing agricultural investment -
               where profitability meets purpose, and sustainability drives
               growth.

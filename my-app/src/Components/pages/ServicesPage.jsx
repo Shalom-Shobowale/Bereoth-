@@ -140,7 +140,7 @@ const ServicesPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
               What We Offer
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-sm text-gray-600">
               End-to-end real estate services designed to deliver exceptional
               results
             </p>
@@ -271,7 +271,7 @@ const ServicesPage = () => {
             Ready to Find Your{" "}
             <span className="text-primary">Perfect Property</span>?
           </h2>
-          <p className="text-lg text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-sm text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
             Contact us today for a free consultation. No pressure, no hidden
             fees — just honest advice from experts who care.
           </p>
